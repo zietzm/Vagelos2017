@@ -18,5 +18,18 @@
   ],
   "type": "webpage",
   "standard_citation": "url:https://github.com/greenelab/manubot-rootstock"
- }
+},
+  {
+    "URL": "http://mathworld.wolfram.com/AdjacencyMatrix.html",
+    "title":  "Adjacency Matrix",
+    "container-title": "MathWorld--A Wolfram Web Resource",
+    "author": [
+      {
+        "family": "Weisstein",
+        "given": "Eric W."
+      }
+    ],
+    "type": "webpage",
+    "standard_citation": "url:http://mathworld.wolfram.com/AdjacencyMatrix.html"
+  }
 ]
