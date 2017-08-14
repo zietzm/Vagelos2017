@@ -10,6 +10,7 @@
   <title>Vagelos Report Summer 2017</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="github-pandoc.css" type="text/css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   <!-- Insert Analytics Script Below -->
   <script>
   </script>
@@ -19,7 +20,7 @@
 <div id="header">
 <h1 class="title">Vagelos Report Summer 2017</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/be28389eb856ccdc697bf6ff56ce298083239306">zietzm/Vagelos2017@be28389</a> on August 14, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/8a3a633aac3123f76535a4c22324fce58356f9de">zietzm/Vagelos2017@8a3a633</a> on August 14, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>Michael N. Zietz</strong><br> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/zietzm">zietzm</a><br> <small> Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania </small></li>
@@ -237,22 +238,47 @@
 <p class="caption">Figure 2: An example graph. Blue nodes are genes, while green nodes are diseases. The edge type between all the nodes in this graph is ‘DaG’ or ‘Disease-associates-Gene’.</p>
 </div>
 <p>For example, the graph in Figure <a href="#fig:eg_graph">2</a> has the following adjacency matrix corresponding to ‘GaD’:</p>
-<div class="figure">
-<img src="images/adjmat.svg" />
-
-</div>
+<p><span class="math display">\[
+\begin{equation}
+\begin{bmatrix}
+1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
+\end{bmatrix}
+\end{equation}
+\]</span></p>
 <p>with labels for rows and columns, respectively:</p>
-<div class="figure">
-<img src="images/labels.svg" />
-
-</div>
+<span class="math display">\[\begin{bmatrix}
+\textrm{NF2}\\
+\textrm{NRXN2}\\
+\textrm{SMARCE1}
+\end{bmatrix}\]</span>
+<span class="math display">\[\begin{bmatrix}
+\textrm{epilepsy syndrome}\\
+\textrm{kidney cancer}\\
+\textrm{pancreatic cancer}\\
+\textrm{spinal cancer}\\
+\textrm{malignant mesothelioma}\\
+\textrm{peripheral nervous system neoplasm}\\
+\textrm{autistic disorder}\\
+\textrm{meningioma}\\
+\textrm{salivary gland cancer}
+\end{bmatrix}\]</span>
 <p>An adjacency matrix is identical to the information about connections between nodes along a given metanode. Another way to consider an adjacency matrix is that it lists the nodes at which one can arrive in one step from a given start node. In this sense, performing a matrix multiplication with two adjacency matrices gives the nodes at which one can arrive in exactly <em>two</em> steps. Further, an arbitrary number of multiplications can be performed between adjacency matrices corresponding to various metaedges, so long as the dimensionality is appropriate to the matrix multiplication in question. Using this method, we can extract what is known as a path count, or the number of ways to traverse the graph between two nodes. In this way of thinking, an adjacency matrix corresponds to the path count for paths of length one. Using the graph in Figure <a href="#fig:eg_graph">2</a>, we could perform a traversal along the meta-<em>path</em> ‘GaDaG’, and would obtain the following matrix:</p>
-<div class="figure">
-<img src="images/path2.svg" />
-
-</div>
+<p><span class="math display">\[
+\begin{equation}
+\begin{bmatrix}
+6 &amp; 1 &amp; 2\\
+1 &amp; 3 &amp; 1\\
+2 &amp; 1 &amp; 3
+\end{bmatrix}
+\end{equation}
+\]</span></p>
 <p>Notice that the elements along the main diagonal of the above matrix are not zero. This indiciates that we are accounting for paths in which we traverse from nodes as follows: A -&gt; B -&gt; A. Useful information cannot be gained from looping paths such as these, and they introduce considerable noise in measures of connection between nodes. We therefore wanted to eliminate any usage of path count, and replace it with walk count, where a walk is a type of path which <em>cannot</em> loop backwards on itself. In this example and for paths of length two, this is trivial; we simply subtract the main diagonal, and we have converted from a walk count to a path count. However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats. My work toward this will be further discussed in the Results section.</p>
-<p>Discuss what an adjacency matrix is, that this corresponds to a metaedge, path counts, walk counts, why path is better, python arrays, multiplication, PEP465, sparse matrices, jupyter notebooks, visualization, include several of my github issue graphs as data within the results section, etc. etc.</p>
+<p><strong>Discuss what an adjacency matrix is, that this corresponds to a metaedge, path counts, walk counts, why path is better</strong></p>
+<h3 id="computational-tools">Computational tools</h3>
+<p>All computational work was done in Python version 3.6. Specifically we used an open-source scientific distribution of Python called Anaconda</p>
+<p><strong>Discuss python arrays, multiplication, PEP465, sparse matrices, jupyter notebooks, visualization, include several of my github issue graphs as data within the results section, etc.</strong></p>
 <h2 id="results">Results</h2>
 <h2 id="next-steps">Next steps</h2>
 <h2 id="citations" class="unnumbered">Citations</h2>
