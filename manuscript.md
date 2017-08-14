@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@8a3a633](https://github.com/zietzm/Vagelos2017/tree/8a3a633aac3123f76535a4c22324fce58356f9de)
+from [zietzm/Vagelos2017@e392aaf](https://github.com/zietzm/Vagelos2017/tree/e392aaf6c0665d87ebad39da17101a2f1bfd6073)
 on August 14, 2017.
 </em></small>
 
@@ -197,7 +197,15 @@ My work toward this will be further discussed in the Results section.
 ### Computational tools
 
 All computational work was done in Python version 3.6.
-Specifically we used an open-source scientific distribution of Python called Anaconda
+Specifically we used an open-source scientific distribution of Python called Anaconda.
+Python's notable library, NumPy has an n-dimensional array class called an `ndarray`.
+`ndarray`s are very useful for representing matrix information, and have superior functionality for our purposes than the native `numpy.matrix` class.
+However, as can be seen in Table @tbl:nodes-by-type, the number of nodes in a given adjacency matrix can be upwards of 20,000.
+In performing matrix multiplications, this can become a computation-intensive process that requires both significant CPU power and memory.
+One of my early goals for the summer was the conversion of all walk-count (and subsequently, path count) functions to sparse matrices.
+
+Sparse matrices, as employed by the Python library SciPy, represent data in matrices which are primarily composed of zeros.
+
 
 
 **Discuss python arrays, multiplication, PEP465, sparse matrices, jupyter notebooks, visualization, include several of my github issue graphs as data within the results section, etc.**

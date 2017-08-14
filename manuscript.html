@@ -20,7 +20,7 @@
 <div id="header">
 <h1 class="title">Vagelos Report Summer 2017</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/8a3a633aac3123f76535a4c22324fce58356f9de">zietzm/Vagelos2017@8a3a633</a> on August 14, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/e392aaf6c0665d87ebad39da17101a2f1bfd6073">zietzm/Vagelos2017@e392aaf</a> on August 14, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>Michael N. Zietz</strong><br> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/zietzm">zietzm</a><br> <small> Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania </small></li>
@@ -277,7 +277,8 @@
 <p>Notice that the elements along the main diagonal of the above matrix are not zero. This indiciates that we are accounting for paths in which we traverse from nodes as follows: A -&gt; B -&gt; A. Useful information cannot be gained from looping paths such as these, and they introduce considerable noise in measures of connection between nodes. We therefore wanted to eliminate any usage of path count, and replace it with walk count, where a walk is a type of path which <em>cannot</em> loop backwards on itself. In this example and for paths of length two, this is trivial; we simply subtract the main diagonal, and we have converted from a walk count to a path count. However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats. My work toward this will be further discussed in the Results section.</p>
 <p><strong>Discuss what an adjacency matrix is, that this corresponds to a metaedge, path counts, walk counts, why path is better</strong></p>
 <h3 id="computational-tools">Computational tools</h3>
-<p>All computational work was done in Python version 3.6. Specifically we used an open-source scientific distribution of Python called Anaconda</p>
+<p>All computational work was done in Python version 3.6. Specifically we used an open-source scientific distribution of Python called Anaconda. Python’s notable library, NumPy has an n-dimensional array class called an <code>ndarray</code>. <code>ndarray</code>s are very useful for representing matrix information, and have superior functionality for our purposes than the native <code>numpy.matrix</code> class. However, as can be seen in Table <a href="#tbl:nodes-by-type">1</a>, the number of nodes in a given adjacency matrix can be upwards of 20,000. In performing matrix multiplications, this can become a computation-intensive process that requires both significant CPU power and memory. One of my early goals for the summer was the conversion of all walk-count (and subsequently, path count) functions to sparse matrices.</p>
+<p>Sparse matrices, as employed by the Python library SciPy, represent data in matrices which are primarily composed of zeros.</p>
 <p><strong>Discuss python arrays, multiplication, PEP465, sparse matrices, jupyter notebooks, visualization, include several of my github issue graphs as data within the results section, etc.</strong></p>
 <h2 id="results">Results</h2>
 <h2 id="next-steps">Next steps</h2>
