@@ -26,6 +26,7 @@ mkdir -p output
 # http://pandoc.org/MANUAL.html
 echo "Exporting HTML manuscript"
 pandoc --verbose \
+  --mathjax \
   --smart \
   --from=markdown \
   --to=html \
