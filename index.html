@@ -4,13 +4,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="Daniel S. Himmelstein" />
-  <meta name="author" content="Anthony Gitter" />
-  <meta name="author" content="Venkat S. Malladi" />
-  <meta name="author" content="Evan M. Cofer" />
+  <meta name="author" content="Michael N. Zietz" />
   <meta name="date" content="2017-08-14" />
   <meta name="keywords" content="work-in-progress, markdown, manuscript, publishing" />
-  <title>Manubot Rootstock: Manuscript Title</title>
+  <title>Vagelos Report Summer 2017</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="github-pandoc.css" type="text/css" />
   <!-- Insert Analytics Script Below -->
@@ -20,61 +17,272 @@
 </head>
 <body>
 <div id="header">
-<h1 class="title">Manubot Rootstock: Manuscript Title</h1>
+<h1 class="title">Vagelos Report Summer 2017</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/cf6aa57afa70793b6035a1bb54a9f1f10abd3a50">zietzm/Vagelos2017@cf6aa57</a> on August 14, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/be28389eb856ccdc697bf6ff56ce298083239306">zietzm/Vagelos2017@be28389</a> on August 14, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
-<li><p><strong>Daniel S. Himmelstein</strong><br> <img src="images/orcid.svg" alt="ORCID icon" height="13" /> <a href="https://orcid.org/0000-0002-3012-7446">0000-0002-3012-7446</a> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/dhimmel">dhimmel</a> · <img src="images/twitter.svg" alt="Twitter icon" height="13" /> <a href="https://twitter.com/dhimmel">dhimmel</a><br> <small> Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania · Funded by GBMF4552 </small></p></li>
-<li><p><strong>Anthony Gitter</strong><br> <img src="images/orcid.svg" alt="ORCID icon" height="13" /> <a href="https://orcid.org/0000-0002-5324-9833">0000-0002-5324-9833</a> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/agitter">agitter</a><br> <small> Department of Biostatistics and Medical Informatics, University of Wisconsin-Madison and Morgridge Institute for Research · Funded by NIH U54AI117924 </small></p></li>
-<li><p><strong>Venkat S. Malladi</strong><br> <img src="images/orcid.svg" alt="ORCID icon" height="13" /> <a href="https://orcid.org/0000-0002-0144-0564">0000-0002-0144-0564</a> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/vsmalladi">vsmalladi</a><br> <small> The Laboratory of Signaling and Gene Expression, Cecil H. and Ida Green Center for Reproductive Biology Sciences, University of Texas Southwestern Medical Center </small></p></li>
-<li><p><strong>Evan M. Cofer</strong><br> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/evancofer">evancofer</a><br> <small> </small></p></li>
+<li><strong>Michael N. Zietz</strong><br> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/zietzm">zietzm</a><br> <small> Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania </small></li>
 </ul>
-<h2 id="abstract">Abstract</h2>
-<p>Offspring of the <a href="https://github.com/greenelab/deep-review">Deep Review</a>. We cite the Deep Review like <span class="citation">[<a href="#ref-tJKvnIaZ">1</a>]</span> or <span class="citation">[<a href="#ref-tJKvnIaZ">1</a>]</span>. The source repository is <span class="citation">[<a href="#ref-1B7Y2HVtw">2</a>]</span>.</p>
-<h3 id="equations" class="page_break_before">Equations</h3>
-<p>Numbered equations can be included by using <code>$$</code> delimiters with embedded LaTeX math. Equations can be labeled with tags like this <code>{#eq:label}</code> and referenced in text using <code>@eq:label</code>.</p>
-<p><a name="eq:line"></a><span style="display: inline-block; position: relative; width: 100%"><br /><span class="math display"><em>y</em> = <em>m</em><em>x</em> + <em>b</em></span><br /><span style="position: absolute; right: 0em; top: 50%; line-height:0; text-align: right">(1)</span></span> </p>
-<p>Equation <a href="#eq:line">1</a> is the equation for a line in slope-intercept form.</p>
-<h3 id="figures">Figures</h3>
-<p>Numbered figures can be included by using the format <code>![Caption text](URL){#fig:label}</code>. The figures can be referenced in the text by using <code>@fig:label</code>.</p>
-<p>Figure <a href="#fig:googletrends">1</a> shows the interest for “Sci-Hub” and “LibGen” over time.</p>
+<h2 id="scientific-background">Scientific background</h2>
+<h3 id="drug-development">Drug development</h3>
+<p>Drug development times and R&amp;D expenditures have risen considerably in the last decades. In fact, to bring a new compound to market can take a 14 years on average <span class="citation">[<a href="#ref-LlRXV6lE">1</a>]</span>. This development process, according to a 2016 estimate by DiMasi et al. <span class="citation">[<a href="#ref-13c9OPizf">2</a>]</span>, costs an average of $2.87 billion dollars, including post-approval R&amp;D. This amount is up from two previous studies by the same authors which found the average captialized R&amp;D costs to be $802 million in 2003 <span class="citation">[<a href="#ref-XJuQlZl1">3</a>]</span> and $318 million in 1991 <span class="citation">[<a href="#ref-269zMv7S">4</a>]</span>. Despite increases in drug development time and expenditures, the rate of R&amp;D failure has increased since the 1990s <span class="citation">[<a href="#ref-z38InjRh">5</a>]</span>. Only about one in 5,000 compounds which begin preclinical testing are eventually approved <span class="citation">[<a href="#ref-g5JcTYOY">6</a>]</span>. Even among those which enter phase I of clinical development, only an estimated one in ten drugs will receive FDA approval <span class="citation">[<a href="#ref-o8yROPbx">7</a>]</span>.</p>
+<h3 id="drug-repurposing">Drug repurposing</h3>
+<p>Drug repurposing refers to the application of an existing therapeutic to a different disease than the one for which it was originally intended. Because candidates for drug repurposing have already been approved for other diseases, the time and cost associated with repurposing a drug are very small compared to the development of a new drug <span class="citation">[<a href="#ref-c7z5BwrM">8</a>]</span>. In fact, even compounds which have been deemed safe but failed in clinical development for other reasons can be candidates for drug repurposing. Several examples exist of drugs which have been repurposed, for example aspirin to treat coronary artery disease, sildenafil to treat erectile dysfunction, and gabapentin to treat postherpetic neuralgia. Most successfully repurposed drugs were discovered serendipitously and not through any systematic discovery mechanism. Our goal is to make accurate predictions of drugs which are candidates for drug repurposing. We hope to do this using heterogeneous networks of biomedical information to learn the patterns of connections between compounds and diseases.</p>
+<h3 id="graphs">Graphs</h3>
+<p>Write some intro graph theory stuff here, ie adjacency matrix, path counts, etc.</p>
+<h2 id="summer-aims">Summer aims</h2>
+<p>thing —-&gt;&gt; methods speed up computation – sparse and multiprocessing multiple search nodes – dwpc with adjacency matrices path count over walk count</p>
+<h2 id="methods">Methods</h2>
+<h3 id="heterogeneous-networks">Heterogeneous networks</h3>
+<p>Heterogeneous networks (‘hetnets’) are networks with multiple node types and edge types. In the network used this summer, titled Hetionet v1.0 (Figure <a href="#fig:metagraph">1</a> B), nodes represent instances of 11 biomedical entity types, and edges correspond to one of 24 edge types, or relationships between entities. ‘Graph’ in this context refers to the entire network of nodes and edges. We define ‘metagraph’ to mean a graph of the types of nodes and edges in Hetionet (Figure <a href="#fig:metagraph">1</a> A).</p>
 <div class="figure">
-<img src="https://cdn.rawgit.com/greenelab/scihub/7891082161dbcfcd5eeb1d7b76ee99ab44b95064/explore/trends/google-trends.svg" alt="Figure 1: Google Trends Search interest for Sci-Hub and LibGen." id="fig:googletrends" />
-<p class="caption">Figure 1: Google Trends Search interest for Sci-Hub and LibGen.</p>
+<img src="https://raw.githubusercontent.com/zietzm/Vagelos2017/master/content/images/graph_metagraph.png" alt="Figure 1: A. Metagraph. The graph of metandoes (node types) and metaedges (edge) type. B. Graph (Hetionet v1.0) The circles and lines represent nodes within the labeled types. For example, within the metanode Anatomy we could have the node Leukocyte." id="fig:metagraph" />
+<p class="caption">Figure 1: A. Metagraph. The graph of metandoes (node types) and metaedges (edge) type. B. Graph (Hetionet v1.0) The circles and lines represent nodes within the labeled types. For example, within the metanode ‘Anatomy’ we could have the node ‘Leukocyte’.</p>
 </div>
-<h3 id="tables">Tables</h3>
-<p>Numbered tables can be included by using Markdown syntax to create the table and then adding a tag after the caption like this <code>{#tbl:label}</code>. The tables can be referenced in the text by using <code>@tbl:label</code>.</p>
-<p>Table <a href="#tbl:interest">1</a> shows the relative search interest of the terms “Sci-Hub” and “LibGen” the week of June 25, 2017.</p>
-<a name="tbl:interest"></a>
+<p>Hetionet v1.0 incorporated 47,031 nodes and 2,250,197 edges <span class="citation">[<a href="#ref-XJuQlZl1">3</a>]</span>. A further breakdown of the nodes and edges can be found below in Tables <a href="#tbl:nodes-by-type">1</a> and <a href="#tbl:nodes-by-source">2</a>, respectively.</p>
+<a name="tbl:nodes-by-type"></a>
 <table>
-<caption>Table 1: Google Trends Search interest for Sci-Hub and LibGen. </caption>
+<caption>Table 1: Breakdown of nodes by type </caption>
 <thead>
 <tr class="header">
-<th>week</th>
-<th>search_term</th>
-<th>interest</th>
+<th>Metanode</th>
+<th>Nodes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>2017-06-25</td>
-<td>LibGen</td>
-<td>47</td>
+<td>Anatomy</td>
+<td>402</td>
 </tr>
 <tr class="even">
-<td>2017-06-25</td>
-<td>Sci-Hub</td>
-<td>56</td>
+<td>Biological Process</td>
+<td>11,381</td>
+</tr>
+<tr class="odd">
+<td>Cellular Component</td>
+<td>1,391</td>
+</tr>
+<tr class="even">
+<td>Compound</td>
+<td>1,552</td>
+</tr>
+<tr class="odd">
+<td>Disease</td>
+<td>137</td>
+</tr>
+<tr class="even">
+<td>Gene</td>
+<td>20,945</td>
+</tr>
+<tr class="odd">
+<td>Molecular Function</td>
+<td>2,884</td>
+</tr>
+<tr class="even">
+<td>Pathway</td>
+<td>1,822</td>
+</tr>
+<tr class="odd">
+<td>Pharmacologic Class</td>
+<td>345</td>
+</tr>
+<tr class="even">
+<td>Side Effect</td>
+<td>5,734</td>
+</tr>
+<tr class="odd">
+<td>Symptom</td>
+<td>438</td>
 </tr>
 </tbody>
 </table>
-<div id="refs" class="references">
-<div id="ref-tJKvnIaZ">
-<p>1. Ching T <em>et al.</em> 2017 Opportunities And Obstacles For Deep Learning In Biology And Medicine. See <a href="https://doi.org/10.1101/142760" class="uri">https://doi.org/10.1101/142760</a>.</p>
+<a name="tbl:nodes-by-source"></a>
+<table>
+<caption>Table 2: Breakdown of edges by type and data source </caption>
+<thead>
+<tr class="header">
+<th>Metaedge</th>
+<th>Edges</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Anatomy-downregulates-Gene</td>
+<td>102,240</td>
+<td>Bgee</td>
+</tr>
+<tr class="even">
+<td>Anatomy-expresses-Gene</td>
+<td>526,407</td>
+<td>Bgee and TISSUES</td>
+</tr>
+<tr class="odd">
+<td>Anatomy-upregulates-Gene</td>
+<td>97,848</td>
+<td>Bgee</td>
+</tr>
+<tr class="even">
+<td>Compound-binds-Gene</td>
+<td>11,571</td>
+<td>BindingDB, DrugBank, DrugCentral</td>
+</tr>
+<tr class="odd">
+<td>Compound-causes-Side Effect</td>
+<td>138,944</td>
+<td>SIDER</td>
+</tr>
+<tr class="even">
+<td>Compound-downregulates-Gene</td>
+<td>21,102</td>
+<td>LINCS L1000</td>
+</tr>
+<tr class="odd">
+<td>Compound-palliates-Disease</td>
+<td>390</td>
+<td>PharmacotherapyDB</td>
+</tr>
+<tr class="even">
+<td>Compound-resembles-Compound</td>
+<td>6,486</td>
+<td>Dice coefficient = 0.5</td>
+</tr>
+<tr class="odd">
+<td>Compound-treats-Disease</td>
+<td>755</td>
+<td>PharmacotherapyDB</td>
+</tr>
+<tr class="even">
+<td>Compound-upregulates-Gene</td>
+<td>18,756</td>
+<td>LINCS L1000</td>
+</tr>
+<tr class="odd">
+<td>Disease-associates-Gene</td>
+<td>12,623</td>
+<td>GWAS Catalog, DISEASES, DisGeNET, DOAF</td>
+</tr>
+<tr class="even">
+<td>Disease-downregulates-Gene</td>
+<td>7,623</td>
+<td>STARGEO</td>
+</tr>
+<tr class="odd">
+<td>Disease-localizes-Anatomy</td>
+<td>3,602</td>
+<td>MEDLINE</td>
+</tr>
+<tr class="even">
+<td>Disease-presents-Symptom</td>
+<td>3,357</td>
+<td>MEDLINE</td>
+</tr>
+<tr class="odd">
+<td>Disease-resembles-Disease</td>
+<td>543</td>
+<td>MEDLINE</td>
+</tr>
+<tr class="even">
+<td>Disease-upregulates-Gene</td>
+<td>7,731</td>
+<td>STARGEO</td>
+</tr>
+<tr class="odd">
+<td>Gene-covaries-Gene</td>
+<td>61,690</td>
+<td>Evolutionary rate covariation = 0.75</td>
+</tr>
+<tr class="even">
+<td>Gene-interacts-Gene</td>
+<td>147,164</td>
+<td>Evolutionary rate covariation = 0.75</td>
+</tr>
+<tr class="odd">
+<td>Gene-participates-Biological Process</td>
+<td>559,504</td>
+<td>Gene Ontology</td>
+</tr>
+<tr class="even">
+<td>Gene-participates-Cellular Component</td>
+<td>73,566</td>
+<td>Gene Ontology</td>
+</tr>
+<tr class="odd">
+<td>Gene-participates-Molecular Function</td>
+<td>97,222</td>
+<td>Gene Ontology</td>
+</tr>
+<tr class="even">
+<td>Gene-participates-Pathway</td>
+<td>84,372</td>
+<td>Gene Ontology</td>
+</tr>
+<tr class="odd">
+<td>Gene-regulates-Gene</td>
+<td>265,672</td>
+<td>Gene Ontology</td>
+</tr>
+<tr class="even">
+<td>Pharmacologic Class-includes-Compound</td>
+<td>1,029</td>
+<td>DrugCentral</td>
+</tr>
+</tbody>
+</table>
+<h3 id="graph-analysis">Graph analysis</h3>
+<p>An adjacency matrix refers to a labeled matrix with 1 or 0 at every position, corresponding to the presence or absence of a connection between two nodes <span class="citation">[<a href="#ref-w4Mi034s">9</a>]</span>. The matrix is labeled, meaning that each row and column correspond to a source and target node, respectively. A function was created, titled <code>metaedge_to_adjacency_matrix</code> which performed the conversion from a string metaedge, such as ‘DaG’, to an adjacency matrix.</p>
+<div class="figure">
+<img src="images/graph.svg" alt="Figure 2: An example graph. Blue nodes are genes, while green nodes are diseases. The edge type between all the nodes in this graph is DaG or Disease-associates-Gene." id="fig:eg_graph" width="480" />
+<p class="caption">Figure 2: An example graph. Blue nodes are genes, while green nodes are diseases. The edge type between all the nodes in this graph is ‘DaG’ or ‘Disease-associates-Gene’.</p>
 </div>
-<div id="ref-1B7Y2HVtw">
-<p>2. Himmelstein D. 2017 greenelab/manubot-rootstock GitHub repository. <em>GitHub</em>. See <a href="https://github.com/greenelab/manubot-rootstock" class="uri">https://github.com/greenelab/manubot-rootstock</a>.</p>
+<p>For example, the graph in Figure <a href="#fig:eg_graph">2</a> has the following adjacency matrix corresponding to ‘GaD’:</p>
+<div class="figure">
+<img src="images/adjmat.svg" />
+
+</div>
+<p>with labels for rows and columns, respectively:</p>
+<div class="figure">
+<img src="images/labels.svg" />
+
+</div>
+<p>An adjacency matrix is identical to the information about connections between nodes along a given metanode. Another way to consider an adjacency matrix is that it lists the nodes at which one can arrive in one step from a given start node. In this sense, performing a matrix multiplication with two adjacency matrices gives the nodes at which one can arrive in exactly <em>two</em> steps. Further, an arbitrary number of multiplications can be performed between adjacency matrices corresponding to various metaedges, so long as the dimensionality is appropriate to the matrix multiplication in question. Using this method, we can extract what is known as a path count, or the number of ways to traverse the graph between two nodes. In this way of thinking, an adjacency matrix corresponds to the path count for paths of length one. Using the graph in Figure <a href="#fig:eg_graph">2</a>, we could perform a traversal along the meta-<em>path</em> ‘GaDaG’, and would obtain the following matrix:</p>
+<div class="figure">
+<img src="images/path2.svg" />
+
+</div>
+<p>Notice that the elements along the main diagonal of the above matrix are not zero. This indiciates that we are accounting for paths in which we traverse from nodes as follows: A -&gt; B -&gt; A. Useful information cannot be gained from looping paths such as these, and they introduce considerable noise in measures of connection between nodes. We therefore wanted to eliminate any usage of path count, and replace it with walk count, where a walk is a type of path which <em>cannot</em> loop backwards on itself. In this example and for paths of length two, this is trivial; we simply subtract the main diagonal, and we have converted from a walk count to a path count. However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats. My work toward this will be further discussed in the Results section.</p>
+<p>Discuss what an adjacency matrix is, that this corresponds to a metaedge, path counts, walk counts, why path is better, python arrays, multiplication, PEP465, sparse matrices, jupyter notebooks, visualization, include several of my github issue graphs as data within the results section, etc. etc.</p>
+<h2 id="results">Results</h2>
+<h2 id="next-steps">Next steps</h2>
+<h2 id="citations" class="unnumbered">Citations</h2>
+<div id="refs" class="references">
+<div id="ref-LlRXV6lE">
+<p>1. Scannell JW, Blanckley A, Boldon H, Warrington B. 2012 Diagnosing the decline in pharmaceutical R&amp;D efficiency. <em>Nat Rev Drug Discov</em> <strong>11</strong>, 191–200. See <a href="https://doi.org/10.1038/nrd3681" class="uri">https://doi.org/10.1038/nrd3681</a>.</p>
+</div>
+<div id="ref-13c9OPizf">
+<p>2. DiMasi JA, Grabowski HG, Hansen RW. 2016 Innovation in the pharmaceutical industry: New estimates of R&amp;D costs. <em>Journal of Health Economics</em> <strong>47</strong>, 20–33. See <a href="https://doi.org/10.1016/j.jhealeco.2016.01.012" class="uri">https://doi.org/10.1016/j.jhealeco.2016.01.012</a>.</p>
+</div>
+<div id="ref-XJuQlZl1">
+<p>3. Himmelstein DS, Baranzini SE. 2015 Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes. <em>PLoS Comput Biol</em> <strong>11</strong>, e1004259. See <a href="https://www.ncbi.nlm.nih.gov/pubmed/26158728" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/26158728</a>.</p>
+</div>
+<div id="ref-269zMv7S">
+<p>4. DiMasi JA, Hansen RW, Grabowski HG, Lasagna L. 1991 Cost of innovation in the pharmaceutical industry. <em>Journal of Health Economics</em> <strong>10</strong>, 107–142. See <a href="https://doi.org/10.1016/0167-6296(91)90001-4" class="uri">https://doi.org/10.1016/0167-6296(91)90001-4</a>.</p>
+</div>
+<div id="ref-z38InjRh">
+<p>5. Pammolli F, Magazzini L, Riccaboni M. 2011 The productivity crisis in pharmaceutical R&amp;D. <em>Nat Rev Drug Discov</em> <strong>10</strong>, 428–438. See <a href="https://doi.org/10.1038/nrd3405" class="uri">https://doi.org/10.1038/nrd3405</a>.</p>
+</div>
+<div id="ref-g5JcTYOY">
+<p>6. Schuhmacher A, Gassmann O, Hinder M. 2016 Changing R&amp;D models in research-based pharmaceutical companies. <em>J Transl Med</em> <strong>14</strong>, 105. See <a href="https://www.ncbi.nlm.nih.gov/pubmed/27118048" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/27118048</a>.</p>
+</div>
+<div id="ref-o8yROPbx">
+<p>7. Hay M, Thomas DW, Craighead JL, Economides C, Rosenthal J. 2014 Clinical development success rates for investigational drugs. <em>Nat Biotechnol</em> <strong>32</strong>, 40–51. See <a href="https://doi.org/10.1038/nbt.2786" class="uri">https://doi.org/10.1038/nbt.2786</a>.</p>
+</div>
+<div id="ref-c7z5BwrM">
+<p>8. Nosengo N. 2016 Can you teach old drugs new tricks? <em>Nature</em> <strong>534</strong>, 314–316. See <a href="https://doi.org/10.1038/534314a" class="uri">https://doi.org/10.1038/534314a</a>.</p>
+</div>
+<div id="ref-w4Mi034s">
+<p>9. Weisstein EW. In press. Adjacency Matrix. <em>MathWorld–A Wolfram Web Resource</em>. See <a href="http://mathworld.wolfram.com/AdjacencyMatrix.html" class="uri">http://mathworld.wolfram.com/AdjacencyMatrix.html</a>.</p>
 </div>
 </div>
 <script>
