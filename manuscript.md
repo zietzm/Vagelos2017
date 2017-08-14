@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@be28389](https://github.com/zietzm/Vagelos2017/tree/be28389eb856ccdc697bf6ff56ce298083239306)
+from [zietzm/Vagelos2017@8a3a633](https://github.com/zietzm/Vagelos2017/tree/8a3a633aac3123f76535a4c22324fce58356f9de)
 on August 14, 2017.
 </em></small>
 
@@ -132,11 +132,36 @@ A function was created, titled `metaedge_to_adjacency_matrix` which performed th
 
 For example, the graph in Figure @fig:eg_graph has the following adjacency matrix corresponding to 'GaD':
 
-![](images/adjmat.svg)
+$$
+\begin{equation}
+\begin{bmatrix}
+1 & 1 & 0 & 1 & 1 & 1 & 0 & 1 & 0\\
+0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1
+\end{bmatrix}
+\end{equation}
+$$
 
 with labels for rows and columns, respectively:
 
-![](images/labels.svg)
+\begin{bmatrix}
+\textrm{NF2}\\
+\textrm{NRXN2}\\
+\textrm{SMARCE1}
+\end{bmatrix}
+
+\begin{bmatrix}
+\textrm{epilepsy syndrome}\\
+\textrm{kidney cancer}\\
+\textrm{pancreatic cancer}\\
+\textrm{spinal cancer}\\
+\textrm{malignant mesothelioma}\\
+\textrm{peripheral nervous system neoplasm}\\
+\textrm{autistic disorder}\\
+\textrm{meningioma}\\
+\textrm{salivary gland cancer}
+\end{bmatrix}
+
 
 An adjacency matrix is identical to the information about connections between nodes along a given metanode.
 Another way to consider an adjacency matrix is that it lists the nodes at which one can arrive in one step from a given start node.
@@ -146,7 +171,15 @@ Using this method, we can extract what is known as a path count, or the number o
 In this way of thinking, an adjacency matrix corresponds to the path count for paths of length one.
 Using the graph in Figure @fig:eg_graph, we could perform a traversal along the meta-*path* 'GaDaG', and would obtain the following matrix:
 
-![](images/path2.svg)
+$$
+\begin{equation}
+\begin{bmatrix}
+6 & 1 & 2\\
+1 & 3 & 1\\
+2 & 1 & 3
+\end{bmatrix}
+\end{equation}
+$$
 
 Notice that the elements along the main diagonal of the above matrix are not zero.
 This indiciates that we are accounting for paths in which we traverse from nodes as follows: A -> B -> A.
@@ -156,7 +189,18 @@ In this example and for paths of length two, this is trivial; we simply subtract
 However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats.
 My work toward this will be further discussed in the Results section.
 
-Discuss what an adjacency matrix is, that this corresponds to a metaedge, path counts, walk counts, why path is better, python arrays, multiplication, PEP465, sparse matrices, jupyter notebooks, visualization, include several of my github issue graphs as data within the results section, etc. etc.
+**Discuss what an adjacency matrix is, that this corresponds to a metaedge, path counts, walk counts, why path is better**
+
+
+
+
+### Computational tools
+
+All computational work was done in Python version 3.6.
+Specifically we used an open-source scientific distribution of Python called Anaconda
+
+
+**Discuss python arrays, multiplication, PEP465, sparse matrices, jupyter notebooks, visualization, include several of my github issue graphs as data within the results section, etc.**
 
 
 ## Results
