@@ -1,6 +1,6 @@
 # Output directory containing the formatted manuscript
 
-The [`gh-pages`](https://github.com/greenelab/manubot-rootstock/tree/gh-pages) branch hosts the contents of this directory at https://greenelab.github.io/manubot-rootstock/.
+The [`gh-pages`](https://github.com/zietzm/Vagelos2017/tree/gh-pages) branch hosts the contents of this directory at https://zietzm.github.io/Vagelos2017/.
 
 ## Files
 
@@ -15,4 +15,4 @@ This directory contains the following files, which are mostly ignored on the `ma
 ## Source
 
 The manuscripts in this directory were built from
-[`03de82178edfc62f43feb57add42739c39b3b7e0`](https://github.com/greenelab/manubot-rootstock/commit/03de82178edfc62f43feb57add42739c39b3b7e0).
+[`27d4da92b05482b15a3ec7a6abfd38fec208f64b`](https://github.com/zietzm/Vagelos2017/commit/27d4da92b05482b15a3ec7a6abfd38fec208f64b).
