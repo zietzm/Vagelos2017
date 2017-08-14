@@ -5,267 +5,113 @@
         [
           2017,
           8,
-          11
+          8
         ]
       ],
-      "date-time": "2017-08-11T15:31:27Z",
-      "timestamp": 1502465487706
+      "date-time": "2017-08-08T02:16:17Z",
+      "timestamp": 1502158577591
     },
-    "posted": {
-      "date-parts": [
-        [
-          2017,
-          5,
-          28
-        ]
-      ]
-    },
-    "group-title": "Bioinformatics",
-    "reference-count": 0,
-    "publisher": "Cold Spring Harbor Laboratory",
+    "reference-count": 35,
+    "publisher": "Elsevier BV",
+    "issue": "2",
+    "license": [
+      {
+        "URL": "http://www.elsevier.com/tdm/userlicense/1.0/",
+        "start": {
+          "date-parts": [
+            [
+              1991,
+              7,
+              1
+            ]
+          ],
+          "date-time": "1991-07-01T00:00:00Z",
+          "timestamp": 678326400000
+        },
+        "delay-in-days": 0,
+        "content-version": "tdm"
+      }
+    ],
     "content-domain": {
       "domain": [],
       "crossmark-restriction": false
     },
-    "accepted": {
+    "published-print": {
       "date-parts": [
         [
-          2017,
-          5,
-          28
+          1991,
+          7
         ]
       ]
     },
-    "abstract": "<jats:p>Deep learning, which describes a class of machine learning algorithms, has recently showed impressive results across a variety of domains. Biology and medicine are data rich, but the data are complex and often ill-understood. Problems of this nature may be particularly well-suited to deep learning techniques. We examine applications of deep learning to a variety of biomedical problems -- patient classification, fundamental biological processes, and treatment of patients -- to predict whether deep learning will transform these tasks or if the biomedical sphere poses unique challenges. We find that deep learning has yet to revolutionize or definitively resolve any of these problems, but promising advances have been made on the prior state of the art. Even when improvement over a previous baseline has been modest, we have seen signs that deep learning methods may speed or aid human investigation. More work is needed to address concerns related to interpretability and how to best model each problem. Furthermore, the limited amount of labeled data for training presents problems in some domains, as can legal and privacy constraints on work with sensitive health records. Nonetheless, we foresee deep learning powering changes at the bench and bedside with the potential to transform several areas of biology and medicine.</jats:p>",
-    "DOI": "10.1101/142760",
-    "type": "manuscript",
+    "DOI": "10.1016/0167-6296(91)90001-4",
+    "type": "article-journal",
     "created": {
       "date-parts": [
         [
-          2017,
-          5,
-          29
+          2002,
+          7,
+          26
         ]
       ],
-      "date-time": "2017-05-29T05:10:15Z",
-      "timestamp": 1496034615000
+      "date-time": "2002-07-26T03:51:33Z",
+      "timestamp": 1027655493000
     },
+    "page": "107-142",
     "source": "Crossref",
-    "is-referenced-by-count": 0,
-    "title": "Opportunities And Obstacles For Deep Learning In Biology And Medicine",
-    "prefix": "10.1101",
+    "is-referenced-by-count": 315,
+    "title": "Cost of innovation in the pharmaceutical industry",
+    "prefix": "10.1016",
+    "volume": "10",
     "author": [
       {
-        "ORCID": "http://orcid.org/0000-0002-5577-3516",
-        "authenticated-orcid": false,
-        "given": "Travers",
-        "family": "Ching",
+        "given": "Joseph A",
+        "family": "DiMasi",
         "affiliation": []
       },
       {
-        "ORCID": "http://orcid.org/0000-0002-3012-7446",
-        "authenticated-orcid": false,
-        "given": "Daniel S.",
-        "family": "Himmelstein",
+        "given": "Ronald W",
+        "family": "Hansen",
         "affiliation": []
       },
       {
-        "ORCID": "http://orcid.org/0000-0002-6700-1468",
-        "authenticated-orcid": false,
-        "given": "Brett K.",
-        "family": "Beaulieu-Jones",
+        "given": "Henry G",
+        "family": "Grabowski",
         "affiliation": []
       },
       {
-        "ORCID": "http://orcid.org/0000-0003-4563-3226",
-        "authenticated-orcid": false,
-        "given": "Alexandr A.",
-        "family": "Kalinin",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0003-4992-2623",
-        "authenticated-orcid": false,
-        "given": "Brian T.",
-        "family": "Do",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0002-0503-9348",
-        "authenticated-orcid": false,
-        "given": "Gregory P.",
-        "family": "Way",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0002-8362-100X",
-        "authenticated-orcid": false,
-        "given": "Enrico",
-        "family": "Ferrero",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0003-1126-1479",
-        "authenticated-orcid": false,
-        "given": "Paul-Michael",
-        "family": "Agapow",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0002-1871-6846",
-        "authenticated-orcid": false,
-        "given": "Wei",
-        "family": "Xie",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0003-1763-5750",
-        "authenticated-orcid": false,
-        "given": "Gail L.",
-        "family": "Rosen",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0001-8690-9554",
-        "authenticated-orcid": false,
-        "given": "Benjamin J.",
-        "family": "Lengerich",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0003-1633-5780",
-        "authenticated-orcid": false,
-        "given": "Johnny",
-        "family": "Israeli",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0003-0811-0944",
-        "authenticated-orcid": false,
-        "given": "Jack",
-        "family": "Lanchantin",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0003-0568-298X",
-        "authenticated-orcid": false,
-        "given": "Stephen",
-        "family": "Woloszynek",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0003-1555-8261",
-        "authenticated-orcid": false,
-        "given": "Anne E.",
-        "family": "Carpenter",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0002-6443-4671",
-        "authenticated-orcid": false,
-        "given": "Avanti",
-        "family": "Shrikumar",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0001-7111-4839",
-        "authenticated-orcid": false,
-        "given": "Jinbo",
-        "family": "Xu",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0003-3877-0433",
-        "authenticated-orcid": false,
-        "given": "Evan M.",
-        "family": "Cofer",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0003-3332-9307",
-        "authenticated-orcid": false,
-        "given": "David J.",
-        "family": "Harris",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0001-8931-9461",
-        "authenticated-orcid": false,
-        "given": "Dave",
-        "family": "DeCaprio",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0002-5796-7453",
-        "authenticated-orcid": false,
-        "given": "Yanjun",
-        "family": "Qi",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0003-3084-2287",
-        "authenticated-orcid": false,
-        "given": "Anshul",
-        "family": "Kundaje",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0001-9309-8331",
-        "authenticated-orcid": false,
-        "given": "Yifan",
-        "family": "Peng",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0001-6681-9754",
-        "authenticated-orcid": false,
-        "given": "Laura K.",
-        "family": "Wiley",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0001-8008-0546",
-        "authenticated-orcid": false,
-        "given": "Marwin H. S.",
-        "family": "Segler",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0002-5324-9833",
-        "authenticated-orcid": false,
-        "given": "Anthony",
-        "family": "Gitter",
-        "affiliation": []
-      },
-      {
-        "ORCID": "http://orcid.org/0000-0001-8713-9213",
-        "authenticated-orcid": false,
-        "given": "Casey S.",
-        "family": "Greene",
+        "given": "Louis",
+        "family": "Lasagna",
         "affiliation": []
       }
     ],
-    "member": "246",
-    "container-title": [],
+    "member": "78",
+    "container-title": "Journal of Health Economics",
     "original-title": [],
     "link": [
       {
-        "URL": "https://syndication.highwire.org/content/doi/10.1101/142760",
-        "content-type": "unspecified",
+        "URL": "http://api.elsevier.com/content/article/PII:0167629691900014?httpAccept=text/xml",
+        "content-type": "text/xml",
         "content-version": "vor",
-        "intended-application": "similarity-checking"
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "http://api.elsevier.com/content/article/PII:0167629691900014?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
       }
     ],
     "deposited": {
       "date-parts": [
         [
           2017,
-          5,
-          29
+          6,
+          15
         ]
       ],
-      "date-time": "2017-05-29T05:10:24Z",
-      "timestamp": 1496034624000
+      "date-time": "2017-06-15T04:09:28Z",
+      "timestamp": 1497499768000
     },
     "score": 1.0,
     "subtitle": [],
@@ -273,36 +119,730 @@
     "issued": {
       "date-parts": [
         [
+          1991,
+          7
+        ]
+      ]
+    },
+    "references-count": 35,
+    "alternative-id": [
+      "0167629691900014"
+    ],
+    "URL": "https://doi.org/10.1016/0167-6296(91)90001-4",
+    "relation": {},
+    "subject": [
+      "Public Health, Environmental and Occupational Health",
+      "Health Policy"
+    ],
+    "container-title-short": "Journal of Health Economics",
+    "short_url": "https://doi.org/fwn2xt",
+    "id": "269zMv7S"
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
           2017,
-          5,
-          28
+          8,
+          12
+        ]
+      ],
+      "date-time": "2017-08-12T14:02:23Z",
+      "timestamp": 1502546543901
+    },
+    "reference-count": 50,
+    "publisher": "Elsevier BV",
+    "license": [
+      {
+        "URL": "http://www.elsevier.com/tdm/userlicense/1.0/",
+        "start": {
+          "date-parts": [
+            [
+              2016,
+              5,
+              1
+            ]
+          ],
+          "date-time": "2016-05-01T00:00:00Z",
+          "timestamp": 1462060800000
+        },
+        "delay-in-days": 0,
+        "content-version": "tdm"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "elsevier.com",
+        "sciencedirect.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2016,
+          5
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.jhealeco.2016.01.012",
+    "type": "article-journal",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          13
+        ]
+      ],
+      "date-time": "2016-02-13T22:55:49Z",
+      "timestamp": 1455404149000
+    },
+    "page": "20-33",
+    "update-policy": "http://dx.doi.org/10.1016/elsevier_cm_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 130,
+    "title": "Innovation in the pharmaceutical industry: New estimates of R&D costs",
+    "prefix": "10.1016",
+    "volume": "47",
+    "author": [
+      {
+        "given": "Joseph A.",
+        "family": "DiMasi",
+        "affiliation": []
+      },
+      {
+        "given": "Henry G.",
+        "family": "Grabowski",
+        "affiliation": []
+      },
+      {
+        "given": "Ronald W.",
+        "family": "Hansen",
+        "affiliation": []
+      }
+    ],
+    "member": "78",
+    "container-title": "Journal of Health Economics",
+    "original-title": [],
+    "link": [
+      {
+        "URL": "http://api.elsevier.com/content/article/PII:S0167629616000291?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "http://api.elsevier.com/content/article/PII:S0167629616000291?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2017,
+          6,
+          24
+        ]
+      ],
+      "date-time": "2017-06-24T05:51:36Z",
+      "timestamp": 1498283496000
+    },
+    "score": 1.0,
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          5
+        ]
+      ]
+    },
+    "references-count": 50,
+    "alternative-id": [
+      "S0167629616000291"
+    ],
+    "URL": "https://doi.org/10.1016/j.jhealeco.2016.01.012",
+    "relation": {},
+    "subject": [
+      "Public Health, Environmental and Occupational Health",
+      "Health Policy"
+    ],
+    "container-title-short": "Journal of Health Economics",
+    "assertion": [
+      {
+        "value": "Elsevier",
+        "name": "publisher",
+        "label": "This article is maintained by"
+      },
+      {
+        "value": "Innovation in the pharmaceutical industry: New estimates of R&D costs",
+        "name": "articletitle",
+        "label": "Article Title"
+      },
+      {
+        "value": "Journal of Health Economics",
+        "name": "journaltitle",
+        "label": "Journal Title"
+      },
+      {
+        "value": "http://dx.doi.org/10.1016/j.jhealeco.2016.01.012",
+        "name": "articlelink",
+        "label": "CrossRef DOI link to publisher maintained version"
+      },
+      {
+        "value": "article",
+        "name": "content_type",
+        "label": "Content Type"
+      },
+      {
+        "value": "Copyright © 2016 Elsevier B.V. All rights reserved.",
+        "name": "copyright",
+        "label": "Copyright"
+      }
+    ],
+    "short_url": "https://doi.org/f3mn5k",
+    "id": "13c9OPizf"
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2017,
+          8,
+          12
+        ]
+      ],
+      "date-time": "2017-08-12T04:42:12Z",
+      "timestamp": 1502512932877
+    },
+    "reference-count": 0,
+    "publisher": "Springer Nature",
+    "issue": "7607",
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "DOI": "10.1038/534314a",
+    "type": "article-journal",
+    "created": {
+      "date-parts": [
+        [
+          2016,
+          6,
+          14
+        ]
+      ],
+      "date-time": "2016-06-14T07:47:34Z",
+      "timestamp": 1465890454000
+    },
+    "page": "314-316",
+    "source": "Crossref",
+    "is-referenced-by-count": 32,
+    "title": "Can you teach old drugs new tricks?",
+    "prefix": "10.1038",
+    "volume": "534",
+    "author": [
+      {
+        "given": "Nicola",
+        "family": "Nosengo",
+        "affiliation": []
+      }
+    ],
+    "member": "339",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          6,
+          14
+        ]
+      ]
+    },
+    "container-title": "Nature",
+    "original-title": [],
+    "deposited": {
+      "date-parts": [
+        [
+          2016,
+          8,
+          8
+        ]
+      ],
+      "date-time": "2016-08-08T12:55:18Z",
+      "timestamp": 1470660918000
+    },
+    "score": 1.0,
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          6,
+          14
         ]
       ]
     },
     "references-count": 0,
-    "URL": "https://doi.org/10.1101/142760",
+    "alternative-id": [
+      "534314a"
+    ],
+    "URL": "https://doi.org/10.1038/534314a",
     "relation": {},
-    "short_url": "https://doi.org/gbpvh5",
-    "id": "tJKvnIaZ"
+    "subject": [
+      "Multidisciplinary"
+    ],
+    "container-title-short": "Nature",
+    "short_url": "https://doi.org/gbqsnj",
+    "id": "c7z5BwrM"
   },
   {
-    "URL": "https://github.com/greenelab/manubot-rootstock",
-    "title": "greenelab/manubot-rootstock GitHub repository",
-    "container-title": "GitHub",
-    "issued": {
+    "indexed": {
       "date-parts": [
         [
-          2017
+          2017,
+          8,
+          12
+        ]
+      ],
+      "date-time": "2017-08-12T22:22:19Z",
+      "timestamp": 1502576539452
+    },
+    "reference-count": 21,
+    "publisher": "Springer Nature",
+    "issue": "1",
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "DOI": "10.1038/nbt.2786",
+    "type": "article-journal",
+    "created": {
+      "date-parts": [
+        [
+          2014,
+          1,
+          9
+        ]
+      ],
+      "date-time": "2014-01-09T17:10:47Z",
+      "timestamp": 1389287447000
+    },
+    "page": "40-51",
+    "source": "Crossref",
+    "is-referenced-by-count": 461,
+    "title": "Clinical development success rates for investigational drugs",
+    "prefix": "10.1038",
+    "volume": "32",
+    "author": [
+      {
+        "given": "Michael",
+        "family": "Hay",
+        "affiliation": []
+      },
+      {
+        "given": "David W",
+        "family": "Thomas",
+        "affiliation": []
+      },
+      {
+        "given": "John L",
+        "family": "Craighead",
+        "affiliation": []
+      },
+      {
+        "given": "Celia",
+        "family": "Economides",
+        "affiliation": []
+      },
+      {
+        "given": "Jesse",
+        "family": "Rosenthal",
+        "affiliation": []
+      }
+    ],
+    "member": "339",
+    "published-online": {
+      "date-parts": [
+        [
+          2014,
+          1,
+          9
         ]
       ]
     },
+    "container-title": "Nature Biotechnology",
+    "original-title": [],
+    "deposited": {
+      "date-parts": [
+        [
+          2014,
+          1,
+          9
+        ]
+      ],
+      "date-time": "2014-01-09T17:11:28Z",
+      "timestamp": 1389287488000
+    },
+    "score": 1.0,
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2014,
+          1,
+          9
+        ]
+      ]
+    },
+    "references-count": 21,
+    "alternative-id": [
+      "nbt.2786"
+    ],
+    "URL": "https://doi.org/10.1038/nbt.2786",
+    "relation": {
+      "cites": []
+    },
+    "subject": [
+      "Biotechnology",
+      "Molecular Medicine",
+      "Applied Microbiology and Biotechnology",
+      "Bioengineering",
+      "Biomedical Engineering"
+    ],
+    "container-title-short": "Nat Biotechnol",
+    "short_url": "https://doi.org/f3mn5m",
+    "id": "o8yROPbx"
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2017,
+          8,
+          11
+        ]
+      ],
+      "date-time": "2017-08-11T12:03:11Z",
+      "timestamp": 1502452991970
+    },
+    "reference-count": 45,
+    "publisher": "Springer Nature",
+    "issue": "6",
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          6
+        ]
+      ]
+    },
+    "DOI": "10.1038/nrd3405",
+    "type": "article-journal",
+    "created": {
+      "date-parts": [
+        [
+          2011,
+          6,
+          1
+        ]
+      ],
+      "date-time": "2011-06-01T09:36:34Z",
+      "timestamp": 1306920994000
+    },
+    "page": "428-438",
+    "source": "Crossref",
+    "is-referenced-by-count": 319,
+    "title": "The productivity crisis in pharmaceutical R&D",
+    "prefix": "10.1038",
+    "volume": "10",
+    "author": [
+      {
+        "given": "Fabio",
+        "family": "Pammolli",
+        "affiliation": []
+      },
+      {
+        "given": "Laura",
+        "family": "Magazzini",
+        "affiliation": []
+      },
+      {
+        "given": "Massimo",
+        "family": "Riccaboni",
+        "affiliation": []
+      }
+    ],
+    "member": "339",
+    "container-title": "Nature Reviews Drug Discovery",
+    "original-title": [],
+    "deposited": {
+      "date-parts": [
+        [
+          2017,
+          6,
+          20
+        ]
+      ],
+      "date-time": "2017-06-20T01:00:36Z",
+      "timestamp": 1497920436000
+    },
+    "score": 1.0,
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          6
+        ]
+      ]
+    },
+    "references-count": 45,
+    "alternative-id": [
+      "nrd3405"
+    ],
+    "URL": "https://doi.org/10.1038/nrd3405",
+    "relation": {
+      "cites": []
+    },
+    "subject": [
+      "Pharmacology",
+      "Drug Discovery",
+      "General Medicine"
+    ],
+    "container-title-short": "Nat Rev Drug Discov",
+    "short_url": "https://doi.org/dzn4km",
+    "id": "z38InjRh"
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2017,
+          8,
+          11
+        ]
+      ],
+      "date-time": "2017-08-11T12:03:11Z",
+      "timestamp": 1502452991967
+    },
+    "reference-count": 87,
+    "publisher": "Springer Nature",
+    "issue": "3",
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "DOI": "10.1038/nrd3681",
+    "type": "article-journal",
+    "created": {
+      "date-parts": [
+        [
+          2012,
+          3,
+          1
+        ]
+      ],
+      "date-time": "2012-03-01T05:30:58Z",
+      "timestamp": 1330579858000
+    },
+    "page": "191-200",
+    "source": "Crossref",
+    "is-referenced-by-count": 472,
+    "title": "Diagnosing the decline in pharmaceutical R&D efficiency",
+    "prefix": "10.1038",
+    "volume": "11",
+    "author": [
+      {
+        "given": "Jack W.",
+        "family": "Scannell",
+        "affiliation": []
+      },
+      {
+        "given": "Alex",
+        "family": "Blanckley",
+        "affiliation": []
+      },
+      {
+        "given": "Helen",
+        "family": "Boldon",
+        "affiliation": []
+      },
+      {
+        "given": "Brian",
+        "family": "Warrington",
+        "affiliation": []
+      }
+    ],
+    "member": "339",
+    "published-online": {
+      "date-parts": [
+        [
+          2012,
+          3,
+          1
+        ]
+      ]
+    },
+    "container-title": "Nature Reviews Drug Discovery",
+    "original-title": [],
+    "deposited": {
+      "date-parts": [
+        [
+          2017,
+          6,
+          20
+        ]
+      ],
+      "date-time": "2017-06-20T15:01:13Z",
+      "timestamp": 1497970873000
+    },
+    "score": 1.0,
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          3,
+          1
+        ]
+      ]
+    },
+    "references-count": 87,
+    "alternative-id": [
+      "nrd3681"
+    ],
+    "URL": "https://doi.org/10.1038/nrd3681",
+    "relation": {
+      "cites": []
+    },
+    "subject": [
+      "Pharmacology",
+      "Drug Discovery",
+      "General Medicine"
+    ],
+    "container-title-short": "Nat Rev Drug Discov",
+    "short_url": "https://doi.org/f3mn5n",
+    "id": "LlRXV6lE"
+  },
+  {
+    "source": "PMC",
+    "accessed": {
+      "date-parts": [
+        [
+          2017,
+          8,
+          14
+        ]
+      ]
+    },
+    "id": "XJuQlZl1",
+    "title": "Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes",
     "author": [
       {
         "family": "Himmelstein",
-        "given": "Daniel"
+        "given": "Daniel S."
+      },
+      {
+        "family": "Baranzini",
+        "given": "Sergio E."
+      }
+    ],
+    "editor": [
+      {
+        "family": "Tang",
+        "given": "Hua"
+      }
+    ],
+    "container-title-short": "PLoS Comput Biol",
+    "container-title": "PLoS Computational Biology",
+    "publisher": "Public Library of Science",
+    "publisher-place": "San Francisco, CA USA",
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          7
+        ]
+      ]
+    },
+    "page": "e1004259",
+    "volume": "11",
+    "issue": "7",
+    "PMID": "26158728",
+    "PMCID": "PMC4497619",
+    "DOI": "10.1371/journal.pcbi.1004259",
+    "type": "article-journal",
+    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/26158728"
+  },
+  {
+    "source": "PMC",
+    "accessed": {
+      "date-parts": [
+        [
+          2017,
+          8,
+          14
+        ]
+      ]
+    },
+    "id": "g5JcTYOY",
+    "title": "Changing R&D models in research-based pharmaceutical companies",
+    "author": [
+      {
+        "family": "Schuhmacher",
+        "given": "Alexander"
+      },
+      {
+        "family": "Gassmann",
+        "given": "Oliver"
+      },
+      {
+        "family": "Hinder",
+        "given": "Markus"
+      }
+    ],
+    "container-title-short": "J Transl Med",
+    "container-title": "Journal of Translational Medicine",
+    "publisher": "BioMed Central",
+    "publisher-place": "London",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "page": "105",
+    "volume": "14",
+    "PMID": "27118048",
+    "PMCID": "PMC4847363",
+    "DOI": "10.1186/s12967-016-0838-4",
+    "type": "article-journal",
+    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/27118048"
+  },
+  {
+    "URL": "http://mathworld.wolfram.com/AdjacencyMatrix.html",
+    "title": "Adjacency Matrix",
+    "container-title": "MathWorld--A Wolfram Web Resource",
+    "author": [
+      {
+        "family": "Weisstein",
+        "given": "Eric W."
       }
     ],
     "type": "webpage",
-    "id": "1B7Y2HVtw"
+    "id": "w4Mi034s"
   }
 ]
