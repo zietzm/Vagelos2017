@@ -1,6 +1,7 @@
 string	citation	standard_citation	citation_id
 @tag:dimasi91	doi:10.1016/0167-6296(91)90001-4	doi:10.1016/0167-6296(91)90001-4	269zMv7S
 @doi:10.1016/j.jhealeco.2016.01.012	doi:10.1016/j.jhealeco.2016.01.012	doi:10.1016/j.jhealeco.2016.01.012	13c9OPizf
+@tag:dimasi03	doi:10.1016/S0167-6296(02)00126-1	doi:10.1016/s0167-6296(02)00126-1	nn9rnuHx
 @doi:10.1038/534314a	doi:10.1038/534314a	doi:10.1038/534314a	c7z5BwrM
 @doi:10.1038/nbt.2786	doi:10.1038/nbt.2786	doi:10.1038/nbt.2786	o8yROPbx
 @doi:10.1038/nrd3405	doi:10.1038/nrd3405	doi:10.1038/nrd3405	z38InjRh
@@ -10,6 +11,7 @@ string	citation	standard_citation	citation_id
 @url:http://mathworld.wolfram.com/AdjacencyMatrix.html	url:http://mathworld.wolfram.com/AdjacencyMatrix.html	url:http://mathworld.wolfram.com/AdjacencyMatrix.html	w4Mi034s
 @url:https://docs.python.org/3/library/concurrent.futures.html	url:https://docs.python.org/3/library/concurrent.futures.html	url:https://docs.python.org/3/library/concurrent.futures.html	AwSIzjc6
 @url:https://github.com/greenelab/	url:https://github.com/greenelab/	url:https://github.com/greenelab/	tgH1jNoV
+@url:https://github.com/greenelab/hetmech/	url:https://github.com/greenelab/hetmech/	url:https://github.com/greenelab/hetmech/	X1hJHTyw
 @url:https://github.com/jupyter/notebook	url:https://github.com/jupyter/notebook	url:https://github.com/jupyter/notebook	klbqKLT4
 @url:https://github.com/matplotlib/matplotlib	url:https://github.com/matplotlib/matplotlib	url:https://github.com/matplotlib/matplotlib	118qTQ4yr
 @url:https://github.com/numpy/numpy	url:https://github.com/numpy/numpy	url:https://github.com/numpy/numpy	eye5ay6P

@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@968284b](https://github.com/zietzm/Vagelos2017/tree/968284bfb80b157699e93237ea8728c6d03972ca)
+from [zietzm/Vagelos2017@a5883a0](https://github.com/zietzm/Vagelos2017/tree/a5883a02df549a58a9ef6ec06ad8815e933835ca)
 on August 15, 2017.
 </em></small>
 
@@ -34,7 +34,7 @@ on August 15, 2017.
 Drug development times and R&D expenditures have risen considerably in the last decades.
 In fact, to bring a new compound to market can take a 14 years on average [@LlRXV6lE].
 This development process, according to a 2016 estimate by DiMasi et al. [@13c9OPizf], costs an average of $2.87 billion dollars, including post-approval R&D.
-This amount is up from two previous studies by the same authors which found the average captialized R&D costs to be $802 million in 2003 [@XJuQlZl1] and $318 million in 1991 [@269zMv7S].
+This amount is up from two previous studies by the same authors which found the average captialized R&D costs to be $802 million in 2003 [@nn9rnuHx] and $318 million in 1991 [@269zMv7S].
 Despite increases in drug development time and expenditures, the rate of R&D failure has increased since the 1990s [@z38InjRh].
 Only about one in 5,000 compounds which begin preclinical testing are eventually approved [@g5JcTYOY].
 Even among those which enter phase I of clinical development, only an estimated one in ten drugs will receive FDA approval [@o8yROPbx].
@@ -48,15 +48,26 @@ Most successfully repurposed drugs were discovered serendipitously and not throu
 Our goal is to make accurate predictions of drugs which are candidates for drug repurposing.
 We hope to do this using heterogeneous networks of biomedical information to learn the patterns of connections between compounds and diseases.
 
-### Graphs
-Write some intro graph theory stuff here, ie adjacency matrix, path counts, etc.
-
 
 ## Summer aims
-thing ---->> methods
-speed up computation -- sparse and multiprocessing
-multiple search nodes -- dwpc with adjacency matrices
-path count over walk count
+
+This summer I worked within the Greene Lab project called 'Hetmech' [@X1hJHTyw].
+Hetmech aims to improve upon and expand the existing method for predicting drug repurposing targets.
+
+I had three primary aims for my work this summer. 
+The details of all are covered in the Methods section.
+
+First, I wanted to add capability within Hetmech to compute the degree-weighted path count (DWPC).
+Previously, the two options had been an inaccurate DWPC method and a degree-weighted walk count (DWWC), whose limitations will be covered in the Methods section.
+
+Second, I hoped to decrease the time required to make calculations of DWPC.
+Towards this aim, I hoped to speed up computation by at least an order of magnitude.
+Sparse matrices and parallel computation were planned solutions to this problem.
+
+Finally, it was my goal to add a multiple search capability.
+This involves querying a set of nodes to return a set of predictions for nodes which connect the queried nodes.
+For example, one should be able to search a set of symptoms and return a list of potential diseases that connect the symptoms. 
+As with the previous problems, moving to strictly matrix computation makes this much more simple.
 
 
 ## Methods
@@ -247,7 +258,7 @@ These three arrays represent the entirety of a matrix.
 
 A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions.
 As has become relatively standard for much of computational work, we made use of Jupyter notebooks [@klbqKLT4] to display the code used to run analysis and its output in a re-usable way. 
-Within this, we were able to effectively incorporate the data manipulation and analysis library `pandas` [@iE9hnE2z] and the multiprocessing library `concurrent.futures` [@AwSIzjc6].
+Within this, we were able to effectively incorporate the data manipulation and analysis library pandas [@iE9hnE2z] and the multiprocessing library concurrent.futures [@AwSIzjc6].
 For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 [@cagYjYkt], and the Python graphing library Matplotlib [@118qTQ4yr].
 
 The most important tool we used this summer to track progress was the version control software, Git.
