@@ -20,7 +20,7 @@
 <div id="header">
 <h1 class="title">Vagelos Report Summer 2017</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/a5883a02df549a58a9ef6ec06ad8815e933835ca">zietzm/Vagelos2017@a5883a0</a> on August 15, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/755702717513fe55fbc67078c94591eff5a9549d">zietzm/Vagelos2017@7557027</a> on August 15, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>Michael N. Zietz</strong><br> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/zietzm">zietzm</a><br> <small> Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania </small></li>
@@ -273,7 +273,6 @@
 2 &amp; 1 &amp; 3
 \end{bmatrix}\]</span>
 <p>Notice that the elements along the main diagonal of the above matrix are not zero. This indiciates that we are accounting for paths in which we traverse from nodes as follows: A -&gt; B -&gt; A. Useful information cannot be gained from looping paths such as these, and they introduce considerable noise in measures of connection between nodes. We therefore wanted to eliminate any usage of path count, and replace it with walk count, where a walk is a type of path which <em>cannot</em> loop backwards on itself. In this example and for paths of length two, this is trivial; we simply subtract the main diagonal, and we have converted from a walk count to a path count. However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats. My work toward this will be further discussed in the Results section.</p>
-<p><strong>Discuss what an adjacency matrix is, that this corresponds to a metaedge, path counts, walk counts, why path is better</strong></p>
 <h3 id="computational-tools">Computational tools</h3>
 <p>All computational work was done in Python version 3.6. Specifically we used an open-source scientific distribution of Python called Anaconda.</p>
 <h4 id="matrices">Matrices</h4>
