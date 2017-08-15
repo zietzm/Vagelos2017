@@ -20,7 +20,7 @@
 <div id="header">
 <h1 class="title">Vagelos Report Summer 2017</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/0dec375441ff18eab1a81eb5014ba3a9566c4d7f">zietzm/Vagelos2017@0dec375</a> on August 15, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/7ac29e6b25e635da688a0f0fd87bb84df3224669">zietzm/Vagelos2017@7ac29e6</a> on August 15, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>Michael N. Zietz</strong><br> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/zietzm">zietzm</a><br> <small> Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania </small></li>
@@ -273,8 +273,10 @@
 <p>Notice that the elements along the main diagonal of the above matrix are not zero. This indiciates that we are accounting for paths in which we traverse from nodes as follows: A -&gt; B -&gt; A. Useful information cannot be gained from looping paths such as these, and they introduce considerable noise in measures of connection between nodes. We therefore wanted to eliminate any usage of path count, and replace it with walk count, where a walk is a type of path which <em>cannot</em> loop backwards on itself. In this example and for paths of length two, this is trivial; we simply subtract the main diagonal, and we have converted from a walk count to a path count. However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats. My work toward this will be further discussed in the Results section.</p>
 <p><strong>Discuss what an adjacency matrix is, that this corresponds to a metaedge, path counts, walk counts, why path is better</strong></p>
 <h3 id="computational-tools">Computational tools</h3>
-<p>All computational work was done in Python version 3.6. Specifically we used an open-source scientific distribution of Python called Anaconda. Python’s notable library, NumPy has an n-dimensional array class called an <code>ndarray</code>. <code>ndarray</code>s are very useful for representing matrix information, and have superior functionality for our purposes than the native <code>numpy.matrix</code> class. However, as can be seen in Table <a href="#tbl:nodes-by-type">1</a>, the number of nodes in a given adjacency matrix can be upwards of 20,000. In performing matrix multiplications, this can become a computation-intensive process that requires both significant CPU power and memory. Additionally, since the adjacency matrices are full of more zeros than ones, a majority of the multiplications performed are trivial zero multiplications.</p>
-<p>One of my early goals for the summer was the conversion of all walk-count (and subsequently, path count) functions to sparse matrices. Sparse matrices, as employed by the Python library SciPy, represent data in matrices which are primarily composed of zeros. The selection of sparse representation and threshold are discussed in the results section, but sparse matrices warrant a brief description.</p>
+<p>All computational work was done in Python version 3.6. Specifically we used an open-source scientific distribution of Python called Anaconda.</p>
+<h4 id="matrices">Matrices</h4>
+<p>Python’s notable mathematical and array library, NumPy <span class="citation">[<a href="#ref-eye5ay6P">10</a>]</span>, has an n-dimensional array class called an <code>ndarray</code>. <code>numpy.ndarray</code>s are very useful for representing matrix information, and have superior functionality for our purposes than the native <code>numpy.matrix</code> class. However, as can be seen in Table <a href="#tbl:nodes-by-type">1</a>, the number of nodes in a given adjacency matrix can be upwards of 20,000. In performing matrix multiplications, this can become a computation-intensive process that requires both significant CPU power and memory. Additionally, since the adjacency matrices are full of more zeros than ones, a majority of the multiplications performed are trivial zero multiplications.</p>
+<p>One of my early goals for the summer was the conversion of all walk-count (and subsequently, path count) functions to sparse matrices. Sparse matrices, as employed by the Python library SciPy <span class="citation">[<a href="#ref-LsT2mKA3">11</a>]</span>, represent data in matrices which are primarily composed of zeros. The selection of sparse representation and threshold are discussed in the Results section, but sparse matrices warrant a brief description.</p>
 <p>In the sparse representation we used, Compressed-sparse-column format (CSC), a matrix is stored as three one-dimensional arrays.</p>
 <p>Consider the following matrix:</p>
 <span class="math display">\[\begin{bmatrix}
@@ -285,17 +287,20 @@
 \end{bmatrix}\]</span>
 <p>We represent the nonzero elements with one array, with the elements being taken from left to right, from top to bottom.</p>
 <span class="math display">\[\begin{bmatrix}
-4 &amp; 5 &amp; 1 &amp; 3 &amp; 9 &amp; 6 &amp; 5
+4 &amp; 3 &amp; 5 &amp; 6 &amp; 1 &amp; 9 &amp; 5
 \end{bmatrix}\]</span>
 <p>Next, we give the row indices of these elements.</p>
 <span class="math display">\[\begin{bmatrix}
-0 &amp; 1 &amp; 2 &amp; 1 &amp; 3 &amp; 1 &amp; 3
+0 &amp; 2 &amp; 0 &amp; 3 &amp; 1 &amp; 2 &amp; 3
 \end{bmatrix}\]</span>
 <p>The final array represents what is called a column pointer. This array gives the indices where each column starts.</p>
 <span class="math display">\[\begin{bmatrix}
-0 &amp; 2 &amp; 3 &amp; 5 &amp; 7
+0 &amp; 2 &amp; 4 &amp; 5 &amp; 7
 \end{bmatrix}\]</span>
 <p>These three arrays represent the entirety of a matrix.</p>
+<h4 id="other-tools">Other tools</h4>
+<p>A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions. As has become relatively standard for much of computational work, we made use of Jupyter notebooks <span class="citation">[<a href="#ref-klbqKLT4">12</a>]</span> to display the code used to run analysis and its output in a re-usable way. Within this, we were able to effectively incorporate the data manipulation and analysis library <code>pandas</code> <span class="citation">[<a href="#ref-iE9hnE2z">13</a>]</span> and the multiprocessing library <code>concurrent.futures</code> <span class="citation">[<a href="#ref-AwSIzjc6">14</a>]</span>.</p>
+<p>The most important tool we used this summer to track progress was the version control software, Git. Our repositories were hosted on the online git hosting service, GitHub <span class="citation">[<a href="#ref-tgH1jNoV">15</a>]</span>. Specifically, every contribution I made this summer can be viewed in detail at my GitHub profile <span class="citation">[<a href="#ref-14DftF1SD">16</a>]</span>. This will be discussed further in the Results section below.</p>
 <p><strong>Discuss python arrays, multiplication, PEP465, sparse matrices, jupyter notebooks, visualization, include several of my github issue graphs as data within the results section, etc.</strong></p>
 <h2 id="results">Results</h2>
 <h2 id="next-steps">Next steps</h2>
@@ -327,6 +332,27 @@
 </div>
 <div id="ref-w4Mi034s">
 <p>9. Weisstein EW. In press. Adjacency Matrix. <em>MathWorld–A Wolfram Web Resource</em>. See <a href="http://mathworld.wolfram.com/AdjacencyMatrix.html" class="uri">http://mathworld.wolfram.com/AdjacencyMatrix.html</a>.</p>
+</div>
+<div id="ref-eye5ay6P">
+<p>10. numpy. In press. numpy/numpy. <em>GitHub</em>. See <a href="https://github.com/numpy/numpy" class="uri">https://github.com/numpy/numpy</a>.</p>
+</div>
+<div id="ref-LsT2mKA3">
+<p>11. scipy. In press. scipy/scipy. <em>GitHub</em>. See <a href="https://github.com/scipy/scipy" class="uri">https://github.com/scipy/scipy</a>.</p>
+</div>
+<div id="ref-klbqKLT4">
+<p>12. jupyter. In press. jupyter/notebook. <em>GitHub</em>. See <a href="https://github.com/jupyter/notebook" class="uri">https://github.com/jupyter/notebook</a>.</p>
+</div>
+<div id="ref-iE9hnE2z">
+<p>13. pandas-dev. In press. pandas-dev/pandas. <em>GitHub</em>. See <a href="https://github.com/pandas-dev/pandas" class="uri">https://github.com/pandas-dev/pandas</a>.</p>
+</div>
+<div id="ref-AwSIzjc6">
+<p>14. 2017 17.4. concurrent.futures — Launching parallel tasks — Python 3.6.2 documentation. See <a href="https://docs.python.org/3/library/concurrent.futures.html" class="uri">https://docs.python.org/3/library/concurrent.futures.html</a>.</p>
+</div>
+<div id="ref-tgH1jNoV">
+<p>15. In press. Greene Laboratory. <em>GitHub</em>. See <a href="https://github.com/greenelab" class="uri">https://github.com/greenelab</a>.</p>
+</div>
+<div id="ref-14DftF1SD">
+<p>16. zietzm. In press. zietzm (Michael Zietz). <em>GitHub</em>. See <a href="https://github.com/zietzm" class="uri">https://github.com/zietzm</a>.</p>
 </div>
 </div>
 <script>
