@@ -887,6 +887,21 @@
     "id": "klbqKLT4"
   },
   {
+    "URL": "https://github.com/matplotlib/matplotlib",
+    "title": "matplotlib/matplotlib",
+    "container-title": "GitHub",
+    "author": [
+      {
+        "family": "matplotlib",
+        "given": ""
+      }
+    ],
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-15 02:16:59",
+    "type": "webpage",
+    "id": "118qTQ4yr"
+  },
+  {
     "URL": "https://github.com/numpy/numpy",
     "title": "numpy/numpy",
     "container-title": "GitHub",
@@ -945,5 +960,29 @@
     "greycite-scanned": "2017-08-15 02:14:32",
     "type": "webpage",
     "id": "14DftF1SD"
+  },
+  {
+    "URL": "https://neo4j.het.io/browser/",
+    "greycite-canonical-uri": null,
+    "title": "Hetionet · Neo4j Browser",
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          5,
+          17
+        ]
+      ]
+    },
+    "author": [
+      {
+        "family": "Technology",
+        "given": "Neo"
+      }
+    ],
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-15 02:17:04",
+    "type": "webpage",
+    "id": "cagYjYkt"
   }
 ]

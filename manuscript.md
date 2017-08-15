@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@7ac29e6](https://github.com/zietzm/Vagelos2017/tree/7ac29e6b25e635da688a0f0fd87bb84df3224669)
+from [zietzm/Vagelos2017@968284b](https://github.com/zietzm/Vagelos2017/tree/968284bfb80b157699e93237ea8728c6d03972ca)
 on August 15, 2017.
 </em></small>
 
@@ -248,14 +248,12 @@ These three arrays represent the entirety of a matrix.
 A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions.
 As has become relatively standard for much of computational work, we made use of Jupyter notebooks [@klbqKLT4] to display the code used to run analysis and its output in a re-usable way. 
 Within this, we were able to effectively incorporate the data manipulation and analysis library `pandas` [@iE9hnE2z] and the multiprocessing library `concurrent.futures` [@AwSIzjc6].
+For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 [@cagYjYkt], and the Python graphing library Matplotlib [@118qTQ4yr].
 
 The most important tool we used this summer to track progress was the version control software, Git.
 Our repositories were hosted on the online git hosting service, GitHub [@tgH1jNoV].
 Specifically, every contribution I made this summer can be viewed in detail at my GitHub profile [@14DftF1SD]. 
 This will be discussed further in the Results section below.
-
-
-**Discuss python arrays, multiplication, PEP465, sparse matrices, jupyter notebooks, visualization, include several of my github issue graphs as data within the results section, etc.**
 
 
 ## Results
