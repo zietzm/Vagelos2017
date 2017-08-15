@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@a5883a0](https://github.com/zietzm/Vagelos2017/tree/a5883a02df549a58a9ef6ec06ad8815e933835ca)
+from [zietzm/Vagelos2017@7557027](https://github.com/zietzm/Vagelos2017/tree/755702717513fe55fbc67078c94591eff5a9549d)
 on August 15, 2017.
 </em></small>
 
@@ -197,10 +197,6 @@ We therefore wanted to eliminate any usage of path count, and replace it with wa
 In this example and for paths of length two, this is trivial; we simply subtract the main diagonal, and we have converted from a walk count to a path count.
 However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats.
 My work toward this will be further discussed in the Results section.
-
-**Discuss what an adjacency matrix is, that this corresponds to a metaedge, path counts, walk counts, why path is better**
-
-
 
 
 ### Computational tools
