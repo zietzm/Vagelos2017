@@ -844,5 +844,106 @@
     ],
     "type": "webpage",
     "id": "w4Mi034s"
+  },
+  {
+    "URL": "https://docs.python.org/3/library/concurrent.futures.html",
+    "title": "17.4. concurrent.futures — Launching parallel tasks — Python 3.6.2 documentation",
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          8,
+          14
+        ]
+      ]
+    },
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-15 02:14:06",
+    "type": "webpage",
+    "id": "AwSIzjc6"
+  },
+  {
+    "URL": "https://github.com/greenelab",
+    "title": "Greene Laboratory",
+    "container-title": "GitHub",
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-15 02:14:08",
+    "type": "webpage",
+    "id": "tgH1jNoV"
+  },
+  {
+    "URL": "https://github.com/jupyter/notebook",
+    "title": "jupyter/notebook",
+    "container-title": "GitHub",
+    "author": [
+      {
+        "family": "jupyter",
+        "given": ""
+      }
+    ],
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-15 02:14:13",
+    "type": "webpage",
+    "id": "klbqKLT4"
+  },
+  {
+    "URL": "https://github.com/numpy/numpy",
+    "title": "numpy/numpy",
+    "container-title": "GitHub",
+    "author": [
+      {
+        "family": "numpy",
+        "given": ""
+      }
+    ],
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-15 02:14:18",
+    "type": "webpage",
+    "id": "eye5ay6P"
+  },
+  {
+    "URL": "https://github.com/pandas-dev/pandas",
+    "title": "pandas-dev/pandas",
+    "container-title": "GitHub",
+    "author": [
+      {
+        "family": "pandas-dev",
+        "given": ""
+      }
+    ],
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-15 02:14:22",
+    "type": "webpage",
+    "id": "iE9hnE2z"
+  },
+  {
+    "URL": "https://github.com/scipy/scipy",
+    "title": "scipy/scipy",
+    "container-title": "GitHub",
+    "author": [
+      {
+        "family": "scipy",
+        "given": ""
+      }
+    ],
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-15 02:14:27",
+    "type": "webpage",
+    "id": "LsT2mKA3"
+  },
+  {
+    "URL": "https://github.com/zietzm",
+    "title": "zietzm (Michael Zietz)",
+    "container-title": "GitHub",
+    "author": [
+      {
+        "family": "zietzm",
+        "given": ""
+      }
+    ],
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-15 02:14:32",
+    "type": "webpage",
+    "id": "14DftF1SD"
   }
 ]

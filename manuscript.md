@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@0dec375](https://github.com/zietzm/Vagelos2017/tree/0dec375441ff18eab1a81eb5014ba3a9566c4d7f)
+from [zietzm/Vagelos2017@7ac29e6](https://github.com/zietzm/Vagelos2017/tree/7ac29e6b25e635da688a0f0fd87bb84df3224669)
 on August 15, 2017.
 </em></small>
 
@@ -196,16 +196,20 @@ My work toward this will be further discussed in the Results section.
 
 All computational work was done in Python version 3.6.
 Specifically we used an open-source scientific distribution of Python called Anaconda.
-Python's notable library, NumPy has an n-dimensional array class called an `ndarray`.
-`ndarray`s are very useful for representing matrix information, and have superior functionality for our purposes than the native `numpy.matrix` class.
+
+
+#### Matrices
+
+Python's notable mathematical and array library, NumPy [@eye5ay6P], has an n-dimensional array class called an `ndarray`.
+`numpy.ndarray`s are very useful for representing matrix information, and have superior functionality for our purposes than the native `numpy.matrix` class.
 However, as can be seen in Table @tbl:nodes-by-type, the number of nodes in a given adjacency matrix can be upwards of 20,000.
 In performing matrix multiplications, this can become a computation-intensive process that requires both significant CPU power and memory.
 Additionally, since the adjacency matrices are full of more zeros than ones, a majority of the multiplications performed are trivial zero multiplications.
 
 
 One of my early goals for the summer was the conversion of all walk-count (and subsequently, path count) functions to sparse matrices.
-Sparse matrices, as employed by the Python library SciPy, represent data in matrices which are primarily composed of zeros.
-The selection of sparse representation and threshold are discussed in the results section, but sparse matrices warrant a brief description.
+Sparse matrices, as employed by the Python library SciPy [@LsT2mKA3], represent data in matrices which are primarily composed of zeros.
+The selection of sparse representation and threshold are discussed in the Results section, but sparse matrices warrant a brief description.
 
 In the sparse representation we used, Compressed-sparse-column format (CSC), a matrix is stored as three one-dimensional arrays.
 
@@ -221,23 +225,34 @@ Consider the following matrix:
 We represent the nonzero elements with one array, with the elements being taken from left to right, from top to bottom.
 
 \begin{bmatrix}
-4 & 5 & 1 & 3 & 9 & 6 & 5
+4 & 3 & 5 & 6 & 1 & 9 & 5
 \end{bmatrix}
 
 Next, we give the row indices of these elements.
 
 \begin{bmatrix}
-0 & 1 & 2 & 1 & 3 & 1 & 3
+0 & 2 & 0 & 3 & 1 & 2 & 3
 \end{bmatrix}
 
 The final array represents what is called a column pointer. 
 This array gives the indices where each column starts.
 
 \begin{bmatrix}
-0 & 2 & 3 & 5 & 7
+0 & 2 & 4 & 5 & 7
 \end{bmatrix}
 
 These three arrays represent the entirety of a matrix.
+
+#### Other tools
+
+A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions.
+As has become relatively standard for much of computational work, we made use of Jupyter notebooks [@klbqKLT4] to display the code used to run analysis and its output in a re-usable way. 
+Within this, we were able to effectively incorporate the data manipulation and analysis library `pandas` [@iE9hnE2z] and the multiprocessing library `concurrent.futures` [@AwSIzjc6].
+
+The most important tool we used this summer to track progress was the version control software, Git.
+Our repositories were hosted on the online git hosting service, GitHub [@tgH1jNoV].
+Specifically, every contribution I made this summer can be viewed in detail at my GitHub profile [@14DftF1SD]. 
+This will be discussed further in the Results section below.
 
 
 **Discuss python arrays, multiplication, PEP465, sparse matrices, jupyter notebooks, visualization, include several of my github issue graphs as data within the results section, etc.**
