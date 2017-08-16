@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@cdcca21](https://github.com/zietzm/Vagelos2017/tree/cdcca21945be7e4c5b08665418b45f2e0769335b)
+from [zietzm/Vagelos2017@a29524b](https://github.com/zietzm/Vagelos2017/tree/a29524b0cb681638461925bc088f76c47ebe198a)
 on August 16, 2017.
 </em></small>
 
@@ -177,11 +177,11 @@ with labels for rows and columns, respectively:
 \end{bmatrix}
 
 
-An adjacency matrix is identical to the information about connections between nodes along a given metanode.
-Another way to consider an adjacency matrix is that it lists the nodes at which one can arrive in one step from a given start node.
+An adjacency matrix is identical to the information about connections between nodes along a given metaedge.
+Another way to consider an adjacency matrix is as a list of the nodes at which one can arrive in one step from a given start node.
 In this sense, performing a matrix multiplication with two adjacency matrices gives the nodes at which one can arrive in exactly *two* steps.
 Further, an arbitrary number of multiplications can be performed between adjacency matrices corresponding to various metaedges, so long as the dimensionality is appropriate to the matrix multiplication in question.
-Using this method, we can extract what is known as a path count, or the number of ways to traverse the graph between two nodes.
+Using this method, we can extract what is known as a walk count, or the number of ways to traverse the graph between two nodes.
 In this way of thinking, an adjacency matrix corresponds to the path count for paths of length one.
 Using the graph in Figure @fig:eg_graph, we could perform a traversal along the meta-*path* 'GaDaG', and would obtain the following matrix:
 
@@ -194,11 +194,15 @@ Using the graph in Figure @fig:eg_graph, we could perform a traversal along the 
 
 
 Notice that the elements along the main diagonal of the above matrix are not zero.
-This indiciates that we are accounting for paths in which we traverse from nodes as follows: A -> B -> A.
-Useful information cannot be gained from looping paths such as these, and they introduce considerable noise in measures of connection between nodes.
-We therefore wanted to eliminate any usage of path count, and replace it with walk count, where a walk is a type of path which *cannot* loop backwards on itself.
+This indiciates that we are accounting for walks in which we traverse from nodes as follows: A -> B -> A.
+Useful information cannot be gained from looping walks such as these, and they introduce considerable noise in measures of connection between nodes.
+We therefore wanted to eliminate any usage of walk count, and replace it with path count, where a path is a type of walk which *cannot* loop backwards on itself.
 In this example and for paths of length two, this is trivial; we simply subtract the main diagonal, and we have converted from a walk count to a path count.
 However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats.
+Using the graph in Figure @fig:eg_graph, `NF2-associates-spinal cancer-resembles-peripheral nervous system neoplasm-associates-NF2` is considered a walk, but it is not a path because its start and end nodes are the same.
+Note that it is perfectly acceptable to repeat *metanodes*, meaning that we can have metapaths of the form `CrCrCrC`.
+Paths simply exclude the repeat of *specific nodes* within the node traverse order.
+
 My work toward this will be further discussed in the Results section.
 
 
