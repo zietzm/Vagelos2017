@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@c2bf820](https://github.com/zietzm/Vagelos2017/tree/c2bf8202afa3c28cb32724631ae81eec28d15606)
+from [zietzm/Vagelos2017@64826ec](https://github.com/zietzm/Vagelos2017/tree/64826ececbf2f91d928d4ff3240f63602ab3e0bd)
 on August 16, 2017.
 </em></small>
 
@@ -281,13 +281,59 @@ This will be discussed further in the Results section below.
 The main problem towards which I worked this summer was an implementation of the degree-weighted path count.
 While the degree-weighted walk count is relatively trivial to implement with matrix multiplication, the path count is non-trivial.
 If computational efficiency is to be considered, each category of metapath will require a different path-count method.
+As of mid-August 2017, I have merged 7 pull requests into the main Hetmech repository on GitHub, and I have one open development branch.
+These contributions amounted to 1043 lines added and 264 lines deleted in the repository.
+
+### DWPC
+
+I have almost completed an implementation of the degree-weighted path count (DWPC) in the form of several independent functions.
+When a user calls the `dwpc` function over a metapath, a series of steps occur before any actual path-counting occurs.
+First, the metapath is categorized according to its repeated metanodes.
+For example, the metapath `GaDrDaG`, ('Gene-associates-Disease-resembles-Disease-associates-Gene') would be classified `BAAB`.
+Further examples of this classification method are in Table @tbl:classification below.
+
+Next, the metapath was split into segments according to its classification.
+This step allowed for the abstraction of metapath patterns to metapaths which followed the pattern of a classification but included randomly inserted, metanodes anywhere in the bath.
+Splitting the metapath essentially allowed us to work with paths like `A-B-C-D-B-A` in the same way that we work with `A-B-B-A`, by abstracting any non-repeating metanodes to within segments.
+
+| Metapath | Classification | Segments |
+| -------- | -------------- | -------- |
+| CbGiGbC | BAAB | CbG GiG GbC |
+| DaGaDaG | BABA | DaG GaD DaG |
+| DlAeGaDaG | BABA | DlAeG GaD DaG |
+| CrCrC | short_repeat | CrCrC |
+| DlAeG | no_repeats | DlAeG |
+| CrCrCrC | long_repeat | CrCrCrC |
+| CbGiGiGaDrDpCpD | interior_complete_group | CbG GiGiG GaD DrD DpC CpD |
+
+Table: Example metapaths with classifications and segments {#tbl:classification}
+
+Once the metapath is split into segments, the original metapath classification is used to select the appropriate dwpc function.
+For example, if the metapath classification is `BAAB`, then the segmented metapath will be run in the function `dwpc_baab`.
+
+Each DWPC function has a unique method for ensuring that it outputs a path-count rather than a walk count.
+For many metapaths this was a non-trivial method to unravel, and often involved several steps of additions, subtractions, multiplications, and normalizations.
+Our work was greatly aided by the help of a mathematician with whom we collaborated on some of the more challenging matrix operations.
+
+In addition to the specific DWPC functions, I created a general method which will work over all metapaths, no matter the length.
+While slower than the other methods, this function allows us to ensure that every path is covered by the DWPC.
+The method uses a dictionary of history vectors for every index in the matrix and splits computations whenever a path has the opportunity to diverge into multiple potential paths.
+
+### Calculation time
 
 
+
+
+### Multiple search capability
+
+
+### Other summer results
 
 I also gained a deeper appreciation of and respect for open-access and collaborative science.
 In working towards this, I reported a bug in the open source Python repository SciPy which dealt with issues involving matrix multiplication [@R0MGiivw].
 
 In the deep learning review, I contributed a section on deep learning applications in the field of protein-protein interaction predictions, with a subsection on deep learning methods for the prediction of MHC-peptide binding [@otFK6ZiU].
+>>>>>>> c2bf8202afa3c28cb32724631ae81eec28d15606
 
 
 ## Next steps
