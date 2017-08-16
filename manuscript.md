@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@a29524b](https://github.com/zietzm/Vagelos2017/tree/a29524b0cb681638461925bc088f76c47ebe198a)
+from [zietzm/Vagelos2017@c2bf820](https://github.com/zietzm/Vagelos2017/tree/c2bf8202afa3c28cb32724631ae81eec28d15606)
 on August 16, 2017.
 </em></small>
 
@@ -203,6 +203,12 @@ Using the graph in Figure @fig:eg_graph, `NF2-associates-spinal cancer-resembles
 Note that it is perfectly acceptable to repeat *metanodes*, meaning that we can have metapaths of the form `CrCrCrC`.
 Paths simply exclude the repeat of *specific nodes* within the node traverse order.
 
+Path-counts provide useful information for predicting potential new relationships within a graph.
+Higher path-counts between two nodes shows good performance as a feature for predicting novel connections [@WkPlH1ds].
+However, as high-degree nodes make many connections, superior performance was acheived by downweighting nodes according to their degree.
+To do this, row sums and column sums are taken for a matrix at each step.
+These one-dimensional arrays are exponentiated
+This represents the 'degree-weight' portion of the 'degree-weighted path count'. 
 My work toward this will be further discussed in the Results section.
 
 
@@ -214,7 +220,7 @@ Specifically we used an open-source scientific distribution of Python called Ana
 
 #### Matrices
 
-Python's notable mathematical and array library, NumPy [@eye5ay6P], has an n-dimensional array class called an `ndarray`.
+Python's mathematical and array library, NumPy [@eye5ay6P], has an n-dimensional array class called an `ndarray`.
 `numpy.ndarray`s are very useful for representing matrix information, and have superior functionality for our purposes than the native `numpy.matrix` class.
 However, as can be seen in Table @tbl:nodes-by-type, the number of nodes in a given adjacency matrix can be upwards of 20,000.
 In performing matrix multiplications, this can become a computation-intensive process that requires both significant CPU power and memory.
@@ -236,7 +242,7 @@ Consider the following matrix:
 0 & 6 & 0 & 5
 \end{bmatrix}
 
-We represent the nonzero elements with one array, with the elements being taken from left to right, from top to bottom.
+We represent the nonzero elements with one array, with the elements being taken from top to bottom, from left to right.
 
 \begin{bmatrix}
 4 & 3 & 5 & 6 & 1 & 9 & 5
@@ -271,6 +277,10 @@ This will be discussed further in the Results section below.
 
 
 ## Results
+
+The main problem towards which I worked this summer was an implementation of the degree-weighted path count.
+While the degree-weighted walk count is relatively trivial to implement with matrix multiplication, the path count is non-trivial.
+If computational efficiency is to be considered, each category of metapath will require a different path-count method.
 
 
 

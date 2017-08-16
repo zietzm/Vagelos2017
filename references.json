@@ -871,6 +871,152 @@
     "id": "LlRXV6lE"
   },
   {
+    "indexed": {
+      "date-parts": [
+        [
+          2017,
+          8,
+          10
+        ]
+      ],
+      "date-time": "2017-08-10T16:18:04Z",
+      "timestamp": 1502381884610
+    },
+    "reference-count": 85,
+    "publisher": "Public Library of Science (PLoS)",
+    "issue": "7",
+    "license": [
+      {
+        "URL": "http://creativecommons.org/licenses/by/4.0/",
+        "start": {
+          "date-parts": [
+            [
+              2015,
+              7,
+              9
+            ]
+          ],
+          "date-time": "2015-07-09T00:00:00Z",
+          "timestamp": 1436400000000
+        },
+        "delay-in-days": 0,
+        "content-version": "vor"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "www.ploscompbiol.org"
+      ],
+      "crossmark-restriction": false
+    },
+    "DOI": "10.1371/journal.pcbi.1004259",
+    "type": "article-journal",
+    "created": {
+      "date-parts": [
+        [
+          2015,
+          7,
+          9
+        ]
+      ],
+      "date-time": "2015-07-09T20:04:48Z",
+      "timestamp": 1436472288000
+    },
+    "page": "e1004259",
+    "update-policy": "http://dx.doi.org/10.1371/journal.pcbi.corrections_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 7,
+    "title": "Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes",
+    "prefix": "10.1371",
+    "volume": "11",
+    "author": [
+      {
+        "given": "Daniel S.",
+        "family": "Himmelstein",
+        "affiliation": []
+      },
+      {
+        "given": "Sergio E.",
+        "family": "Baranzini",
+        "affiliation": []
+      }
+    ],
+    "member": "340",
+    "published-online": {
+      "date-parts": [
+        [
+          2015,
+          7,
+          9
+        ]
+      ]
+    },
+    "container-title": "PLOS Computational Biology",
+    "original-title": [],
+    "link": [
+      {
+        "URL": "http://dx.plos.org/10.1371/journal.pcbi.1004259",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2017,
+          6,
+          23
+        ]
+      ],
+      "date-time": "2017-06-23T15:25:07Z",
+      "timestamp": 1498231507000
+    },
+    "score": 1.0,
+    "subtitle": [],
+    "editor": [
+      {
+        "given": "Hua",
+        "family": "Tang",
+        "affiliation": []
+      }
+    ],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          7,
+          9
+        ]
+      ]
+    },
+    "references-count": 85,
+    "URL": "https://doi.org/10.1371/journal.pcbi.1004259",
+    "relation": {
+      "has-preprint": [
+        {
+          "id-type": "doi",
+          "id": "10.1101/011569",
+          "asserted-by": "object"
+        }
+      ],
+      "cites": []
+    },
+    "subject": [
+      "Ecology",
+      "Modelling and Simulation",
+      "Computational Theory and Mathematics",
+      "Genetics",
+      "Ecology, Evolution, Behavior and Systematics",
+      "Molecular Biology",
+      "Cellular and Molecular Neuroscience"
+    ],
+    "container-title-short": "PLoS Comput Biol",
+    "short_url": "https://doi.org/98q",
+    "id": "WkPlH1ds"
+  },
+  {
     "source": "PMC",
     "accessed": {
       "date-parts": [

@@ -11,15 +11,15 @@
   ],
   "ci_source": {
     "repo_slug": "zietzm/Vagelos2017",
-    "commit": "a29524b0cb681638461925bc088f76c47ebe198a"
+    "commit": "c2bf8202afa3c28cb32724631ae81eec28d15606"
   },
   "manuscript_stats": {
     "reference_counts": {
-      "doi": 7,
+      "doi": 8,
       "pmid": 2,
       "url": 14,
-      "total": 23
+      "total": 24
     },
-    "word_count": 2226
+    "word_count": 2354
   }
 }
