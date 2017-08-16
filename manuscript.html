@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Michael N. Zietz" />
-  <meta name="date" content="2017-08-15" />
+  <meta name="date" content="2017-08-16" />
   <meta name="keywords" content="work-in-progress, markdown, manuscript, publishing" />
   <title>Vagelos Report Summer 2017</title>
   <style type="text/css">code{white-space: pre;}</style>
@@ -20,7 +20,7 @@
 <div id="header">
 <h1 class="title">Vagelos Report Summer 2017</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/755702717513fe55fbc67078c94591eff5a9549d">zietzm/Vagelos2017@7557027</a> on August 15, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/cdcca21945be7e4c5b08665418b45f2e0769335b">zietzm/Vagelos2017@cdcca21</a> on August 16, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>Michael N. Zietz</strong><br> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/zietzm">zietzm</a><br> <small> Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania </small></li>
@@ -36,6 +36,7 @@
 <p>First, I wanted to add capability within Hetmech to compute the degree-weighted path count (DWPC). Previously, the two options had been an inaccurate DWPC method and a degree-weighted walk count (DWWC), whose limitations will be covered in the Methods section.</p>
 <p>Second, I hoped to decrease the time required to make calculations of DWPC. Towards this aim, I hoped to speed up computation by at least an order of magnitude. Sparse matrices and parallel computation were planned solutions to this problem.</p>
 <p>Finally, it was my goal to add a multiple search capability. This involves querying a set of nodes to return a set of predictions for nodes which connect the queried nodes. For example, one should be able to search a set of symptoms and return a list of potential diseases that connect the symptoms. As with the previous problems, moving to strictly matrix computation makes this much more simple.</p>
+<p>My secondary aim for the summer was to become familiar with and contribute to open-source, reproducible, computational science in biology. I hoped to contribute to a collaboratively written review of deep learning methods in the fields of biology and medicine <span class="citation">[<a href="#ref-yLr4pV4G">10</a>]</span>.</p>
 <h2 id="methods">Methods</h2>
 <h3 id="heterogeneous-networks">Heterogeneous networks</h3>
 <p>Heterogeneous networks (‘hetnets’) are networks with multiple node types and edge types. In the network used this summer, titled Hetionet v1.0 (Figure <a href="#fig:metagraph">1</a> B), nodes represent instances of 11 biomedical entity types, and edges correspond to one of 24 edge types, or relationships between entities. ‘Graph’ in this context refers to the entire network of nodes and edges. We define ‘metagraph’ to mean a graph of the types of nodes and edges in Hetionet (Figure <a href="#fig:metagraph">1</a> A).</p>
@@ -43,7 +44,7 @@
 <img src="https://raw.githubusercontent.com/zietzm/Vagelos2017/master/content/images/graph_metagraph.png" alt="Figure 1: A. Metagraph. The graph of metandoes (node types) and metaedges (edge) type. B. Graph (Hetionet v1.0) The circles and lines represent nodes within the labeled types. For example, within the metanode Anatomy we could have the node Leukocyte." id="fig:metagraph" />
 <p class="caption">Figure 1: A. Metagraph. The graph of metandoes (node types) and metaedges (edge) type. B. Graph (Hetionet v1.0) The circles and lines represent nodes within the labeled types. For example, within the metanode ‘Anatomy’ we could have the node ‘Leukocyte’.</p>
 </div>
-<p>Hetionet v1.0 incorporated 47,031 nodes and 2,250,197 edges <span class="citation">[<a href="#ref-XJuQlZl1">10</a>]</span>. A further breakdown of the nodes and edges can be found below in Tables <a href="#tbl:nodes-by-type">1</a> and <a href="#tbl:nodes-by-source">2</a>, respectively.</p>
+<p>Hetionet v1.0 incorporated 47,031 nodes and 2,250,197 edges <span class="citation">[<a href="#ref-XJuQlZl1">11</a>]</span>. A further breakdown of the nodes and edges can be found below in Tables <a href="#tbl:nodes-by-type">1</a> and <a href="#tbl:nodes-by-source">2</a>, respectively.</p>
 <a name="tbl:nodes-by-type"></a>
 <table>
 <caption>Table 1: Breakdown of nodes by type </caption>
@@ -234,7 +235,7 @@
 </tbody>
 </table>
 <h3 id="graph-analysis">Graph analysis</h3>
-<p>An adjacency matrix refers to a labeled matrix with 1 or 0 at every position, corresponding to the presence or absence of a connection between two nodes <span class="citation">[<a href="#ref-w4Mi034s">11</a>]</span>. The matrix is labeled, meaning that each row and column correspond to a source and target node, respectively. A function was created, titled <code>metaedge_to_adjacency_matrix</code> which performed the conversion from a string metaedge, such as ‘DaG’, to an adjacency matrix.</p>
+<p>An adjacency matrix refers to a labeled matrix with 1 or 0 at every position, corresponding to the presence or absence of a connection between two nodes <span class="citation">[<a href="#ref-w4Mi034s">12</a>]</span>. The matrix is labeled, meaning that each row and column correspond to a source and target node, respectively. A function was created, titled <code>metaedge_to_adjacency_matrix</code> which performed the conversion from a string metaedge, such as ‘DaG’, to an adjacency matrix.</p>
 <div class="figure">
 <img src="images/graph.svg" alt="Figure 2: An example graph. Blue nodes are genes, while green nodes are diseases. The edge type between all the nodes in this graph is DaG or Disease-associates-Gene." id="fig:eg_graph" width="480" />
 <p class="caption">Figure 2: An example graph. Blue nodes are genes, while green nodes are diseases. The edge type between all the nodes in this graph is ‘DaG’ or ‘Disease-associates-Gene’.</p>
@@ -276,8 +277,8 @@
 <h3 id="computational-tools">Computational tools</h3>
 <p>All computational work was done in Python version 3.6. Specifically we used an open-source scientific distribution of Python called Anaconda.</p>
 <h4 id="matrices">Matrices</h4>
-<p>Python’s notable mathematical and array library, NumPy <span class="citation">[<a href="#ref-eye5ay6P">12</a>]</span>, has an n-dimensional array class called an <code>ndarray</code>. <code>numpy.ndarray</code>s are very useful for representing matrix information, and have superior functionality for our purposes than the native <code>numpy.matrix</code> class. However, as can be seen in Table <a href="#tbl:nodes-by-type">1</a>, the number of nodes in a given adjacency matrix can be upwards of 20,000. In performing matrix multiplications, this can become a computation-intensive process that requires both significant CPU power and memory. Additionally, since the adjacency matrices are full of more zeros than ones, a majority of the multiplications performed are trivial zero multiplications.</p>
-<p>One of my early goals for the summer was the conversion of all walk-count (and subsequently, path count) functions to sparse matrices. Sparse matrices, as employed by the Python library SciPy <span class="citation">[<a href="#ref-LsT2mKA3">13</a>]</span>, represent data in matrices which are primarily composed of zeros. The selection of sparse representation and threshold are discussed in the Results section, but sparse matrices warrant a brief description.</p>
+<p>Python’s notable mathematical and array library, NumPy <span class="citation">[<a href="#ref-eye5ay6P">13</a>]</span>, has an n-dimensional array class called an <code>ndarray</code>. <code>numpy.ndarray</code>s are very useful for representing matrix information, and have superior functionality for our purposes than the native <code>numpy.matrix</code> class. However, as can be seen in Table <a href="#tbl:nodes-by-type">1</a>, the number of nodes in a given adjacency matrix can be upwards of 20,000. In performing matrix multiplications, this can become a computation-intensive process that requires both significant CPU power and memory. Additionally, since the adjacency matrices are full of more zeros than ones, a majority of the multiplications performed are trivial zero multiplications.</p>
+<p>One of my early goals for the summer was the conversion of all walk-count (and subsequently, path count) functions to sparse matrices. Sparse matrices, as employed by the Python library SciPy <span class="citation">[<a href="#ref-LsT2mKA3">14</a>]</span>, represent data in matrices which are primarily composed of zeros. The selection of sparse representation and threshold are discussed in the Results section, but sparse matrices warrant a brief description.</p>
 <p>In the sparse representation we used, Compressed-sparse-column format (CSC), a matrix is stored as three one-dimensional arrays.</p>
 <p>Consider the following matrix:</p>
 <span class="math display">\[\begin{bmatrix}
@@ -300,9 +301,11 @@
 \end{bmatrix}\]</span>
 <p>These three arrays represent the entirety of a matrix.</p>
 <h4 id="other-tools">Other tools</h4>
-<p>A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions. As has become relatively standard for much of computational work, we made use of Jupyter notebooks <span class="citation">[<a href="#ref-klbqKLT4">14</a>]</span> to display the code used to run analysis and its output in a re-usable way. Within this, we were able to effectively incorporate the data manipulation and analysis library pandas <span class="citation">[<a href="#ref-iE9hnE2z">15</a>]</span> and the multiprocessing library concurrent.futures <span class="citation">[<a href="#ref-AwSIzjc6">16</a>]</span>. For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 <span class="citation">[<a href="#ref-cagYjYkt">17</a>]</span>, and the Python graphing library Matplotlib <span class="citation">[<a href="#ref-118qTQ4yr">18</a>]</span>.</p>
-<p>The most important tool we used this summer to track progress was the version control software, Git. Our repositories were hosted on the online git hosting service, GitHub <span class="citation">[<a href="#ref-tgH1jNoV">19</a>]</span>. Specifically, every contribution I made this summer can be viewed in detail at my GitHub profile <span class="citation">[<a href="#ref-14DftF1SD">20</a>]</span>. This will be discussed further in the Results section below.</p>
+<p>A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions. As has become relatively standard for much of computational work, we made use of Jupyter notebooks <span class="citation">[<a href="#ref-klbqKLT4">15</a>]</span> to display the code used to run analysis and its output in a re-usable way. Within this, we were able to effectively incorporate the data manipulation and analysis library pandas <span class="citation">[<a href="#ref-iE9hnE2z">16</a>]</span> and the multiprocessing library concurrent.futures <span class="citation">[<a href="#ref-AwSIzjc6">17</a>]</span>. For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 <span class="citation">[<a href="#ref-cagYjYkt">18</a>]</span>, and the Python graphing library Matplotlib <span class="citation">[<a href="#ref-118qTQ4yr">19</a>]</span>.</p>
+<p>The most important tool we used this summer to track progress was the version control software, Git. Our repositories were hosted on the online git hosting service, GitHub <span class="citation">[<a href="#ref-tgH1jNoV">20</a>]</span>. Specifically, every contribution I made this summer can be viewed in detail at my GitHub profile <span class="citation">[<a href="#ref-14DftF1SD">21</a>]</span>. This will be discussed further in the Results section below.</p>
 <h2 id="results">Results</h2>
+<p>I also gained a deeper appreciation of and respect for open-access and collaborative science. In working towards this, I reported a bug in the open source Python repository SciPy which dealt with issues involving matrix multiplication <span class="citation">[<a href="#ref-R0MGiivw">22</a>]</span>.</p>
+<p>In the deep learning review, I contributed a section on deep learning applications in the field of protein-protein interaction predictions, with a subsection on deep learning methods for the prediction of MHC-peptide binding <span class="citation">[<a href="#ref-otFK6ZiU">23</a>]</span>.</p>
 <h2 id="next-steps">Next steps</h2>
 <h2 id="citations" class="unnumbered">Citations</h2>
 <div id="refs" class="references">
@@ -333,38 +336,47 @@
 <div id="ref-X1hJHTyw">
 <p>9. greenelab. In press. greenelab/hetmech. <em>GitHub</em>. See <a href="https://github.com/greenelab/hetmech" class="uri">https://github.com/greenelab/hetmech</a>.</p>
 </div>
+<div id="ref-yLr4pV4G">
+<p>10. greenelab. In press. greenelab/deep-review. <em>GitHub</em>. See <a href="https://github.com/greenelab/deep-review" class="uri">https://github.com/greenelab/deep-review</a>.</p>
+</div>
 <div id="ref-XJuQlZl1">
-<p>10. Himmelstein DS, Baranzini SE. 2015 Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes. <em>PLoS Comput Biol</em> <strong>11</strong>, e1004259. See <a href="https://www.ncbi.nlm.nih.gov/pubmed/26158728" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/26158728</a>.</p>
+<p>11. Himmelstein DS, Baranzini SE. 2015 Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes. <em>PLoS Comput Biol</em> <strong>11</strong>, e1004259. See <a href="https://www.ncbi.nlm.nih.gov/pubmed/26158728" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/26158728</a>.</p>
 </div>
 <div id="ref-w4Mi034s">
-<p>11. Weisstein EW. In press. Adjacency Matrix. <em>MathWorld–A Wolfram Web Resource</em>. See <a href="http://mathworld.wolfram.com/AdjacencyMatrix.html" class="uri">http://mathworld.wolfram.com/AdjacencyMatrix.html</a>.</p>
+<p>12. Weisstein EW. In press. Adjacency Matrix. <em>MathWorld–A Wolfram Web Resource</em>. See <a href="http://mathworld.wolfram.com/AdjacencyMatrix.html" class="uri">http://mathworld.wolfram.com/AdjacencyMatrix.html</a>.</p>
 </div>
 <div id="ref-eye5ay6P">
-<p>12. numpy. In press. numpy/numpy. <em>GitHub</em>. See <a href="https://github.com/numpy/numpy" class="uri">https://github.com/numpy/numpy</a>.</p>
+<p>13. numpy. In press. numpy/numpy. <em>GitHub</em>. See <a href="https://github.com/numpy/numpy" class="uri">https://github.com/numpy/numpy</a>.</p>
 </div>
 <div id="ref-LsT2mKA3">
-<p>13. scipy. In press. scipy/scipy. <em>GitHub</em>. See <a href="https://github.com/scipy/scipy" class="uri">https://github.com/scipy/scipy</a>.</p>
+<p>14. scipy. In press. scipy/scipy. <em>GitHub</em>. See <a href="https://github.com/scipy/scipy" class="uri">https://github.com/scipy/scipy</a>.</p>
 </div>
 <div id="ref-klbqKLT4">
-<p>14. jupyter. In press. jupyter/notebook. <em>GitHub</em>. See <a href="https://github.com/jupyter/notebook" class="uri">https://github.com/jupyter/notebook</a>.</p>
+<p>15. jupyter. In press. jupyter/notebook. <em>GitHub</em>. See <a href="https://github.com/jupyter/notebook" class="uri">https://github.com/jupyter/notebook</a>.</p>
 </div>
 <div id="ref-iE9hnE2z">
-<p>15. pandas-dev. In press. pandas-dev/pandas. <em>GitHub</em>. See <a href="https://github.com/pandas-dev/pandas" class="uri">https://github.com/pandas-dev/pandas</a>.</p>
+<p>16. pandas-dev. In press. pandas-dev/pandas. <em>GitHub</em>. See <a href="https://github.com/pandas-dev/pandas" class="uri">https://github.com/pandas-dev/pandas</a>.</p>
 </div>
 <div id="ref-AwSIzjc6">
-<p>16. 2017 17.4. concurrent.futures — Launching parallel tasks — Python 3.6.2 documentation. See <a href="https://docs.python.org/3/library/concurrent.futures.html" class="uri">https://docs.python.org/3/library/concurrent.futures.html</a>.</p>
+<p>17. 2017 17.4. concurrent.futures — Launching parallel tasks — Python 3.6.2 documentation. See <a href="https://docs.python.org/3/library/concurrent.futures.html" class="uri">https://docs.python.org/3/library/concurrent.futures.html</a>.</p>
 </div>
 <div id="ref-cagYjYkt">
-<p>17. Technology N. 2017 Hetionet · Neo4j Browser. See <a href="https://neo4j.het.io/browser/" class="uri">https://neo4j.het.io/browser/</a>.</p>
+<p>18. Technology N. 2017 Hetionet · Neo4j Browser. See <a href="https://neo4j.het.io/browser/" class="uri">https://neo4j.het.io/browser/</a>.</p>
 </div>
 <div id="ref-118qTQ4yr">
-<p>18. matplotlib. In press. matplotlib/matplotlib. <em>GitHub</em>. See <a href="https://github.com/matplotlib/matplotlib" class="uri">https://github.com/matplotlib/matplotlib</a>.</p>
+<p>19. matplotlib. In press. matplotlib/matplotlib. <em>GitHub</em>. See <a href="https://github.com/matplotlib/matplotlib" class="uri">https://github.com/matplotlib/matplotlib</a>.</p>
 </div>
 <div id="ref-tgH1jNoV">
-<p>19. In press. Greene Laboratory. <em>GitHub</em>. See <a href="https://github.com/greenelab" class="uri">https://github.com/greenelab</a>.</p>
+<p>20. In press. Greene Laboratory. <em>GitHub</em>. See <a href="https://github.com/greenelab" class="uri">https://github.com/greenelab</a>.</p>
 </div>
 <div id="ref-14DftF1SD">
-<p>20. zietzm. In press. zietzm (Michael Zietz). <em>GitHub</em>. See <a href="https://github.com/zietzm" class="uri">https://github.com/zietzm</a>.</p>
+<p>21. zietzm. In press. zietzm (Michael Zietz). <em>GitHub</em>. See <a href="https://github.com/zietzm" class="uri">https://github.com/zietzm</a>.</p>
+</div>
+<div id="ref-R0MGiivw">
+<p>22. scipy. In press. Operations between numpy.array and scipy.sparse matrix return inconsistent array type · Issue #7510 · scipy/scipy. <em>GitHub</em>. See <a href="https://github.com/scipy/scipy/issues/7510" class="uri">https://github.com/scipy/scipy/issues/7510</a>.</p>
+</div>
+<div id="ref-otFK6ZiU">
+<p>23. greenelab. In press. Added PPI section with MHC subsection by zietzm · Pull Request #638 · greenelab/deep-review. <em>GitHub</em>. See <a href="https://github.com/greenelab/deep-review/pull/638" class="uri">https://github.com/greenelab/deep-review/pull/638</a>.</p>
 </div>
 </div>
 <script>

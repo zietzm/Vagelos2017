@@ -1006,6 +1006,36 @@
     "id": "tgH1jNoV"
   },
   {
+    "URL": "https://github.com/greenelab/deep-review",
+    "title": "greenelab/deep-review",
+    "container-title": "GitHub",
+    "author": [
+      {
+        "family": "greenelab",
+        "given": ""
+      }
+    ],
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-05-18 17:25:21",
+    "type": "webpage",
+    "id": "yLr4pV4G"
+  },
+  {
+    "URL": "https://github.com/greenelab/deep-review/pull/638",
+    "title": "Added PPI section with MHC subsection by zietzm · Pull Request #638 · greenelab/deep-review",
+    "container-title": "GitHub",
+    "author": [
+      {
+        "family": "greenelab",
+        "given": ""
+      }
+    ],
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-16 03:19:34",
+    "type": "webpage",
+    "id": "otFK6ZiU"
+  },
+  {
     "URL": "https://github.com/greenelab/hetmech",
     "title": "greenelab/hetmech",
     "container-title": "GitHub",
@@ -1094,6 +1124,21 @@
     "greycite-scanned": "2017-08-15 02:14:27",
     "type": "webpage",
     "id": "LsT2mKA3"
+  },
+  {
+    "URL": "https://github.com/scipy/scipy/issues/7510",
+    "title": "Operations between numpy.array and scipy.sparse matrix return inconsistent array type · Issue #7510 · scipy/scipy",
+    "container-title": "GitHub",
+    "author": [
+      {
+        "family": "scipy",
+        "given": ""
+      }
+    ],
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-16 03:19:39",
+    "type": "webpage",
+    "id": "R0MGiivw"
   },
   {
     "URL": "https://github.com/zietzm",

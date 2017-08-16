@@ -1,5 +1,5 @@
 {
-  "date": "August 15, 2017",
+  "date": "August 16, 2017",
   "authors": [
     {
       "github": "zietzm",
@@ -11,15 +11,15 @@
   ],
   "ci_source": {
     "repo_slug": "zietzm/Vagelos2017",
-    "commit": "755702717513fe55fbc67078c94591eff5a9549d"
+    "commit": "cdcca21945be7e4c5b08665418b45f2e0769335b"
   },
   "manuscript_stats": {
     "reference_counts": {
       "doi": 7,
       "pmid": 2,
-      "url": 11,
-      "total": 20
+      "url": 14,
+      "total": 23
     },
-    "word_count": 2051
+    "word_count": 2163
   }
 }

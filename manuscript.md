@@ -1,7 +1,7 @@
 ---
 author-meta:
 - Michael N. Zietz
-date-meta: '2017-08-15'
+date-meta: '2017-08-16'
 keywords:
 - work-in-progress
 - markdown
@@ -12,8 +12,8 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@7557027](https://github.com/zietzm/Vagelos2017/tree/755702717513fe55fbc67078c94591eff5a9549d)
-on August 15, 2017.
+from [zietzm/Vagelos2017@cdcca21](https://github.com/zietzm/Vagelos2017/tree/cdcca21945be7e4c5b08665418b45f2e0769335b)
+on August 16, 2017.
 </em></small>
 
 ## Authors
@@ -68,6 +68,9 @@ Finally, it was my goal to add a multiple search capability.
 This involves querying a set of nodes to return a set of predictions for nodes which connect the queried nodes.
 For example, one should be able to search a set of symptoms and return a list of potential diseases that connect the symptoms. 
 As with the previous problems, moving to strictly matrix computation makes this much more simple.
+
+My secondary aim for the summer was to become familiar with and contribute to open-source, reproducible, computational science in biology.
+I hoped to contribute to a collaboratively written review of deep learning methods in the fields of biology and medicine [@yLr4pV4G].
 
 
 ## Methods
@@ -264,6 +267,13 @@ This will be discussed further in the Results section below.
 
 
 ## Results
+
+
+
+I also gained a deeper appreciation of and respect for open-access and collaborative science.
+In working towards this, I reported a bug in the open source Python repository SciPy which dealt with issues involving matrix multiplication [@R0MGiivw].
+
+In the deep learning review, I contributed a section on deep learning applications in the field of protein-protein interaction predictions, with a subsection on deep learning methods for the prediction of MHC-peptide binding [@otFK6ZiU].
 
 
 ## Next steps
