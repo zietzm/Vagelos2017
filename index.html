@@ -20,7 +20,7 @@
 <div id="header">
 <h1 class="title">Vagelos Report Summer 2017</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/a29524b0cb681638461925bc088f76c47ebe198a">zietzm/Vagelos2017@a29524b</a> on August 16, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/c2bf8202afa3c28cb32724631ae81eec28d15606">zietzm/Vagelos2017@c2bf820</a> on August 16, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>Michael N. Zietz</strong><br> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/zietzm">zietzm</a><br> <small> Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania </small></li>
@@ -274,12 +274,12 @@
 2 &amp; 1 &amp; 3
 \end{bmatrix}\]</span>
 <p>Notice that the elements along the main diagonal of the above matrix are not zero. This indiciates that we are accounting for walks in which we traverse from nodes as follows: A -&gt; B -&gt; A. Useful information cannot be gained from looping walks such as these, and they introduce considerable noise in measures of connection between nodes. We therefore wanted to eliminate any usage of walk count, and replace it with path count, where a path is a type of walk which <em>cannot</em> loop backwards on itself. In this example and for paths of length two, this is trivial; we simply subtract the main diagonal, and we have converted from a walk count to a path count. However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats. Using the graph in Figure <a href="#fig:eg_graph">2</a>, <code>NF2-associates-spinal cancer-resembles-peripheral nervous system neoplasm-associates-NF2</code> is considered a walk, but it is not a path because its start and end nodes are the same. Note that it is perfectly acceptable to repeat <em>metanodes</em>, meaning that we can have metapaths of the form <code>CrCrCrC</code>. Paths simply exclude the repeat of <em>specific nodes</em> within the node traverse order.</p>
-<p>My work toward this will be further discussed in the Results section.</p>
+<p>Path-counts provide useful information for predicting potential new relationships within a graph. Higher path-counts between two nodes shows good performance as a feature for predicting novel connections <span class="citation">[<a href="#ref-WkPlH1ds">13</a>]</span>. However, as high-degree nodes make many connections, superior performance was acheived by downweighting nodes according to their degree. To do this, row sums and column sums are taken for a matrix at each step. These one-dimensional arrays are exponentiated This represents the ‘degree-weight’ portion of the ‘degree-weighted path count’. My work toward this will be further discussed in the Results section.</p>
 <h3 id="computational-tools">Computational tools</h3>
 <p>All computational work was done in Python version 3.6. Specifically we used an open-source scientific distribution of Python called Anaconda.</p>
 <h4 id="matrices">Matrices</h4>
-<p>Python’s notable mathematical and array library, NumPy <span class="citation">[<a href="#ref-eye5ay6P">13</a>]</span>, has an n-dimensional array class called an <code>ndarray</code>. <code>numpy.ndarray</code>s are very useful for representing matrix information, and have superior functionality for our purposes than the native <code>numpy.matrix</code> class. However, as can be seen in Table <a href="#tbl:nodes-by-type">1</a>, the number of nodes in a given adjacency matrix can be upwards of 20,000. In performing matrix multiplications, this can become a computation-intensive process that requires both significant CPU power and memory. Additionally, since the adjacency matrices are full of more zeros than ones, a majority of the multiplications performed are trivial zero multiplications.</p>
-<p>One of my early goals for the summer was the conversion of all walk-count (and subsequently, path count) functions to sparse matrices. Sparse matrices, as employed by the Python library SciPy <span class="citation">[<a href="#ref-LsT2mKA3">14</a>]</span>, represent data in matrices which are primarily composed of zeros. The selection of sparse representation and threshold are discussed in the Results section, but sparse matrices warrant a brief description.</p>
+<p>Python’s mathematical and array library, NumPy <span class="citation">[<a href="#ref-eye5ay6P">14</a>]</span>, has an n-dimensional array class called an <code>ndarray</code>. <code>numpy.ndarray</code>s are very useful for representing matrix information, and have superior functionality for our purposes than the native <code>numpy.matrix</code> class. However, as can be seen in Table <a href="#tbl:nodes-by-type">1</a>, the number of nodes in a given adjacency matrix can be upwards of 20,000. In performing matrix multiplications, this can become a computation-intensive process that requires both significant CPU power and memory. Additionally, since the adjacency matrices are full of more zeros than ones, a majority of the multiplications performed are trivial zero multiplications.</p>
+<p>One of my early goals for the summer was the conversion of all walk-count (and subsequently, path count) functions to sparse matrices. Sparse matrices, as employed by the Python library SciPy <span class="citation">[<a href="#ref-LsT2mKA3">15</a>]</span>, represent data in matrices which are primarily composed of zeros. The selection of sparse representation and threshold are discussed in the Results section, but sparse matrices warrant a brief description.</p>
 <p>In the sparse representation we used, Compressed-sparse-column format (CSC), a matrix is stored as three one-dimensional arrays.</p>
 <p>Consider the following matrix:</p>
 <span class="math display">\[\begin{bmatrix}
@@ -288,7 +288,7 @@
 3 &amp; 0 &amp; 0 &amp; 9\\ 
 0 &amp; 6 &amp; 0 &amp; 5
 \end{bmatrix}\]</span>
-<p>We represent the nonzero elements with one array, with the elements being taken from left to right, from top to bottom.</p>
+<p>We represent the nonzero elements with one array, with the elements being taken from top to bottom, from left to right.</p>
 <span class="math display">\[\begin{bmatrix}
 4 &amp; 3 &amp; 5 &amp; 6 &amp; 1 &amp; 9 &amp; 5
 \end{bmatrix}\]</span>
@@ -302,11 +302,12 @@
 \end{bmatrix}\]</span>
 <p>These three arrays represent the entirety of a matrix.</p>
 <h4 id="other-tools">Other tools</h4>
-<p>A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions. As has become relatively standard for much of computational work, we made use of Jupyter notebooks <span class="citation">[<a href="#ref-klbqKLT4">15</a>]</span> to display the code used to run analysis and its output in a re-usable way. Within this, we were able to effectively incorporate the data manipulation and analysis library pandas <span class="citation">[<a href="#ref-iE9hnE2z">16</a>]</span> and the multiprocessing library concurrent.futures <span class="citation">[<a href="#ref-AwSIzjc6">17</a>]</span>. For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 <span class="citation">[<a href="#ref-cagYjYkt">18</a>]</span>, and the Python graphing library Matplotlib <span class="citation">[<a href="#ref-118qTQ4yr">19</a>]</span>.</p>
-<p>The most important tool we used this summer to track progress was the version control software, Git. Our repositories were hosted on the online git hosting service, GitHub <span class="citation">[<a href="#ref-tgH1jNoV">20</a>]</span>. Specifically, every contribution I made this summer can be viewed in detail at my GitHub profile <span class="citation">[<a href="#ref-14DftF1SD">21</a>]</span>. This will be discussed further in the Results section below.</p>
+<p>A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions. As has become relatively standard for much of computational work, we made use of Jupyter notebooks <span class="citation">[<a href="#ref-klbqKLT4">16</a>]</span> to display the code used to run analysis and its output in a re-usable way. Within this, we were able to effectively incorporate the data manipulation and analysis library pandas <span class="citation">[<a href="#ref-iE9hnE2z">17</a>]</span> and the multiprocessing library concurrent.futures <span class="citation">[<a href="#ref-AwSIzjc6">18</a>]</span>. For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 <span class="citation">[<a href="#ref-cagYjYkt">19</a>]</span>, and the Python graphing library Matplotlib <span class="citation">[<a href="#ref-118qTQ4yr">20</a>]</span>.</p>
+<p>The most important tool we used this summer to track progress was the version control software, Git. Our repositories were hosted on the online git hosting service, GitHub <span class="citation">[<a href="#ref-tgH1jNoV">21</a>]</span>. Specifically, every contribution I made this summer can be viewed in detail at my GitHub profile <span class="citation">[<a href="#ref-14DftF1SD">22</a>]</span>. This will be discussed further in the Results section below.</p>
 <h2 id="results">Results</h2>
-<p>I also gained a deeper appreciation of and respect for open-access and collaborative science. In working towards this, I reported a bug in the open source Python repository SciPy which dealt with issues involving matrix multiplication <span class="citation">[<a href="#ref-R0MGiivw">22</a>]</span>.</p>
-<p>In the deep learning review, I contributed a section on deep learning applications in the field of protein-protein interaction predictions, with a subsection on deep learning methods for the prediction of MHC-peptide binding <span class="citation">[<a href="#ref-otFK6ZiU">23</a>]</span>.</p>
+<p>The main problem towards which I worked this summer was an implementation of the degree-weighted path count. While the degree-weighted walk count is relatively trivial to implement with matrix multiplication, the path count is non-trivial. If computational efficiency is to be considered, each category of metapath will require a different path-count method.</p>
+<p>I also gained a deeper appreciation of and respect for open-access and collaborative science. In working towards this, I reported a bug in the open source Python repository SciPy which dealt with issues involving matrix multiplication <span class="citation">[<a href="#ref-R0MGiivw">23</a>]</span>.</p>
+<p>In the deep learning review, I contributed a section on deep learning applications in the field of protein-protein interaction predictions, with a subsection on deep learning methods for the prediction of MHC-peptide binding <span class="citation">[<a href="#ref-otFK6ZiU">24</a>]</span>.</p>
 <h2 id="next-steps">Next steps</h2>
 <h2 id="citations" class="unnumbered">Citations</h2>
 <div id="refs" class="references">
@@ -346,38 +347,41 @@
 <div id="ref-w4Mi034s">
 <p>12. Weisstein EW. In press. Adjacency Matrix. <em>MathWorld–A Wolfram Web Resource</em>. See <a href="http://mathworld.wolfram.com/AdjacencyMatrix.html" class="uri">http://mathworld.wolfram.com/AdjacencyMatrix.html</a>.</p>
 </div>
+<div id="ref-WkPlH1ds">
+<p>13. Himmelstein DS, Baranzini SE. 2015 Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes. <em>PLoS Comput Biol</em> <strong>11</strong>, e1004259. See <a href="https://doi.org/10.1371/journal.pcbi.1004259" class="uri">https://doi.org/10.1371/journal.pcbi.1004259</a>.</p>
+</div>
 <div id="ref-eye5ay6P">
-<p>13. numpy. In press. numpy/numpy. <em>GitHub</em>. See <a href="https://github.com/numpy/numpy" class="uri">https://github.com/numpy/numpy</a>.</p>
+<p>14. numpy. In press. numpy/numpy. <em>GitHub</em>. See <a href="https://github.com/numpy/numpy" class="uri">https://github.com/numpy/numpy</a>.</p>
 </div>
 <div id="ref-LsT2mKA3">
-<p>14. scipy. In press. scipy/scipy. <em>GitHub</em>. See <a href="https://github.com/scipy/scipy" class="uri">https://github.com/scipy/scipy</a>.</p>
+<p>15. scipy. In press. scipy/scipy. <em>GitHub</em>. See <a href="https://github.com/scipy/scipy" class="uri">https://github.com/scipy/scipy</a>.</p>
 </div>
 <div id="ref-klbqKLT4">
-<p>15. jupyter. In press. jupyter/notebook. <em>GitHub</em>. See <a href="https://github.com/jupyter/notebook" class="uri">https://github.com/jupyter/notebook</a>.</p>
+<p>16. jupyter. In press. jupyter/notebook. <em>GitHub</em>. See <a href="https://github.com/jupyter/notebook" class="uri">https://github.com/jupyter/notebook</a>.</p>
 </div>
 <div id="ref-iE9hnE2z">
-<p>16. pandas-dev. In press. pandas-dev/pandas. <em>GitHub</em>. See <a href="https://github.com/pandas-dev/pandas" class="uri">https://github.com/pandas-dev/pandas</a>.</p>
+<p>17. pandas-dev. In press. pandas-dev/pandas. <em>GitHub</em>. See <a href="https://github.com/pandas-dev/pandas" class="uri">https://github.com/pandas-dev/pandas</a>.</p>
 </div>
 <div id="ref-AwSIzjc6">
-<p>17. 2017 17.4. concurrent.futures — Launching parallel tasks — Python 3.6.2 documentation. See <a href="https://docs.python.org/3/library/concurrent.futures.html" class="uri">https://docs.python.org/3/library/concurrent.futures.html</a>.</p>
+<p>18. 2017 17.4. concurrent.futures — Launching parallel tasks — Python 3.6.2 documentation. See <a href="https://docs.python.org/3/library/concurrent.futures.html" class="uri">https://docs.python.org/3/library/concurrent.futures.html</a>.</p>
 </div>
 <div id="ref-cagYjYkt">
-<p>18. Technology N. 2017 Hetionet · Neo4j Browser. See <a href="https://neo4j.het.io/browser/" class="uri">https://neo4j.het.io/browser/</a>.</p>
+<p>19. Technology N. 2017 Hetionet · Neo4j Browser. See <a href="https://neo4j.het.io/browser/" class="uri">https://neo4j.het.io/browser/</a>.</p>
 </div>
 <div id="ref-118qTQ4yr">
-<p>19. matplotlib. In press. matplotlib/matplotlib. <em>GitHub</em>. See <a href="https://github.com/matplotlib/matplotlib" class="uri">https://github.com/matplotlib/matplotlib</a>.</p>
+<p>20. matplotlib. In press. matplotlib/matplotlib. <em>GitHub</em>. See <a href="https://github.com/matplotlib/matplotlib" class="uri">https://github.com/matplotlib/matplotlib</a>.</p>
 </div>
 <div id="ref-tgH1jNoV">
-<p>20. In press. Greene Laboratory. <em>GitHub</em>. See <a href="https://github.com/greenelab" class="uri">https://github.com/greenelab</a>.</p>
+<p>21. In press. Greene Laboratory. <em>GitHub</em>. See <a href="https://github.com/greenelab" class="uri">https://github.com/greenelab</a>.</p>
 </div>
 <div id="ref-14DftF1SD">
-<p>21. zietzm. In press. zietzm (Michael Zietz). <em>GitHub</em>. See <a href="https://github.com/zietzm" class="uri">https://github.com/zietzm</a>.</p>
+<p>22. zietzm. In press. zietzm (Michael Zietz). <em>GitHub</em>. See <a href="https://github.com/zietzm" class="uri">https://github.com/zietzm</a>.</p>
 </div>
 <div id="ref-R0MGiivw">
-<p>22. scipy. In press. Operations between numpy.array and scipy.sparse matrix return inconsistent array type · Issue #7510 · scipy/scipy. <em>GitHub</em>. See <a href="https://github.com/scipy/scipy/issues/7510" class="uri">https://github.com/scipy/scipy/issues/7510</a>.</p>
+<p>23. scipy. In press. Operations between numpy.array and scipy.sparse matrix return inconsistent array type · Issue #7510 · scipy/scipy. <em>GitHub</em>. See <a href="https://github.com/scipy/scipy/issues/7510" class="uri">https://github.com/scipy/scipy/issues/7510</a>.</p>
 </div>
 <div id="ref-otFK6ZiU">
-<p>23. greenelab. In press. Added PPI section with MHC subsection by zietzm · Pull Request #638 · greenelab/deep-review. <em>GitHub</em>. See <a href="https://github.com/greenelab/deep-review/pull/638" class="uri">https://github.com/greenelab/deep-review/pull/638</a>.</p>
+<p>24. greenelab. In press. Added PPI section with MHC subsection by zietzm · Pull Request #638 · greenelab/deep-review. <em>GitHub</em>. See <a href="https://github.com/greenelab/deep-review/pull/638" class="uri">https://github.com/greenelab/deep-review/pull/638</a>.</p>
 </div>
 </div>
 <script>
