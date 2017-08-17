@@ -447,6 +447,196 @@
         [
           2017,
           8,
+          11
+        ]
+      ],
+      "date-time": "2017-08-11T14:47:37Z",
+      "timestamp": 1502462857048
+    },
+    "reference-count": 82,
+    "publisher": "American Chemical Society (ACS)",
+    "issue": "6",
+    "funder": [
+      {
+        "DOI": "10.13039/501100001809",
+        "name": "National Natural Science Foundation of China",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "02303301",
+          "61673020",
+          "61203290"
+        ]
+      },
+      {
+        "DOI": "10.13039/501100003995",
+        "name": "Natural Science Foundation of Anhui Province",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "1708085QF143"
+        ]
+      },
+      {
+        "name": "Higher Education Institutions of Anhui province",
+        "award": [
+          "KJ2016A016"
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2017,
+          6,
+          26
+        ]
+      ]
+    },
+    "DOI": "10.1021/acs.jcim.7b00028",
+    "type": "article-journal",
+    "created": {
+      "date-parts": [
+        [
+          2017,
+          5,
+          17
+        ]
+      ],
+      "date-time": "2017-05-17T18:13:56Z",
+      "timestamp": 1495044836000
+    },
+    "page": "1499-1510",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": "DeepPPI: Boosting Prediction of Protein–Protein Interactions with Deep Neural Networks",
+    "prefix": "10.1021",
+    "volume": "57",
+    "author": [
+      {
+        "ORCID": "http://orcid.org/0000-0001-7913-7605",
+        "authenticated-orcid": true,
+        "given": "Xiuquan",
+        "family": "Du",
+        "affiliation": [
+          {
+            "name": "Key Laboratory\rof Intelligent Computing and Signal Processing of\rMinistry of Education, ‡School of Computer Science and Technology, and §Center of Information Support &amp; Assurance\rTechnology, Anhui University, Hefei, 230601 Anhui, China"
+          }
+        ]
+      },
+      {
+        "given": "Shiwei",
+        "family": "Sun",
+        "affiliation": [
+          {
+            "name": "Key Laboratory\rof Intelligent Computing and Signal Processing of\rMinistry of Education, ‡School of Computer Science and Technology, and §Center of Information Support &amp; Assurance\rTechnology, Anhui University, Hefei, 230601 Anhui, China"
+          }
+        ]
+      },
+      {
+        "given": "Changlin",
+        "family": "Hu",
+        "affiliation": [
+          {
+            "name": "Key Laboratory\rof Intelligent Computing and Signal Processing of\rMinistry of Education, ‡School of Computer Science and Technology, and §Center of Information Support &amp; Assurance\rTechnology, Anhui University, Hefei, 230601 Anhui, China"
+          }
+        ]
+      },
+      {
+        "given": "Yu",
+        "family": "Yao",
+        "affiliation": [
+          {
+            "name": "Key Laboratory\rof Intelligent Computing and Signal Processing of\rMinistry of Education, ‡School of Computer Science and Technology, and §Center of Information Support &amp; Assurance\rTechnology, Anhui University, Hefei, 230601 Anhui, China"
+          }
+        ]
+      },
+      {
+        "given": "Yuanting",
+        "family": "Yan",
+        "affiliation": [
+          {
+            "name": "Key Laboratory\rof Intelligent Computing and Signal Processing of\rMinistry of Education, ‡School of Computer Science and Technology, and §Center of Information Support &amp; Assurance\rTechnology, Anhui University, Hefei, 230601 Anhui, China"
+          }
+        ]
+      },
+      {
+        "given": "Yanping",
+        "family": "Zhang",
+        "affiliation": [
+          {
+            "name": "Key Laboratory\rof Intelligent Computing and Signal Processing of\rMinistry of Education, ‡School of Computer Science and Technology, and §Center of Information Support &amp; Assurance\rTechnology, Anhui University, Hefei, 230601 Anhui, China"
+          }
+        ]
+      }
+    ],
+    "member": "316",
+    "published-online": {
+      "date-parts": [
+        [
+          2017,
+          5,
+          26
+        ]
+      ]
+    },
+    "container-title": "Journal of Chemical Information and Modeling",
+    "original-title": [],
+    "link": [
+      {
+        "URL": "http://pubs.acs.org/doi/pdf/10.1021/acs.jcim.7b00028",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2017,
+          6,
+          26
+        ]
+      ],
+      "date-time": "2017-06-26T08:00:52Z",
+      "timestamp": 1498464052000
+    },
+    "score": 1.0,
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          5,
+          26
+        ]
+      ]
+    },
+    "references-count": 82,
+    "alternative-id": [
+      "10.1021/acs.jcim.7b00028"
+    ],
+    "URL": "https://doi.org/10.1021/acs.jcim.7b00028",
+    "relation": {},
+    "subject": [
+      "General Chemistry",
+      "General Chemical Engineering",
+      "Library and Information Sciences",
+      "Computer Science Applications"
+    ],
+    "container-title-short": "J. Chem. Inf. Model.",
+    "short_url": "https://doi.org/gbmn43",
+    "id": "rVgq22nD"
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2017,
+          8,
           12
         ]
       ],

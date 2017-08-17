@@ -1,7 +1,7 @@
 ---
 author-meta:
 - Michael N. Zietz
-date-meta: '2017-08-16'
+date-meta: '2017-08-17'
 keywords:
 - work-in-progress
 - markdown
@@ -12,8 +12,8 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@64826ec](https://github.com/zietzm/Vagelos2017/tree/64826ececbf2f91d928d4ff3240f63602ab3e0bd)
-on August 16, 2017.
+from [zietzm/Vagelos2017@570c599](https://github.com/zietzm/Vagelos2017/tree/570c599b045ab67a7b65747c6fe1e310853f9a31)
+on August 17, 2017.
 </em></small>
 
 ## Authors
@@ -326,6 +326,9 @@ The method uses a dictionary of history vectors for every index in the matrix an
 
 ### Multiple search capability
 
+As with many graph traversal tasks, using adjacency matrices to calculated DWPC meant that querying a set of nodes has become simpler.
+Our initial work has been on metapaths starting with compounds and ending with diseases.
+Having cached our DWPC matrices along every C-[...]-D metapath with five or fewer edges, we can extract path counts for queried nodes by performing matrix-vector multiplication.
 
 ### Other summer results
 
@@ -333,10 +336,29 @@ I also gained a deeper appreciation of and respect for open-access and collabora
 In working towards this, I reported a bug in the open source Python repository SciPy which dealt with issues involving matrix multiplication [@R0MGiivw].
 
 In the deep learning review, I contributed a section on deep learning applications in the field of protein-protein interaction predictions, with a subsection on deep learning methods for the prediction of MHC-peptide binding [@otFK6ZiU].
->>>>>>> c2bf8202afa3c28cb32724631ae81eec28d15606
 
 
 ## Next steps
+
+The primary next step is to use the functionality created this summer to make test predictions of potential targets for drug repurposing.
+
+
+By increasing the amount of data within the hetnet, we will expand our capability to make high-quality predictions of potential connections between nodes.
+
+**Ideas to add above**
+
+---
+
+* Actually make some C-->D predictions
+* Make the hetnet bigger
+* Use many more metapaths than just Rephetio ones, as these aren't (to my knowledge) all the metapaths linking compounds and diseases.
+* Potentially test the method's performance on other types of metapath, ie. not just C-[...]-D.
+* Potentially some sort of analysis of new drugs entering into the later stages of clinical trial, and compare these (whose data shouldn't be in the hetnet) to our predictions for their targets.
+This would be a further validation of the methodology.
+* Create an open-access webserver
+* Potentially try new methods to find predictions between nodes, see if some other sort of feature can be extracted for non-existent connections or nodes.
+Something like [@rVgq22nD] where a two-stage deep neural network first learned the characteristics of proteins that make them likely to interact, then secondly combined these already-higher level features into an even higher-level feature in the second stage.
+There could be any number of other graph-theory concepts which could be applied here, including both features and potential corrections, like graph centrality, etc.
 
 
 ## Citations

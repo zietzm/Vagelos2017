@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Michael N. Zietz" />
-  <meta name="date" content="2017-08-16" />
+  <meta name="date" content="2017-08-17" />
   <meta name="keywords" content="work-in-progress, markdown, manuscript, publishing" />
   <title>Vagelos Report Summer 2017</title>
   <style type="text/css">code{white-space: pre;}</style>
@@ -20,7 +20,7 @@
 <div id="header">
 <h1 class="title">Vagelos Report Summer 2017</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/64826ececbf2f91d928d4ff3240f63602ab3e0bd">zietzm/Vagelos2017@64826ec</a> on August 16, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/570c599b045ab67a7b65747c6fe1e310853f9a31">zietzm/Vagelos2017@570c599</a> on August 17, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>Michael N. Zietz</strong><br> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/zietzm">zietzm</a><br> <small> Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania </small></li>
@@ -362,10 +362,24 @@
 <p>In addition to the specific DWPC functions, I created a general method which will work over all metapaths, no matter the length. While slower than the other methods, this function allows us to ensure that every path is covered by the DWPC. The method uses a dictionary of history vectors for every index in the matrix and splits computations whenever a path has the opportunity to diverge into multiple potential paths.</p>
 <h3 id="calculation-time">Calculation time</h3>
 <h3 id="multiple-search-capability">Multiple search capability</h3>
+<p>As with many graph traversal tasks, using adjacency matrices to calculated DWPC meant that querying a set of nodes has become simpler. Our initial work has been on metapaths starting with compounds and ending with diseases. Having cached our DWPC matrices along every C-[…]-D metapath with five or fewer edges, we can extract path counts for queried nodes by performing matrix-vector multiplication.</p>
 <h3 id="other-summer-results">Other summer results</h3>
 <p>I also gained a deeper appreciation of and respect for open-access and collaborative science. In working towards this, I reported a bug in the open source Python repository SciPy which dealt with issues involving matrix multiplication <span class="citation">[<a href="#ref-R0MGiivw">23</a>]</span>.</p>
-<p>In the deep learning review, I contributed a section on deep learning applications in the field of protein-protein interaction predictions, with a subsection on deep learning methods for the prediction of MHC-peptide binding <span class="citation">[<a href="#ref-otFK6ZiU">24</a>]</span>. &gt;&gt;&gt;&gt;&gt;&gt;&gt; c2bf8202afa3c28cb32724631ae81eec28d15606</p>
+<p>In the deep learning review, I contributed a section on deep learning applications in the field of protein-protein interaction predictions, with a subsection on deep learning methods for the prediction of MHC-peptide binding <span class="citation">[<a href="#ref-otFK6ZiU">24</a>]</span>.</p>
 <h2 id="next-steps">Next steps</h2>
+<p>The primary next step is to use the functionality created this summer to make test predictions of potential targets for drug repurposing.</p>
+<p>By increasing the amount of data within the hetnet, we will expand our capability to make high-quality predictions of potential connections between nodes.</p>
+<p><strong>Ideas to add above</strong></p>
+<hr />
+<ul>
+<li>Actually make some C–&gt;D predictions</li>
+<li>Make the hetnet bigger</li>
+<li>Use many more metapaths than just Rephetio ones, as these aren’t (to my knowledge) all the metapaths linking compounds and diseases.</li>
+<li>Potentially test the method’s performance on other types of metapath, ie. not just C-[…]-D.</li>
+<li>Potentially some sort of analysis of new drugs entering into the later stages of clinical trial, and compare these (whose data shouldn’t be in the hetnet) to our predictions for their targets. This would be a further validation of the methodology.</li>
+<li>Create an open-access webserver</li>
+<li>Potentially try new methods to find predictions between nodes, see if some other sort of feature can be extracted for non-existent connections or nodes. Something like <span class="citation">[<a href="#ref-rVgq22nD">25</a>]</span> where a two-stage deep neural network first learned the characteristics of proteins that make them likely to interact, then secondly combined these already-higher level features into an even higher-level feature in the second stage. There could be any number of other graph-theory concepts which could be applied here, including both features and potential corrections, like graph centrality, etc.</li>
+</ul>
 <h2 id="citations" class="unnumbered">Citations</h2>
 <div id="refs" class="references">
 <div id="ref-LlRXV6lE">
@@ -439,6 +453,9 @@
 </div>
 <div id="ref-otFK6ZiU">
 <p>24. greenelab. In press. Added PPI section with MHC subsection by zietzm · Pull Request #638 · greenelab/deep-review. <em>GitHub</em>. See <a href="https://github.com/greenelab/deep-review/pull/638" class="uri">https://github.com/greenelab/deep-review/pull/638</a>.</p>
+</div>
+<div id="ref-rVgq22nD">
+<p>25. Du X, Sun S, Hu C, Yao Y, Yan Y, Zhang Y. 2017 DeepPPI: Boosting Prediction of Protein–Protein Interactions with Deep Neural Networks. <em>J. Chem. Inf. Model.</em> <strong>57</strong>, 1499–1510. See <a href="https://doi.org/10.1021/acs.jcim.7b00028" class="uri">https://doi.org/10.1021/acs.jcim.7b00028</a>.</p>
 </div>
 </div>
 <script>
