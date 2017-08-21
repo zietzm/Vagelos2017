@@ -1,7 +1,7 @@
 ---
 author-meta:
 - Michael N. Zietz
-date-meta: '2017-08-17'
+date-meta: '2017-08-21'
 keywords:
 - work-in-progress
 - markdown
@@ -12,8 +12,8 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@570c599](https://github.com/zietzm/Vagelos2017/tree/570c599b045ab67a7b65747c6fe1e310853f9a31)
-on August 17, 2017.
+from [zietzm/Vagelos2017@3cd73e9](https://github.com/zietzm/Vagelos2017/tree/3cd73e9650230975c3926666647edcfb7474944b)
+on August 21, 2017.
 </em></small>
 
 ## Authors
@@ -340,25 +340,37 @@ In the deep learning review, I contributed a section on deep learning applicatio
 
 ## Next steps
 
-The primary next step is to use the functionality created this summer to make test predictions of potential targets for drug repurposing.
+We plan to use the functionality created this summer to make test predictions of potential targets for drug repurposing.
+By doing this, we can provide some verification for our path-count method in the same way we did for the original study.
+Additionally, we can verify the accuracy of the new matrix-formulation by comparing it to the far slower but precise graph method.
+Another method for verifying the predictions of our method involves comparing our predictions to new drugs which are entering the later phases of clinical trial.
+As these compounds are not in our hetnet, we would hope to see that later-phase clinical trial drugs score highly in our treatment predictions for their target diseases.
+Luckily, a description of all such clinical trials-- both active and complete in 195 countries-- is available on a government website [@vbD9t39A] run by the National Institutes of Health and the National Library of Medicine.
 
+Now that our methods for traversing the graph are much faster and more expanded, we can add significantly more data into our heterogeneous network.
+A project is already underway in our lab which hopes to incorporate data mined from biomedical literature through natural language processing into our network.
+This project is a natural complement to the work I did this summer, because while a bigger graph requires more computation time, the matrix-based DWPC method will scale far better to increased data size than the conventional graph method.
 
-By increasing the amount of data within the hetnet, we will expand our capability to make high-quality predictions of potential connections between nodes.
+Another use-case for our faster computation method is an increase in considered metapaths.
+In previous work, we have considered only a subset of the potential metapaths.
+For one, we only investigated metapaths starting with a compound and ending with a disease.
+Further, even within compound-disease metapaths, we did not consider all possible paths.
+My work this summer will allow us to expand the reach of potential metapaths we consider without sacrificing hugely on performance.
 
-**Ideas to add above**
+As with many of the open-source projects in the Greene lab, we hope to eventually create an open-access webserver which can access the results of our method.
+It should allow a user to search for as many nodes as desired and be returned a set of possible connections between them with corresponding metapaths.
+If this could be done, the functionality could be expanded to automatically generate a Neo4j query which could show the graphs being described by our predictions.
 
----
-
-* Actually make some C-->D predictions
-* Make the hetnet bigger
-* Use many more metapaths than just Rephetio ones, as these aren't (to my knowledge) all the metapaths linking compounds and diseases.
-* Potentially test the method's performance on other types of metapath, ie. not just C-[...]-D.
-* Potentially some sort of analysis of new drugs entering into the later stages of clinical trial, and compare these (whose data shouldn't be in the hetnet) to our predictions for their targets.
-This would be a further validation of the methodology.
-* Create an open-access webserver
-* Potentially try new methods to find predictions between nodes, see if some other sort of feature can be extracted for non-existent connections or nodes.
-Something like [@rVgq22nD] where a two-stage deep neural network first learned the characteristics of proteins that make them likely to interact, then secondly combined these already-higher level features into an even higher-level feature in the second stage.
-There could be any number of other graph-theory concepts which could be applied here, including both features and potential corrections, like graph centrality, etc.
+A final potential step forward involves extracting different features from the graph in order to make predictions about potential connections.
+Our method utilizes path count which corrects for degree-weight, and it has shown good performance toward predicting targets for drug repurposing.
+Other measures of connected-ness within a graph, or other methods for degree correction could show equal or better performance, though.
+For example, graph centrality is a measure of the importance of certain vertices in a graph.
+There are feasible methods which could, for example, correct for graph centrality instead of degree for every node in a path.
+Even more distant from our current method is one which could incorporate some of the most exciting advances in computer science and statistics like deep learning.
+In such a method, we would feed a model a large amount of information about each node, and then computationally extract features without human selection.
+For example, in predicting protein-protein interactions, Du et al. [@rVgq22nD] used a two-stage deep neural network first to learn the features of individual proteins which are important for predicting their interactions and second to learn the higher-level features of two proteins' pre-selected features which predict their binding.
+In short, there are many additional methods we could employ to make predictions of future graph connections.
+The best way to test other methods is to split our data into training, validation, and test sets and compare the performance of different methods.
 
 
 ## Citations

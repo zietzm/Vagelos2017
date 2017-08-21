@@ -1316,6 +1316,15 @@
     "id": "w4Mi034s"
   },
   {
+    "URL": "https://clinicaltrials.gov/",
+    "greycite-canonical-uri": null,
+    "title": "Home - ClinicalTrials.gov",
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-21 21:37:41",
+    "type": "webpage",
+    "id": "vbD9t39A"
+  },
+  {
     "URL": "https://docs.python.org/3/library/concurrent.futures.html",
     "title": "17.4. concurrent.futures — Launching parallel tasks — Python 3.6.2 documentation",
     "issued": {
