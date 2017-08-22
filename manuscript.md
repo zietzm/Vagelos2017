@@ -1,7 +1,7 @@
 ---
 author-meta:
 - Michael N. Zietz
-date-meta: '2017-08-21'
+date-meta: '2017-08-22'
 keywords:
 - work-in-progress
 - markdown
@@ -12,8 +12,8 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@3cd73e9](https://github.com/zietzm/Vagelos2017/tree/3cd73e9650230975c3926666647edcfb7474944b)
-on August 21, 2017.
+from [zietzm/Vagelos2017@596e29c](https://github.com/zietzm/Vagelos2017/tree/596e29cb9cbfaf15c4b47651e0112c57ffe07aa3)
+on August 22, 2017.
 </em></small>
 
 ## Authors
@@ -320,6 +320,21 @@ While slower than the other methods, this function allows us to ensure that ever
 The method uses a dictionary of history vectors for every index in the matrix and splits computations whenever a path has the opportunity to diverge into multiple potential paths.
 
 ### Calculation time
+
+Our new matrix method for calculating DWPC decreased the computation time by 97.8 percent.
+We reduced the time to compute DWPC over nearly 1200 metepaths from roughly four-and-a-half days to roughly two hours [@1BU7iA21F].
+One of the major advances we made in our method this summer was the realization that we can calculate the DWPC more efficiently by categorizing each metapath and feeding it to a DWPC function corresponding to a particular metapath category.
+These specialized functions allow us to increase significantly the speed with which we can make calculations.
+However, while we were able to reduce almost all computation times, there are a number of metapaths which we cannot calculate significantly more quickly than we could with the old method.
+36 of 1206 metapaths had to use a generalized function I wrote which enumerates each path independently using a dictionary of history vectors in order to ensure no nodes are repeated.
+
+For the remaining 1170 metapaths, the corresponding DWPC calculation times are summarized in Figure @fig:all_metapath_times.
+
+
+As mentioned, we created a new system whereby metapaths are categorized according to the method we use for computing the DWPC.
+For example, the metapath `CbGbCbGaD` is classified as `BABA`, due to the overlapping repeat nature of the metanodes for 'Compound' and 'Gene'.
+See Figure @fig:metapath_breakdown for a breakdown of all the metapaths according to their categorization.
+
 
 
 
