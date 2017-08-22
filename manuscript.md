@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@596e29c](https://github.com/zietzm/Vagelos2017/tree/596e29cb9cbfaf15c4b47651e0112c57ffe07aa3)
+from [zietzm/Vagelos2017@a0a6ec5](https://github.com/zietzm/Vagelos2017/tree/a0a6ec566139b3a3c0a1d7e1d284304ee4b68525)
 on August 22, 2017.
 </em></small>
 
