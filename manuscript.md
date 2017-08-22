@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@a0a6ec5](https://github.com/zietzm/Vagelos2017/tree/a0a6ec566139b3a3c0a1d7e1d284304ee4b68525)
+from [zietzm/Vagelos2017@a8145dc](https://github.com/zietzm/Vagelos2017/tree/a8145dc4a22baa971ed290112f685db5c480ea20)
 on August 22, 2017.
 </em></small>
 
@@ -32,7 +32,7 @@ on August 22, 2017.
 
 ### Drug development
 Drug development times and R&D expenditures have risen considerably in the last decades.
-In fact, to bring a new compound to market can take a 14 years on average [@LlRXV6lE].
+In fact, to bring a new compound to market can take 14 years on average [@LlRXV6lE].
 This development process, according to a 2016 estimate by DiMasi et al. [@13c9OPizf], costs an average of $2.87 billion dollars, including post-approval R&D.
 This amount is up from two previous studies by the same authors which found the average captialized R&D costs to be $802 million in 2003 [@nn9rnuHx] and $318 million in 1991 [@269zMv7S].
 Despite increases in drug development time and expenditures, the rate of R&D failure has increased since the 1990s [@z38InjRh].
@@ -42,22 +42,22 @@ Even among those which enter phase I of clinical development, only an estimated 
 ### Drug repurposing
 Drug repurposing refers to the application of an existing therapeutic to a different disease than the one for which it was originally intended.
 Because candidates for drug repurposing have already been approved for other diseases, the time and cost associated with repurposing a drug are very small compared to the development of a new drug [@c7z5BwrM].
-In fact, even compounds which have been deemed safe but failed in clinical development for other reasons can be candidates for drug repurposing.
+In fact, even compounds which have been deemed safe but have failed in clinical development for other reasons can be candidates for drug repurposing.
 Several examples exist of drugs which have been repurposed, for example aspirin to treat coronary artery disease, sildenafil to treat erectile dysfunction, and gabapentin to treat postherpetic neuralgia.
 Most successfully repurposed drugs were discovered serendipitously and not through any systematic discovery mechanism.
 Our goal is to make accurate predictions of drugs which are candidates for drug repurposing.
-We hope to do this using heterogeneous networks of biomedical information to learn the patterns of connections between compounds and diseases.
+We hope to do this using heterogeneous networks of biomedical information to learn the patterns of connections between compounds which treat diseases.
 
 
 ## Summer aims
 
 This summer I worked within the Greene Lab project called 'Hetmech' [@X1hJHTyw].
-Hetmech aims to improve upon and expand the existing method for predicting drug repurposing targets.
+Hetmech aims to improve upon and expand our existing method for predicting drug repurposing targets.
 
-I had three primary aims for my work this summer. 
-The details of all are covered in the Methods section.
+I had three primary aims for my work this summer.
+The details of each are covered in the Methods section.
 
-First, I wanted to add capability within Hetmech to compute the degree-weighted path count (DWPC).
+First, I wanted to add a capability within Hetmech to compute precisely the degree-weighted path count (DWPC).
 Previously, the two options had been an inaccurate DWPC method and a degree-weighted walk count (DWWC), whose limitations will be covered in the Methods section.
 
 Second, I hoped to decrease the time required to make calculations of DWPC.
@@ -66,7 +66,7 @@ Sparse matrices and parallel computation were planned solutions to this problem.
 
 Finally, it was my goal to add a multiple search capability.
 This involves querying a set of nodes to return a set of predictions for nodes which connect the queried nodes.
-For example, one should be able to search a set of symptoms and return a list of potential diseases that connect the symptoms. 
+For example, one should be able to search a set of symptoms and return a list of potential diseases that connect the symptoms.
 As with the previous problems, moving to strictly matrix computation makes this much more simple.
 
 My secondary aim for the summer was to become familiar with and contribute to open-source, reproducible, computational science in biology.
@@ -207,8 +207,8 @@ Path-counts provide useful information for predicting potential new relationship
 Higher path-counts between two nodes shows good performance as a feature for predicting novel connections [@WkPlH1ds].
 However, as high-degree nodes make many connections, superior performance was acheived by downweighting nodes according to their degree.
 To do this, row sums and column sums are taken for a matrix at each step.
-These one-dimensional arrays are exponentiated
-This represents the 'degree-weight' portion of the 'degree-weighted path count'. 
+These one-dimensional arrays are exponentiated and the matrix is multiplied by each.
+This represents the 'degree-weight' portion of the 'degree-weighted path count'.
 My work toward this will be further discussed in the Results section.
 
 
@@ -236,9 +236,9 @@ In the sparse representation we used, Compressed-sparse-column format (CSC), a m
 Consider the following matrix:
 
 \begin{bmatrix}
-4 & 5 & 0 & 0\\ 
-0 & 0 & 1 & 0\\ 
-3 & 0 & 0 & 9\\ 
+4 & 5 & 0 & 0\\
+0 & 0 & 1 & 0\\
+3 & 0 & 0 & 9\\
 0 & 6 & 0 & 5
 \end{bmatrix}
 
@@ -254,7 +254,7 @@ Next, we give the row indices of these elements.
 0 & 2 & 0 & 3 & 1 & 2 & 3
 \end{bmatrix}
 
-The final array represents what is called a column pointer. 
+The final array represents what is called a column pointer.
 This array gives the indices where each column starts.
 
 \begin{bmatrix}
@@ -266,13 +266,13 @@ These three arrays represent the entirety of a matrix.
 #### Other tools
 
 A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions.
-As has become relatively standard for much of computational work, we made use of Jupyter notebooks [@klbqKLT4] to display the code used to run analysis and its output in a re-usable way. 
+As has become relatively standard for much of computational work, we made use of Jupyter notebooks [@klbqKLT4] to display the code used to run analysis and its output in a re-usable way.
 Within this, we were able to effectively incorporate the data manipulation and analysis library pandas [@iE9hnE2z] and the multiprocessing library concurrent.futures [@AwSIzjc6].
 For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 [@cagYjYkt], and the Python graphing library Matplotlib [@118qTQ4yr].
 
 The most important tool we used this summer to track progress was the version control software, Git.
 Our repositories were hosted on the online git hosting service, GitHub [@tgH1jNoV].
-Specifically, every contribution I made this summer can be viewed in detail at my GitHub profile [@14DftF1SD]. 
+Specifically, every contribution I made this summer can be viewed in detail at my GitHub profile [@14DftF1SD].
 This will be discussed further in the Results section below.
 
 
@@ -286,36 +286,42 @@ These contributions amounted to 1043 lines added and 264 lines deleted in the re
 
 ### DWPC
 
-I have almost completed an implementation of the degree-weighted path count (DWPC) in the form of several independent functions.
+I have completed an implementation of the degree-weighted path count (DWPC) in the form of several independent functions.
+What follows are the specifics of this new method.
+
 When a user calls the `dwpc` function over a metapath, a series of steps occur before any actual path-counting occurs.
 First, the metapath is categorized according to its repeated metanodes.
 For example, the metapath `GaDrDaG`, ('Gene-associates-Disease-resembles-Disease-associates-Gene') would be classified `BAAB`.
 Further examples of this classification method are in Table @tbl:classification below.
 
-Next, the metapath was split into segments according to its classification.
-This step allowed for the abstraction of metapath patterns to metapaths which followed the pattern of a classification but included randomly inserted, metanodes anywhere in the bath.
+Next, the metapath is split into segments according to its classification.
+This step allowed for the abstraction of metapath patterns to metapaths which followed the pattern of a classification but included randomly inserted, non-repeating metanodes anywhere in the bath.
 Splitting the metapath essentially allowed us to work with paths like `A-B-C-D-B-A` in the same way that we work with `A-B-B-A`, by abstracting any non-repeating metanodes to within segments.
 
 | Metapath | Classification | Segments |
 | -------- | -------------- | -------- |
-| CbGiGbC | BAAB | CbG GiG GbC |
-| DaGaDaG | BABA | DaG GaD DaG |
-| DlAeGaDaG | BABA | DlAeG GaD DaG |
+| CbGiGbC | BAAB | CbG; GiG; GbC |
+| DaGaDaG | BABA | DaG; GaD; DaG |
+| DlAeGaDaG | BABA | DlAeG; GaD; DaG |
 | CrCrC | short_repeat | CrCrC |
 | DlAeG | no_repeats | DlAeG |
 | CrCrCrC | long_repeat | CrCrCrC |
-| CbGiGiGaDrDpCpD | interior_complete_group | CbG GiGiG GaD DrD DpC CpD |
+| CbGiGiGaDrDpCpD | interior_complete_group | CbG; GiGiG; GaD; DrD; DpC; CpD |
 
 Table: Example metapaths with classifications and segments {#tbl:classification}
 
-Once the metapath is split into segments, the original metapath classification is used to select the appropriate dwpc function.
+See Figure @fig:metapath_breakdown for a breakdown of all the metapaths according to their categorization.
+
+![1170 metapaths by categorization](images/metanodes_by_category.svg){#fig:metapath_breakdown width="5in"}
+
+Once the metapath is split into segments, the original metapath classification is used to select the appropriate DWPC function.
 For example, if the metapath classification is `BAAB`, then the segmented metapath will be run in the function `dwpc_baab`.
 
 Each DWPC function has a unique method for ensuring that it outputs a path-count rather than a walk count.
 For many metapaths this was a non-trivial method to unravel, and often involved several steps of additions, subtractions, multiplications, and normalizations.
-Our work was greatly aided by the help of a mathematician with whom we collaborated on some of the more challenging matrix operations.
+Our work was greatly aided by the help of a mathematician with whom we collaborated on some of the more challenging linear algebra algorithms.
 
-In addition to the specific DWPC functions, I created a general method which will work over all metapaths, no matter the length.
+In addition to the specific DWPC functions, I created a general method which works over all metapaths, no matter the length.
 While slower than the other methods, this function allows us to ensure that every path is covered by the DWPC.
 The method uses a dictionary of history vectors for every index in the matrix and splits computations whenever a path has the opportunity to diverge into multiple potential paths.
 
@@ -326,17 +332,27 @@ We reduced the time to compute DWPC over nearly 1200 metepaths from roughly four
 One of the major advances we made in our method this summer was the realization that we can calculate the DWPC more efficiently by categorizing each metapath and feeding it to a DWPC function corresponding to a particular metapath category.
 These specialized functions allow us to increase significantly the speed with which we can make calculations.
 However, while we were able to reduce almost all computation times, there are a number of metapaths which we cannot calculate significantly more quickly than we could with the old method.
-36 of 1206 metapaths had to use a generalized function I wrote which enumerates each path independently using a dictionary of history vectors in order to ensure no nodes are repeated.
+36 of 1206 metapaths had to use the generalized function I wrote which enumerates each path independently using a dictionary of history vectors in order to ensure no nodes are repeated.
 
 For the remaining 1170 metapaths, the corresponding DWPC calculation times are summarized in Figure @fig:all_metapath_times.
 
+![Matrix method DWPC calculation times for each of 1170 metapaths](images/all_path_time.svg){#fig:all_metapath_times width="5in"}
 
 As mentioned, we created a new system whereby metapaths are categorized according to the method we use for computing the DWPC.
 For example, the metapath `CbGbCbGaD` is classified as `BABA`, due to the overlapping repeat nature of the metanodes for 'Compound' and 'Gene'.
 See Figure @fig:metapath_breakdown for a breakdown of all the metapaths according to their categorization.
 
+In trying to reduce runtime, we were constantly trying to optimize every step in our computation.
+We were able to reduce runtimes significantly using sparse matrices as previously mentioned.
+The key, however, to a faster computational pipeline was categorizing metapaths and using specialized functions for each metapath.
+A breakdown of these functions' performance is in Figure @fig:category_runtimes.
 
+![DWPC calculation runtimes by metapath category](images/category_runtimes.svg){#fig:category_runtimes width="5in"}
 
+Finally, in tracing back the slowest calculations, we found that a few metapaths took significantly longer than all others.
+We discovered that these involved the metapaths with the segment `[...]GeAeG[...]` (see Figure  @fig:gene_times).
+
+![Breakdown of the slowest metapath computation time by repeated Gene segment. 'G_X_G' is all metapaths which include a segment of three metanodes, whose innermost metanode is not 'Anatomy'. 'G_A_G' is all metapaths with a segment 'Gene'-'Anatomy'-'Gene' except those of the form 'GeAeG'. 'GeAeG' is strictly metapaths with the segment corresponding to 'Gene-expressed-Anatomy-expressed-Gene', meaning that there are two genes expressed in a certain anatomical region. Please note that there is no overlap between any of the three groups. 'GeAeG' is the most specific, and the other two groups do not include it. 'G_X_G' does includes neither any of the 'G_A_G' nor the 'GeAeG' metapaths.](images/gene_time_breakdown.svg){#fig:gene_times width="5in"}
 
 
 ### Multiple search capability
@@ -348,18 +364,18 @@ Having cached our DWPC matrices along every C-[...]-D metapath with five or fewe
 ### Other summer results
 
 I also gained a deeper appreciation of and respect for open-access and collaborative science.
-In working towards this, I reported a bug in the open source Python repository SciPy which dealt with issues involving matrix multiplication [@R0MGiivw].
+In working towards this, I reported a relevant bug in the open source Python repository SciPy which dealt with issues involving matrix multiplication [@R0MGiivw].
 
-In the deep learning review, I contributed a section on deep learning applications in the field of protein-protein interaction predictions, with a subsection on deep learning methods for the prediction of MHC-peptide binding [@otFK6ZiU].
+In the deep learning review paper, I contributed a section on deep learning applications in the field of protein-protein interaction predictions, with a subsection on deep learning methods for the prediction of MHC-peptide binding [@otFK6ZiU].
 
 
 ## Next steps
 
-We plan to use the functionality created this summer to make test predictions of potential targets for drug repurposing.
-By doing this, we can provide some verification for our path-count method in the same way we did for the original study.
-Additionally, we can verify the accuracy of the new matrix-formulation by comparing it to the far slower but precise graph method.
-Another method for verifying the predictions of our method involves comparing our predictions to new drugs which are entering the later phases of clinical trial.
-As these compounds are not in our hetnet, we would hope to see that later-phase clinical trial drugs score highly in our treatment predictions for their target diseases.
+We plan to use the functionality created this summer to predict potential targets for drug repurposing.
+By doing this, we can provide further verification for our path-count method in the same way we did for the original study.
+Additionally, we can verify the accuracy of our new matrix-formulation by comparing it to the far slower but precise graph method.
+Yet another method for verifying the predictions of our method involves comparing our predictions to new drugs which are entering the later phases of clinical trial.
+As these compounds are not in our Hetnet, we would hope to see that later-phase clinical trial drugs score highly in our treatment predictions for their target diseases.
 Luckily, a description of all such clinical trials-- both active and complete in 195 countries-- is available on a government website [@vbD9t39A] run by the National Institutes of Health and the National Library of Medicine.
 
 Now that our methods for traversing the graph are much faster and more expanded, we can add significantly more data into our heterogeneous network.
@@ -372,7 +388,7 @@ For one, we only investigated metapaths starting with a compound and ending with
 Further, even within compound-disease metapaths, we did not consider all possible paths.
 My work this summer will allow us to expand the reach of potential metapaths we consider without sacrificing hugely on performance.
 
-As with many of the open-source projects in the Greene lab, we hope to eventually create an open-access webserver which can access the results of our method.
+As with many of the open-source projects in the Greene Lab, we hope to eventually create an open-access webserver which can access the results of our method.
 It should allow a user to search for as many nodes as desired and be returned a set of possible connections between them with corresponding metapaths.
 If this could be done, the functionality could be expanded to automatically generate a Neo4j query which could show the graphs being described by our predictions.
 
@@ -384,8 +400,5 @@ There are feasible methods which could, for example, correct for graph centralit
 Even more distant from our current method is one which could incorporate some of the most exciting advances in computer science and statistics like deep learning.
 In such a method, we would feed a model a large amount of information about each node, and then computationally extract features without human selection.
 For example, in predicting protein-protein interactions, Du et al. [@rVgq22nD] used a two-stage deep neural network first to learn the features of individual proteins which are important for predicting their interactions and second to learn the higher-level features of two proteins' pre-selected features which predict their binding.
-In short, there are many additional methods we could employ to make predictions of future graph connections.
 The best way to test other methods is to split our data into training, validation, and test sets and compare the performance of different methods.
-
-
-## Citations
+In short, there are many additional methods we could employ to make predictions of future graph connections.
