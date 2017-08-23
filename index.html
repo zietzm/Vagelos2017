@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Michael N. Zietz" />
-  <meta name="date" content="2017-08-22" />
+  <meta name="date" content="2017-08-23" />
   <meta name="keywords" content="work-in-progress, markdown, manuscript, publishing" />
   <title>Vagelos Report Summer 2017</title>
   <style type="text/css">code{white-space: pre;}</style>
@@ -20,7 +20,7 @@
 <div id="header">
 <h1 class="title">Vagelos Report Summer 2017</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/a8145dc4a22baa971ed290112f685db5c480ea20">zietzm/Vagelos2017@a8145dc</a> on August 22, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/zietzm/Vagelos2017/tree/c2998b8896038290daad0bb63e8f903e989adb72">zietzm/Vagelos2017@c2998b8</a> on August 23, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>Michael N. Zietz</strong><br> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/zietzm">zietzm</a><br> <small> Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania </small></li>
@@ -395,6 +395,9 @@
 <p>Another use-case for our faster computation method is an increase in considered metapaths. In previous work, we have considered only a subset of the potential metapaths. For one, we only investigated metapaths starting with a compound and ending with a disease. Further, even within compound-disease metapaths, we did not consider all possible paths. My work this summer will allow us to expand the reach of potential metapaths we consider without sacrificing hugely on performance.</p>
 <p>As with many of the open-source projects in the Greene Lab, we hope to eventually create an open-access webserver which can access the results of our method. It should allow a user to search for as many nodes as desired and be returned a set of possible connections between them with corresponding metapaths. If this could be done, the functionality could be expanded to automatically generate a Neo4j query which could show the graphs being described by our predictions.</p>
 <p>A final potential step forward involves extracting different features from the graph in order to make predictions about potential connections. Our method utilizes path count which corrects for degree-weight, and it has shown good performance toward predicting targets for drug repurposing. Other measures of connected-ness within a graph, or other methods for degree correction could show equal or better performance, though. For example, graph centrality is a measure of the importance of certain vertices in a graph. There are feasible methods which could, for example, correct for graph centrality instead of degree for every node in a path. Even more distant from our current method is one which could incorporate some of the most exciting advances in computer science and statistics like deep learning. In such a method, we would feed a model a large amount of information about each node, and then computationally extract features without human selection. For example, in predicting protein-protein interactions, Du et al. <span class="citation">[<a href="#ref-rVgq22nD">27</a>]</span> used a two-stage deep neural network first to learn the features of individual proteins which are important for predicting their interactions and second to learn the higher-level features of two proteins’ pre-selected features which predict their binding. The best way to test other methods is to split our data into training, validation, and test sets and compare the performance of different methods. In short, there are many additional methods we could employ to make predictions of future graph connections.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This summer I worked in the Greene Lab on implementing a new method for predicting drugs which could be repurposed. I contributed to this goal through several means, including the implementing a new matrix formulation of a graph node connected-ness measure called the degree-weighted path count (DWPC). This measure and its new calculation method allows us to make significantly (97.8 percent) faster calculations, whose outputs can be used to accurately predict future connections in a graph. In trying to predict compound-disease connections, our work represents a methodological advance from the previously serendipitous nature of discovering drug repurposing targets. I found this summer extremely valuable for this reason, as well as for my personal development. My computational skills have improved considerably, and my depth of understanding in the field of computational biomedical science has grown. We hope that our new method will prove useful to future researchers hoping to quickly and cheaply bring effective drugs to market, and I hope that the skills I gained this summer will be beneficial in a future biomedical research capacity.</p>
+<h2 id="citations" class="unnumbered">Citations</h2>
 <div id="refs" class="references">
 <div id="ref-LlRXV6lE">
 <p>1. Scannell JW, Blanckley A, Boldon H, Warrington B. 2012 Diagnosing the decline in pharmaceutical R&amp;D efficiency. <em>Nat Rev Drug Discov</em> <strong>11</strong>, 191–200. See <a href="https://doi.org/10.1038/nrd3681" class="uri">https://doi.org/10.1038/nrd3681</a>.</p>
