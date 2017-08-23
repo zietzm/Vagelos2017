@@ -1,7 +1,7 @@
 ---
 author-meta:
 - Michael N. Zietz
-date-meta: '2017-08-22'
+date-meta: '2017-08-23'
 keywords:
 - work-in-progress
 - markdown
@@ -12,8 +12,8 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@a8145dc](https://github.com/zietzm/Vagelos2017/tree/a8145dc4a22baa971ed290112f685db5c480ea20)
-on August 22, 2017.
+from [zietzm/Vagelos2017@c2998b8](https://github.com/zietzm/Vagelos2017/tree/c2998b8896038290daad0bb63e8f903e989adb72)
+on August 23, 2017.
 </em></small>
 
 ## Authors
@@ -402,3 +402,17 @@ In such a method, we would feed a model a large amount of information about each
 For example, in predicting protein-protein interactions, Du et al. [@rVgq22nD] used a two-stage deep neural network first to learn the features of individual proteins which are important for predicting their interactions and second to learn the higher-level features of two proteins' pre-selected features which predict their binding.
 The best way to test other methods is to split our data into training, validation, and test sets and compare the performance of different methods.
 In short, there are many additional methods we could employ to make predictions of future graph connections.
+
+
+## Conclusion
+
+This summer I worked in the Greene Lab on implementing a new method for predicting drugs which could be repurposed.
+I contributed to this goal through several means, including the implementing a new matrix formulation of a graph node connected-ness measure called the degree-weighted path count (DWPC).
+This measure and its new calculation method allows us to make significantly (97.8 percent) faster calculations, whose outputs can be used to accurately predict future connections in a graph.
+In trying to predict compound-disease connections, our work represents a methodological advance from the previously serendipitous nature of discovering drug repurposing targets.
+I found this summer extremely valuable for this reason, as well as for my personal development.
+My computational skills have improved considerably, and my depth of understanding in the field of computational biomedical science has grown.
+We hope that our new method will prove useful to future researchers hoping to quickly and cheaply bring effective drugs to market, and I hope that the skills I gained this summer will be beneficial in a future biomedical research capacity.
+
+
+## Citations
