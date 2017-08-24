@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@3f3da33](https://github.com/zietzm/Vagelos2017/tree/3f3da3385c57006048de569bfd61f4a5175e7014)
+from [zietzm/Vagelos2017@8003d66](https://github.com/zietzm/Vagelos2017/tree/8003d66e9698905ef9c3873f6aa4932d4b5d8945)
 on August 24, 2017.
 </em></small>
 
@@ -420,10 +420,10 @@ We hope that our new method will prove useful to future researchers hoping to qu
 ## Acknowledgements
 
 Greene Lab
-Daniel Himmelstein
-Casey Greene
-Kyle Kloster
-Michael Mayers
+Daniel Himmelstein - Postdoctoral Fellow, Greene Lab
+Casey Greene - PI, Greene Lab
+Kyle Kloster - Postdoctoral Researcher, NCSU
+Michael Mayers - Graduate Student, Scripps Research Institute
 
 
 ## Citations
