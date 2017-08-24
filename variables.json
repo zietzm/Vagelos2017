@@ -1,25 +1,26 @@
 {
-  "date": "August 23, 2017",
+  "date": "August 24, 2017",
   "authors": [
     {
       "github": "zietzm",
       "name": "Michael N. Zietz",
       "initials": "MNZ",
       "email": "michael.zietz@gmail.com",
-      "affiliations": "Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania"
+      "affiliations": "Greene Lab, Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania",
+      "orcid": "0000-0003-0539-630X"
     }
   ],
   "ci_source": {
     "repo_slug": "zietzm/Vagelos2017",
-    "commit": "c2998b8896038290daad0bb63e8f903e989adb72"
+    "commit": "fdc2ecbd1445597075f98bc89e2743e9a6cf5373"
   },
   "manuscript_stats": {
     "reference_counts": {
-      "doi": 9,
-      "pmid": 2,
-      "url": 16,
-      "total": 27
+      "doi": 10,
+      "pmid": 1,
+      "url": 15,
+      "total": 26
     },
-    "word_count": 4137
+    "word_count": 4159
   }
 }

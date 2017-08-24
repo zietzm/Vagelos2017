@@ -7,8 +7,8 @@ string	citation	standard_citation	citation_id
 @doi:10.1038/nbt.2786	doi:10.1038/nbt.2786	doi:10.1038/nbt.2786	o8yROPbx
 @doi:10.1038/nrd3405	doi:10.1038/nrd3405	doi:10.1038/nrd3405	z38InjRh
 @doi:10.1038/nrd3681	doi:10.1038/nrd3681	doi:10.1038/nrd3681	LlRXV6lE
+@doi:10.1101/087619	doi:10.1101/087619	doi:10.1101/087619	11rVTcUCK
 @doi:10.1371/journal.pcbi.1004259	doi:10.1371/journal.pcbi.1004259	doi:10.1371/journal.pcbi.1004259	WkPlH1ds
-@pmid:26158728	pmid:26158728	pmid:26158728	XJuQlZl1
 @pmid:27118048	pmid:27118048	pmid:27118048	g5JcTYOY
 @url:http://mathworld.wolfram.com/AdjacencyMatrix.html	url:http://mathworld.wolfram.com/AdjacencyMatrix.html	url:http://mathworld.wolfram.com/AdjacencyMatrix.html	w4Mi034s
 @url:https://clinicaltrials.gov	url:https://clinicaltrials.gov	url:https://clinicaltrials.gov	vbD9t39A
@@ -24,5 +24,4 @@ string	citation	standard_citation	citation_id
 @url:https://github.com/pandas-dev/pandas	url:https://github.com/pandas-dev/pandas	url:https://github.com/pandas-dev/pandas	iE9hnE2z
 @url:https://github.com/scipy/scipy	url:https://github.com/scipy/scipy	url:https://github.com/scipy/scipy	LsT2mKA3
 @url:https://github.com/scipy/scipy/issues/7510	url:https://github.com/scipy/scipy/issues/7510	url:https://github.com/scipy/scipy/issues/7510	R0MGiivw
-@url:https://github.com/zietzm/	url:https://github.com/zietzm/	url:https://github.com/zietzm/	14DftF1SD
 @url:https://neo4j.het.io/browser/	url:https://neo4j.het.io/browser/	url:https://neo4j.het.io/browser/	cagYjYkt
