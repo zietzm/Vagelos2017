@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@8003d66](https://github.com/zietzm/Vagelos2017/tree/8003d66e9698905ef9c3873f6aa4932d4b5d8945)
+from [zietzm/Vagelos2017@3ccb7e0](https://github.com/zietzm/Vagelos2017/tree/3ccb7e05b213fbead1e29286b6e4903248a94ad1)
 on August 24, 2017.
 </em></small>
 
@@ -202,7 +202,7 @@ We therefore wanted to eliminate any usage of walk count, and replace it with pa
 In this example and for paths of length two, this is trivial; we simply subtract the main diagonal, and we have converted from a walk count to a path count.
 However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats.
 Using the graph in Figure @fig:eg_graph, _NF2—associates—spinal cancer—resembles—peripheral nervous system neoplasm—associates—NF2_ is considered a walk, but it is not a path because its start and end nodes are the same.
-Note that it is perfectly acceptable to repeat *metanodes*, meaning that we can have metapaths of the form `CrCrCrC`.
+Note that it is perfectly acceptable to repeat *metanodes*, meaning that we can have metapaths of the form 'CrCrCrC'.
 Paths simply exclude the repeat of *specific nodes* within an ordering of nodes.
 
 Path counts provide useful information for predicting potential new relationships within a graph.
@@ -270,7 +270,7 @@ These three arrays represent the entirety of a matrix.
 A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions.
 As has become relatively standard for much of computational work, we made use of Jupyter notebooks [@klbqKLT4] to display the code used to run analysis and its output in a re-usable way.
 Within this, we were able to effectively incorporate the data manipulation and analysis library pandas [@iE9hnE2z] and the multiprocessing library concurrent.futures [@AwSIzjc6].
-For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 [@cagYjYkt], and the Python graphing library Matplotlib [@118qTQ4yr].
+For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 [@cagYjYkt], and the Python graphing librarys Matplotlib [@118qTQ4yr] and seaborn [@CyOJLKc2].
 
 The most important tool we used this summer to track progress was the version control software, Git.
 Our repositories were hosted on the online git hosting service, GitHub [@tgH1jNoV].
@@ -293,7 +293,7 @@ What follows are the specifics of this new method.
 
 When a user calls the `dwpc` function over a metapath, a series of steps occur before any actual path-counting occurs.
 First, the metapath is categorized according to its repeated metanodes.
-For example, the metapath `GaDrDaG`, ('Gene-associates-Disease-resembles-Disease-associates-Gene') would be classified `BAAB`.
+For example, the metapath 'GaDrDaG', ('Gene-associates-Disease-resembles-Disease-associates-Gene') would be classified `BAAB`.
 Further examples of this classification method are in Table @tbl:classification below.
 
 Next, the metapath is split into segments according to its classification.
@@ -341,7 +341,7 @@ For the remaining 1170 metapaths, the corresponding DWPC calculation times are s
 ![Matrix method DWPC calculation times for each of 1170 metapaths](images/all_path_time.svg){#fig:all_metapath_times width="5in"}
 
 As mentioned, we created a new system whereby metapaths are categorized according to the method we use for computing the DWPC.
-For example, the metapath `CbGbCbGaD` is classified as `BABA`, due to the overlapping repeat nature of the metanodes for 'Compound' and 'Gene'.
+For example, the metapath 'CbGbCbGaD' is classified as `BABA`, due to the overlapping repeat nature of the metanodes for 'Compound' and 'Gene'.
 See Figure @fig:metapath_breakdown for a breakdown of all the metapaths according to their categorization.
 
 In trying to reduce runtime, we were constantly trying to optimize every step in our computation.
@@ -349,10 +349,10 @@ We were able to reduce runtimes significantly using sparse matrices as previousl
 The key, however, to a faster computational pipeline was categorizing metapaths and using specialized functions for each metapath.
 A breakdown of these functions' performance is in Figure @fig:category_runtimes.
 
-![DWPC calculation runtimes by metapath category](images/category_runtimes.svg){#fig:category_runtimes width="5in"}
+![DWPC calculation runtimes by metapath category and path length. In this context, path length indicates the number of edges in the path.](images/category_runtimes.svg){#fig:category_runtimes width="5in"}
 
 Finally, in tracing back the slowest calculations, we found that a few metapaths took significantly longer than all others.
-We discovered that these involved the metapaths with the segment `[...]GeAeG[...]` (see Figure  @fig:gene_times).
+We discovered that these involved the metapaths with the segment '[...]GeAeG[...]' (see Figure  @fig:gene_times).
 
 ![Breakdown of the slowest metapath computation time by repeated Gene segment. 'G_X_G' is all metapaths which include a segment of three metanodes, whose innermost metanode is not 'Anatomy'. 'G_A_G' is all metapaths with a segment 'Gene'-'Anatomy'-'Gene' except those of the form 'GeAeG'. 'GeAeG' is strictly metapaths with the segment corresponding to 'Gene-expressed-Anatomy-expressed-Gene', meaning that there are two genes expressed in a certain anatomical region. Please note that there is no overlap between any of the three groups. 'GeAeG' is the most specific, and the other two groups do not include it. 'G_X_G' does includes neither any of the 'G_A_G' nor the 'GeAeG' metapaths.](images/gene_time_breakdown.svg){#fig:gene_times width="5in"}
 
@@ -361,7 +361,7 @@ We discovered that these involved the metapaths with the segment `[...]GeAeG[...
 
 As with many graph traversal tasks, using adjacency matrices to calculated DWPC meant that querying a set of nodes has become simpler.
 Our initial work has been on metapaths starting with compounds and ending with diseases.
-Having cached our DWPC matrices along every C-[...]-D metapath with five or fewer edges, we can extract path counts for queried nodes by performing matrix-vector multiplication.
+Having cached our DWPC matrices along every 'C-[...]-D' metapath with five or fewer edges, we can extract path counts for queried nodes by performing matrix-vector multiplication.
 
 ### Other summer results
 
@@ -419,10 +419,14 @@ We hope that our new method will prove useful to future researchers hoping to qu
 
 ## Acknowledgements
 
-Greene Lab
+Greene Lab (http://www.greenelab.com/)
+
 Daniel Himmelstein - Postdoctoral Fellow, Greene Lab
+
 Casey Greene - PI, Greene Lab
+
 Kyle Kloster - Postdoctoral Researcher, NCSU
+
 Michael Mayers - Graduate Student, Scripps Research Institute
 
 

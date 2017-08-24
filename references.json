@@ -1630,5 +1630,23 @@
     "greycite-scanned": "2017-08-15 02:17:04",
     "type": "webpage",
     "id": "cagYjYkt"
+  },
+  {
+    "URL": "https://seaborn.pydata.org/",
+    "greycite-canonical-uri": null,
+    "title": "seaborn: statistical data visualization — seaborn 0.8.0 documentation",
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          7,
+          9
+        ]
+      ]
+    },
+    "greycite-status": "Scanned",
+    "greycite-scanned": "2017-08-24 21:12:32",
+    "type": "webpage",
+    "id": "CyOJLKc2"
   }
 ]
