@@ -12,7 +12,7 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@fdc2ecb](https://github.com/zietzm/Vagelos2017/tree/fdc2ecbd1445597075f98bc89e2743e9a6cf5373)
+from [zietzm/Vagelos2017@3f3da33](https://github.com/zietzm/Vagelos2017/tree/3f3da3385c57006048de569bfd61f4a5175e7014)
 on August 24, 2017.
 </em></small>
 
@@ -329,8 +329,8 @@ The method uses a dictionary of history vectors for every index in the matrix an
 
 ### Calculation time
 
-Our new matrix method for calculating DWPC decreased the computation time by 97.8 percent.
-We reduced the time to compute DWPC over nearly 1200 metepaths from roughly four-and-a-half days to roughly two hours [@1BU7iA21F].
+Our new matrix method for calculating DWPC decreased the computation time by 98.5 percent.
+We reduced the time to compute DWPC over nearly 1200 metepaths from roughly four-and-a-half days to roughly one hour and thirty-seven minutes [@1BU7iA21F].
 One of the major advances we made in our method this summer was the realization that we can calculate the DWPC more efficiently by categorizing each metapath and feeding it to a DWPC function corresponding to a particular metapath category.
 These specialized functions allow us to increase significantly the speed with which we can make calculations.
 However, while we were able to reduce almost all computation times, there are a number of metapaths which we cannot calculate significantly more quickly than we could with the old method.
@@ -388,6 +388,7 @@ Another use-case for our faster computation method is an increase in considered 
 In previous work, we have considered only a subset of the potential metapaths.
 For one, we only investigated metapaths starting with a compound and ending with a disease.
 Further, even within compound-disease metapaths, we did not consider all possible paths.
+Path lengths were constrained to be of length four or fewer edges in the previous work.
 My work this summer will allow us to expand the reach of potential metapaths we consider without sacrificing hugely on performance.
 
 As with many of the open-source projects in the Greene Lab, we hope to eventually create an open-access webserver which can access the results of our method.
@@ -396,7 +397,7 @@ If this could be done, the functionality could be expanded to automatically gene
 
 A final potential step forward involves extracting different features from the graph in order to make predictions about potential connections.
 Our method utilizes path count which corrects for degree-weight, and it has shown good performance toward predicting targets for drug repurposing.
-Other measures of connected-ness within a graph, or other methods for degree correction could show equal or better performance, though.
+Other measures of connectedness within a graph, or other methods for degree correction could show equal or better performance, though.
 For example, graph centrality is a measure of the importance of certain vertices in a graph.
 There are feasible methods which could, for example, correct for graph centrality instead of degree for every node in a path.
 Even more distant from our current method is one which could incorporate some of the most exciting advances in computer science and statistics like deep learning.
@@ -410,11 +411,19 @@ In short, there are many additional methods we could employ to make predictions 
 
 This summer I worked in the Greene Lab on implementing a new method for predicting drugs which could be repurposed.
 I contributed to this goal through several means, including the implementing a new matrix formulation of a graph node connected-ness measure called the degree-weighted path count (DWPC).
-This measure and its new calculation method allows us to make significantly (97.8 percent) faster calculations, whose outputs can be used to accurately predict future connections in a graph.
+This measure and its new calculation method allows us to make significantly faster (66.8-fold decrease in time) calculations, whose outputs can be used to accurately predict future connections in a graph.
 In trying to predict compound-disease connections, our work represents a methodological advance from the previously serendipitous nature of discovering drug repurposing targets.
 I found this summer extremely valuable for this reason, as well as for my personal development.
 My computational skills have improved considerably, and my depth of understanding in the field of computational biomedical science has grown.
 We hope that our new method will prove useful to future researchers hoping to quickly and cheaply bring effective drugs to market, and I hope that the skills I gained this summer will be beneficial in a future biomedical research capacity.
+
+## Acknowledgements
+
+Greene Lab
+Daniel Himmelstein
+Casey Greene
+Kyle Kloster
+Michael Mayers
 
 
 ## Citations
