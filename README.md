@@ -1,3 +1,12 @@
+## Summer Report for the Vagelos Scholars Program in Molecular Life Science
+
+Report detailing work done in the Greene Lab at the University of Pennsylvania for the Summer of 2017.
+Sparse matrix implementation of degree-weighted path count (DWPC) over a heterogeneous network of biomedical information.
+Summer research conducted as part of the Penn Vagelos Scholars Program in Molecular Life Science (MLS).
+
+https://doi.org/10.6084/m9.figshare.5346577
+
+
 # Continuous manuscripts written collaboratively on GitHub
 
 [Manubot Rootstock](https://git.io/vQSvo) provides a system for collaboratively writing scholarly manuscripts via GitHub.
