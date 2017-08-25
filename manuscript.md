@@ -10,9 +10,11 @@ keywords:
 title: Vagelos Report Summer 2017
 ...
 
+*This report is available online at <https://doi.org/10.6084/m9.figshare.5346577>.*
+
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@a4d9e16](https://github.com/zietzm/Vagelos2017/tree/a4d9e16b9acb4dcee734276d3643060382c1d34b)
+from [zietzm/Vagelos2017@5c827bd](https://github.com/zietzm/Vagelos2017/tree/5c827bdf169c6f8ecee8f1703596da44dba5c3b1)
 on August 25, 2017.
 </em></small>
 
@@ -213,7 +215,6 @@ These one-dimensional arrays are exponentiated by a damping exponent, and the ma
 This represents the 'degree-weight' portion of the 'degree-weighted path count'.
 My work toward this will be further discussed in the Results section.
 
-Finally, I will make a note on how actual predictions are performed.
 Once we have calculated the DWPC over all the considered metapaths, we use the best of these path counts as features to train a machine learning (logistic regression) model.
 Once trained, the model's performance is assessed by comparing its predictions to known relationships.
 Since we cannot exclude test paths from the overall network, however, we must compare each feature's performance to its performance on a 'permuted hetnet', or an identical network in which the edges have been randomly reassigned, while node-degree has been universally preserved.
