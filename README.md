@@ -15,4 +15,4 @@ This directory contains the following files, which are mostly ignored on the `ma
 ## Source
 
 The manuscripts in this directory were built from
-[`5c827bdf169c6f8ecee8f1703596da44dba5c3b1`](https://github.com/zietzm/Vagelos2017/commit/5c827bdf169c6f8ecee8f1703596da44dba5c3b1).
+[`e4482aa7356ccf21f6c75c8926cb3f7bd9f451c9`](https://github.com/zietzm/Vagelos2017/commit/e4482aa7356ccf21f6c75c8926cb3f7bd9f451c9).
