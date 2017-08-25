@@ -1,7 +1,7 @@
 ---
 author-meta:
 - Michael N. Zietz
-date-meta: '2017-08-24'
+date-meta: '2017-08-25'
 keywords:
 - work-in-progress
 - markdown
@@ -12,8 +12,8 @@ title: Vagelos Report Summer 2017
 
 <small><em>
 This manuscript was automatically generated
-from [zietzm/Vagelos2017@3ccb7e0](https://github.com/zietzm/Vagelos2017/tree/3ccb7e05b213fbead1e29286b6e4903248a94ad1)
-on August 24, 2017.
+from [zietzm/Vagelos2017@a4d9e16](https://github.com/zietzm/Vagelos2017/tree/a4d9e16b9acb4dcee734276d3643060382c1d34b)
+on August 25, 2017.
 </em></small>
 
 ## Authors
@@ -60,7 +60,7 @@ I had three primary aims for my work this summer.
 The details of each are covered in the Methods section.
 
 First, I wanted to add a capability within Hetmech to compute precisely the degree-weighted path count (DWPC).
-Previously, the two options had been an inaccurate DWPC method and a degree-weighted walk count (DWWC), whose limitations will be covered in the Methods section.
+Previously, the three options had been an extremely slow DWPC method, an inaccurate DWPC method, and a degree-weighted walk count (DWWC), whose limitations will be covered in the Methods section. 
 
 Second, I hoped to decrease the time required to make calculations of DWPC.
 Towards this aim, I hoped to speed up computation by at least an order of magnitude.
@@ -85,8 +85,8 @@ In the network used this summer, titled Hetionet v1.0 (Figure {@fig:metagraph}B)
 We define 'metagraph' to mean a graph of the types of nodes and edges in Hetionet (Figure {@fig:metagraph}A).
 
 
-![A. Metagraph. The graph of metandoes (node types) and metaedges (edge) type. B. Graph (Hetionet v1.0) The circles and lines
-represent nodes within the labeled types. For example, within the metanode 'Anatomy' we could have the node 'Leukocyte'.](https://raw.githubusercontent.com/zietzm/Vagelos2017/master/content/images/graph_metagraph.png){#fig:metagraph}
+![A. Metagraph. The graph of metandoes (node types) and metaedges (edge types). B. Graph (Hetionet v1.0) The circles and lines
+represent nodes _within_ the labeled types. For example, within the metanode 'Anatomy' we could have the node 'Leukocyte'.](https://raw.githubusercontent.com/zietzm/Vagelos2017/master/content/images/graph_metagraph.png){#fig:metagraph}
 
 
 Hetionet v1.0 incorporated 47,031 nodes and 2,250,197 edges [@11rVTcUCK]. A further breakdown of the nodes and edges can be found below in Tables @tbl:nodes-by-type and @tbl:nodes-by-source, respectively.
@@ -144,7 +144,7 @@ An adjacency matrix refers to a labeled matrix with 1 or 0 at every position, co
 The matrix is labeled, meaning that each row and column correspond to a source and target node, respectively.
 A function was created, titled `metaedge_to_adjacency_matrix` which performed the conversion from a string metaedge, such as 'DaG', to an adjacency matrix.
 
-![An example graph. Blue nodes are genes, while green nodes are diseases. The edge type between all the nodes in this graph is 'DaG' or 'Disease-associates-Gene'. This is also the complete graph for the relationship 'DaGaD' starting with 'spinal cancer'](images/graph.svg){#fig:eg_graph width="5in"}
+![An example graph. Blue nodes are genes, while green nodes are diseases. The edge type between all the nodes in this graph is 'DaG' or 'Disease-associates-Gene'. This is also the complete graph for the relationship 'DaGaD' starting with 'spinal cancer'.](images/graph.svg){#fig:eg_graph width="5in"}
 
 For example, the graph in Figure @fig:eg_graph has the following adjacency matrix corresponding to 'GaD':
 
@@ -196,9 +196,9 @@ Using the graph in Figure @fig:eg_graph, we could perform a traversal along the 
 
 
 Notice that the elements along the main diagonal of the above matrix are not zero.
-This indiciates that we are accounting for walks in which we traverse from nodes as follows: a ⟶ b ⟶ a.
-Useful information cannot be gained from looping walks such as these, and they introduce considerable noise in measures of connection between nodes.
-We therefore wanted to eliminate any usage of walk count, and replace it with path count, where a path is a type of walk which *cannot* loop backwards on itself.
+This indicates that we are accounting for walks in which we traverse the nodes as follows: 'NF2' ⟶ 'kidney cancer' ⟶ 'NF2'.
+Looping walks do not provide useful information, and they introduce considerable noise in measures of connection between nodes.
+We therefore wanted to eliminate any usage of walk count and replace it with path count, where a path is a type of walk which *cannot* loop backwards on itself.
 In this example and for paths of length two, this is trivial; we simply subtract the main diagonal, and we have converted from a walk count to a path count.
 However, this conversion becomes non-trivial when dealing with longer paths and overlapping metanode repeats.
 Using the graph in Figure @fig:eg_graph, _NF2—associates—spinal cancer—resembles—peripheral nervous system neoplasm—associates—NF2_ is considered a walk, but it is not a path because its start and end nodes are the same.
@@ -207,11 +207,18 @@ Paths simply exclude the repeat of *specific nodes* within an ordering of nodes.
 
 Path counts provide useful information for predicting potential new relationships within a graph.
 Higher path-counts between two nodes shows good performance as a feature for predicting novel connections [@WkPlH1ds].
-However, as high-degree nodes make many connections, superior performance was acheived by downweighting nodes according to their degree.
+However, as high-degree nodes by definition make many connections, superior performance was achieved by downweighting nodes according to their degree.
 To do this, row sums and column sums are taken for a matrix at each step.
-These one-dimensional arrays are exponentiated and the matrix is multiplied by each.
+These one-dimensional arrays are exponentiated by a damping exponent, and the matrix is multiplied by each array (vector).
 This represents the 'degree-weight' portion of the 'degree-weighted path count'.
 My work toward this will be further discussed in the Results section.
+
+Finally, I will make a note on how actual predictions are performed.
+Once we have calculated the DWPC over all the considered metapaths, we use the best of these path counts as features to train a machine learning (logistic regression) model.
+Once trained, the model's performance is assessed by comparing its predictions to known relationships.
+Since we cannot exclude test paths from the overall network, however, we must compare each feature's performance to its performance on a 'permuted hetnet', or an identical network in which the edges have been randomly reassigned, while node-degree has been universally preserved.
+The corrected measure we use to assess feature performance is therefore the ΔAUROC, the difference in area under (AU) the receiver operating characteristic (ROC) curve.
+Once our model is trained and tested, we can translate DWPC data for specific connections into the probability that a compound treats a disease.
 
 
 ### Computational tools
@@ -233,7 +240,7 @@ One of my early goals for the summer was the conversion of all walk-count (and s
 Sparse matrices, as employed by the Python library SciPy [@LsT2mKA3], represent data in matrices which are primarily composed of zeros.
 The selection of sparse representation and threshold are discussed in the Results section, but sparse matrices warrant a brief description.
 
-In the sparse representation we used, Compressed-sparse-column format (CSC), a matrix is stored as three one-dimensional arrays.
+In the sparse representation we used, compressed-sparse-column format (CSC), a matrix is stored as three one-dimensional arrays.
 
 Consider the following matrix:
 
@@ -257,7 +264,7 @@ Next, we give the row indices of these elements.
 \end{bmatrix}
 
 The final array represents what is called a column pointer.
-This array gives the indices where each column starts.
+This array gives the indices of the first array where each column starts.
 
 \begin{bmatrix}
 0 & 2 & 4 & 5 & 7
@@ -270,7 +277,7 @@ These three arrays represent the entirety of a matrix.
 A significant amount of work done later in the summer involved attempting to compare the new functions to the quite slow old functions.
 As has become relatively standard for much of computational work, we made use of Jupyter notebooks [@klbqKLT4] to display the code used to run analysis and its output in a re-usable way.
 Within this, we were able to effectively incorporate the data manipulation and analysis library pandas [@iE9hnE2z] and the multiprocessing library concurrent.futures [@AwSIzjc6].
-For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 [@cagYjYkt], and the Python graphing librarys Matplotlib [@118qTQ4yr] and seaborn [@CyOJLKc2].
+For visualization, we utilized the online service Neo4j to represent Hetionet v1.0 [@cagYjYkt], and the Python graphing libraries Matplotlib [@118qTQ4yr] and seaborn [@CyOJLKc2].
 
 The most important tool we used this summer to track progress was the version control software, Git.
 Our repositories were hosted on the online git hosting service, GitHub [@tgH1jNoV].
@@ -281,7 +288,7 @@ This will be discussed further in the Results section below.
 ## Results
 
 The main problem towards which I worked this summer was an implementation of the degree-weighted path count.
-While the degree-weighted walk count is relatively trivial to implement with matrix multiplication, the path count is non-trivial.
+While the degree-weighted _walk_ count is relatively trivial to implement with matrix multiplication, the path count is non-trivial.
 If computational efficiency is to be considered, each category of metapath will require a different path-count method.
 As of mid-August 2017, I have merged 7 pull requests into the main Hetmech repository on GitHub, and I have one open development branch.
 These contributions amounted to 1043 lines added and 264 lines deleted in the repository.
@@ -317,11 +324,11 @@ See Figure @fig:metapath_breakdown for a breakdown of all the metapaths accordin
 ![1170 metapaths by categorization](images/metanodes_by_category.svg){#fig:metapath_breakdown width="5in"}
 
 Once the metapath is split into segments, the original metapath classification is used to select the appropriate DWPC function.
-For example, if the metapath classification is `BAAB`, then the segmented metapath will be run in the function `dwpc_baab`.
+For example, if the metapath classification is `BAAB`, then the segmented metapath will be given to the function `dwpc_baab`.
 
 Each DWPC function has a unique method for ensuring that it outputs a path-count rather than a walk count.
 For many metapaths this was a non-trivial method to unravel, and often involved several steps of additions, subtractions, multiplications, and normalizations.
-Our work was greatly aided by the help of the mathematician Dr. Kyle Kloster with whom we collaborated on some of the more challenging linear algebra algorithms.
+Our work was greatly aided by the help of the mathematician Dr. Kyle Kloster, with whom we collaborated on some of the more challenging linear algebra algorithms.
 
 In addition to the specific DWPC functions, I created a general method which works over all metapaths, no matter the length.
 While slower than the other methods, this function allows us to ensure that every path is covered by the DWPC.
@@ -354,14 +361,14 @@ A breakdown of these functions' performance is in Figure @fig:category_runtimes.
 Finally, in tracing back the slowest calculations, we found that a few metapaths took significantly longer than all others.
 We discovered that these involved the metapaths with the segment '[...]GeAeG[...]' (see Figure  @fig:gene_times).
 
-![Breakdown of the slowest metapath computation time by repeated Gene segment. 'G_X_G' is all metapaths which include a segment of three metanodes, whose innermost metanode is not 'Anatomy'. 'G_A_G' is all metapaths with a segment 'Gene'-'Anatomy'-'Gene' except those of the form 'GeAeG'. 'GeAeG' is strictly metapaths with the segment corresponding to 'Gene-expressed-Anatomy-expressed-Gene', meaning that there are two genes expressed in a certain anatomical region. Please note that there is no overlap between any of the three groups. 'GeAeG' is the most specific, and the other two groups do not include it. 'G_X_G' does includes neither any of the 'G_A_G' nor the 'GeAeG' metapaths.](images/gene_time_breakdown.svg){#fig:gene_times width="5in"}
+![Breakdown of the slowest metapath computation time by repeated Gene segment. 'G_X_G' is all metapaths which include a segment of three metanodes, whose innermost metanode is not 'Anatomy'. 'G_A_G' is all metapaths with a segment 'Gene'-'Anatomy'-'Gene' except those of the form 'GeAeG'. 'GeAeG' is strictly metapaths with the segment corresponding to 'Gene-expressed-Anatomy-expressed-Gene', meaning that there are two genes expressed in a certain anatomical region. Please note that there is no overlap between any of the three groups. 'GeAeG' is the most specific, and the other two groups do not include it. 'G_X_G' includes neither any of the 'G_A_G' nor of the 'GeAeG' metapaths.](images/gene_time_breakdown.svg){#fig:gene_times width="5in"}
 
 
 ### Multiple search capability
 
 As with many graph traversal tasks, using adjacency matrices to calculated DWPC meant that querying a set of nodes has become simpler.
 Our initial work has been on metapaths starting with compounds and ending with diseases.
-Having cached our DWPC matrices along every 'C-[...]-D' metapath with five or fewer edges, we can extract path counts for queried nodes by performing matrix-vector multiplication.
+Having cached our DWPC matrices along every 'C-[...]-D' metapath with five or fewer edges, we can extract path counts for multiple queried nodes simply by performing matrix-vector multiplication.
 
 ### Other summer results
 
@@ -389,7 +396,7 @@ In previous work, we have considered only a subset of the potential metapaths.
 For one, we only investigated metapaths starting with a compound and ending with a disease.
 Further, even within compound-disease metapaths, we did not consider all possible paths.
 Path lengths were constrained to be of length four or fewer edges in the previous work.
-My work this summer will allow us to expand the reach of potential metapaths we consider without sacrificing hugely on performance.
+My work this summer allows us to expand the reach of potential metapaths we consider without sacrificing hugely on performance.
 
 As with many of the open-source projects in the Greene Lab, we hope to eventually create an open-access webserver which can access the results of our method.
 It should allow a user to search for as many nodes as desired and be returned a set of possible connections between them with corresponding metapaths.
@@ -410,7 +417,7 @@ In short, there are many additional methods we could employ to make predictions 
 ## Conclusion
 
 This summer I worked in the Greene Lab on implementing a new method for predicting drugs which could be repurposed.
-I contributed to this goal through several means, including the implementing a new matrix formulation of a graph node connected-ness measure called the degree-weighted path count (DWPC).
+I contributed to this goal through several means, including the implementing a new matrix formulation of a graph node connectedness measure called the degree-weighted path count (DWPC).
 This measure and its new calculation method allows us to make significantly faster (66.8-fold decrease in time) calculations, whose outputs can be used to accurately predict future connections in a graph.
 In trying to predict compound-disease connections, our work represents a methodological advance from the previously serendipitous nature of discovering drug repurposing targets.
 I found this summer extremely valuable for this reason, as well as for my personal development.
@@ -419,13 +426,15 @@ We hope that our new method will prove useful to future researchers hoping to qu
 
 ## Acknowledgements
 
+Vagelos Scholars Program in Molecular Life Science (MLS)
+
 Greene Lab (http://www.greenelab.com/)
 
 Daniel Himmelstein - Postdoctoral Fellow, Greene Lab
 
 Casey Greene - PI, Greene Lab
 
-Kyle Kloster - Postdoctoral Researcher, NCSU
+Kyle Kloster - Postdoctoral Researcher, North Carolina State University (NCSU)
 
 Michael Mayers - Graduate Student, Scripps Research Institute
 
